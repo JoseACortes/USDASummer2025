@@ -19,7 +19,8 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 2. Compare Analysis over Depth
 3. Compare Core Harvesting Methods with Spectral Analysis
 4. Mapping Methods
-5. Testing Scanning Amounts
+5. Testing Field Coverage
+
 
 # 2. Paper-Presentation-Poster-Video Topics
 
@@ -37,6 +38,7 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 6. Depth Study
 7. Core Harvesting Comparison (local)
 8. Mapping Comparison
+9. Field Coverage Study
 
 # 4. Replicability
 

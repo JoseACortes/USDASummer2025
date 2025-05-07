@@ -40,3 +40,17 @@ the package has a workaround by deleting the line and adding it back in inside t
 
 My idea is to input everything except the soil and air
 the final script will just let you do sectioned soil with the relevant tallies given a soil composition function.
+
+
+05/01/2025
+Have some extra time to work on this, i need to skip the gui and just make a script that will generate the mcnp code.
+
+05/02/2025
+
+Im going to give the scripts from this step the id: 000000XX
+
+05/06/2025
+
+I have the scripts generated, Im not completely sure i made the right density calculations. I need to consult with galina.
+
+next todo: add tallies to the make_mcnp function
