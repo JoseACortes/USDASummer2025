@@ -53,4 +53,22 @@ Im going to give the scripts from this step the id: 000000XX
 
 I have the scripts generated, Im not completely sure i made the right density calculations. I need to consult with galina.
 
+<<<<<<< HEAD
 next todo: add tallies to the make_mcnp function
+=======
+next todo: add tallies to the make_mcnp function
+
+05/09/2025
+I have the tallies added, but I need to make sure they are correct. 
+I try with res (1, 1, 1), (2, 2, 2), (10, 10, 10)
+I need to record the times for each.
+
+actually i forgot to add the reciprocoal soil tallies
+i added energy cards
+
+looking at the mcnp manual, it might be worth looking into using pinhole detectors
+
+alright i think i have the tallies correct, now its time to see if this runs
+
+Alot of fixes, but it looks like its working.
+>>>>>>> 246f78b (wow)

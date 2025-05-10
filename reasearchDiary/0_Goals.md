@@ -31,7 +31,7 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 # 3. Steps
 
 1. Generate Pure Spectrums
-2. Verify Effective Map
+2. Generate Effective Map
 3. Verify Fast Spectrum Convolution
 4. Compare Analysis Methods
 5. Variance Study

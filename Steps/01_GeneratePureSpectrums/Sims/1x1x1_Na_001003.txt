@@ -39,26 +39,25 @@ c
 c
 c @@@@@@@@@@ SOIL VOLUME @@@@@@@@@@@
 c
-20 1 -2.156 -1 imp:n,p 1 $ SOIL VOLUME
+3000 4000 -0.97 20010 -20011 20020 -20021 -20030 20031 imp:n,p 1
 c
-c 30 12 -0.00129 -200 #101 #121 #122 #123 #124 #125 #126 #127 #128 #129 #130 #131 #132 #133
-c #21 #211 #212 #22 #221 #222 #23 #231 #232 #24 #241 #242 #20 imp:n,p 1 $Rest of the World
+30 12 -0.00129 -200 #101 #121 #122 #123 #124 #125 #126 #127 #128 #129 #130 #131 #132 #133
+        #21 #211 #212 #22 #221 #222 #23 #231 #232 #24 #241 #242 #(20010 -20011 20020 -20021 -20030 20031) imp:n,p 1 $Rest of the World
 31 0 200 imp:n,p 0 $Outside world
 
 c SURFACE CARDS
 c
-c %%%%%%%%%%%
 c Sample Volume
-c %%%%%%%%%%%
-1 rpp -56 56 -45 45 42 92 $Soil xmin xmax ymin ymax zmin zmax
-c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+20010 px -56.0
+20011 px 56.0
+20020 py -45.0
+20021 py 45.0
+20030 pz 92.0
+20031 pz 42.0
 c Active Detector Region
-c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 21 rcc 56  -5.0 -1.0   0.0 20.3 0.0   4.5 $Detector 1 Base center, Hx,Hy,Hz, radius
 c Shielding Surfaces
-c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c Shielding Pb
-c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 31 rpp 19 29 -7.5 7.5 -11 9 $PbPE xmin xmax ymin ymax zmin zmax
 32 rpp 9 19 4 9 -11 9 $Pb xmin xmax ymin ymax zmin zmax
 33 rpp 9 19 -9 -4 -11 9 $Pb xmin xmax ymin ymax zmin zmax
@@ -75,9 +74,10 @@ c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 302 px 18
 303 cx 3.71
 304 cx 3.81
-c %
 c Wheels Surfaces
-c %
+c 23/10.5-12 turf tires, 22.6 lb rubber
+c diameter 29cm, tread width 25cm, and sidewall height 13.76 cm
+c set thickness of all sides 1.3 cm (s.t. weight is 22.6 lb)
 41 rcc -2 77 8   0.0 25 0.0 29 $wheel 1 outer tread surface
 42 rcc -2 77 8   0.0 25 0.0 27.7 $wheel 1 inner tread surface
 421 rcc -2 75.7 8   0.0 1.3 0.0 29 $wheel 1 outside sidewall exterior
@@ -102,29 +102,45 @@ c %
 482 rcc 68 -75.7 8   0.0 -1.3 0.0 15.24
 483 rcc 68 -102 8   0.0 -1.3 0.0 29
 484 rcc 68 -102 8   0.0 -1.3 0.0 15.24
-c %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 200 so 800    $sphere of 800cm centered at origin
+c
 
 c DATA CARDS
 mode n p
-prdmp 1j -1440 1j 1
+c dump every hr
+prdmp -60 -60 -1
+c 100 keV Neutron Energy Cutoff
 Cut:n 1j 0.1
-phys:n 1j 14 $analog neutron transport
+c analog neutron transport
+phys:n 1j 14
+phys:p
 sdef pos=0 0 0 erg=14.0 vec= 0 0 1 dir=d1
 si1  -1 .93 1
 sp1   0  0.0  1.0
-m1      13027   -0.5294 $Silicon
-        8016    -0.4706 $Oxygen
+c ********************
+c begin material cards
+c ********************
+c Pure Carbon
+c ****************************************
+m4000 11023 -1.0 
+c **********************************
+c PE+Pb, dens=4.78 g/cm3
 m2      6000    -0.04286 $Carbon
         1001    -0.00714 $Hydrogen
         82000   -0.95000 $Lead
+c **********************************
 m3    1001 -0.048535 $Boric acid
       5010 -0.034981
       5011 -0.139923
       8016 -0.776561
+c **********************************
 m4    82000 1 $Lead
+c **********************************
 m5 26000 1 $Iron
+c **********************************
 m6     13027   -1.000 $ Aluminum
+c **********************************
+c  SS-304 (8.00 g/cm3), #298 in PNNL Compendium
 m7   006000.50c -0.0004000
      014000.60c -0.0050000
      015031.50c -0.0002300
@@ -133,17 +149,52 @@ m7   006000.50c -0.0004000
      025055.60c -0.0099999
      026000.50c -0.7017229
      028000.50c -0.0924991
+c ****************************************
+c       LaBr detector
+c ****************************************
 m8       35079    -0.2946       $ Br79
          35081    -0.3069       $ Br81
          57139    -0.3485       $ La139
          58140    -0.0500       $ Ce140
+c ************ air den=1.15e-3g/cc
 m12     8016 -0.23
-       7014 -0.77
+        7014 -0.77
+c ************ Rubber Natural den=0.92 g/cc
 m13     1001 -0.118371  $weight fraction
-       6000 -0.881629
+        6000 -0.881629
+c
+c end material cards
+c
 rand seed=8674536546524321 $different initial random #; seed# - any less 18 digits
+c
+c ********** begin tallies *********************
 fc78 *********Broadened Pulse Height Tally Sum of Detectors 1,2 & 3 ***********
 e78 0 1e-5 932i 8.4295
 F78:p (101)
 FT78 GEB -0.026198 0.059551 -0.037176
-nps 1e10
+fc18 *********Unbroadened Pulse Height Tally Sum of Detectors 1,2 & 3 ***********
+e18 0 1e-5 932i 8.4295
+F18:p (101)
+F50008:p 3000 
+e50008 3000 
+*F50004:p 3000 
+e50004 3000 
+F500006:p 3000 
+e500006 3000 
++F500016 3000 
+e500016 3000 
+F80808:p 101
+E80808 0 1e-5 932i 8.4295
+F80818:p 101
+E80818 0 1e-5 932i 8.4295
+FT80818 GEB -0.026198 0.059551 -0.037176
+*F80828:p 101
+E80828 0 1e-5 932i 8.4295
+F80834:p 101
+E80834 0 1e-5 932i 8.4295
+F80836:p 101
+E80836 0 1e-5 932i 8.4295
+T0 0 150i 150
+c ***********************************
+c mplot tal 78 freq 10000
+nps 1e1

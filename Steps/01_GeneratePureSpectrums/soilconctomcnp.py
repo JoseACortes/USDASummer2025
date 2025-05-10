@@ -263,6 +263,37 @@ def sample_section(f, midpoints, padding, n):
     elems = np.reshape(elems, (len(midpoints), n, elems.shape[-1]))
     elems = np.mean(elems, axis=1)
     return elems
+
+def fold128(text):
+    """
+    Folds a string to a maximum of 128 characters per line.
+
+    Parameters:
+    text (str): The input string to be folded.
+
+    Returns:
+    str: The folded string.
+    """
+    
+    # print('text', text)
+    new_lines = []
+    lines = text.split(' ')
+    
+    new_line = ''
+    i=0
+    while i < len(lines):
+        if len('\t'+new_line + lines[i] + ' ') < 128:
+            new_line += lines[i] + ' '
+            i += 1
+        else:
+            lines[i] = new_line
+            new_line = ''
+            new_lines.append(lines[i])
+            i += 1
+    # print('new_lines', new_lines)
+    
+    return '\n\t'.join(new_lines)
+
 # %%
 def make_mcnp(
         f, 
@@ -281,7 +312,11 @@ def make_mcnp(
         mat_header='', 
         mat_footer='', 
         cell_header='', 
-        cell_footer='', 
+        cell_footer='',
+        tally_header='',
+        tally_footer='', 
+        detector_tally_header='',
+        detector_cell='',
         subsection_n=50
         ):
     """
@@ -368,6 +403,37 @@ def make_mcnp(
 
     cells = ''
     cell_ids = []
+
+    tallies = ''
+    tally_ids = []
+
+    
+    detector_tallies = [
+        f'F{detector_tally_header}08:p {detector_cell}',
+        f'E{detector_tally_header}08 0 1e-5 932i 8.4295',
+        # f'T{detector_tally_header}08 0 150i 150',
+        f'F{detector_tally_header}18:p {detector_cell}',
+        f'E{detector_tally_header}18 0 1e-5 932i 8.4295',
+        # f'T{detector_tally_header}18 0 150i 150',
+        f'FT{detector_tally_header}18 GEB -0.026198 0.059551 -0.037176',
+        f'*F{detector_tally_header}28:p {detector_cell}',
+        f'E{detector_tally_header}28 0 1e-5 932i 8.4295',
+        # f'T{detector_tally_header}28 0 150i 150',
+        f'F{detector_tally_header}34:p {detector_cell}',
+        f'CF{detector_tally_header}34:p', # put them here
+        f'E{detector_tally_header}34 0 1e-5 932i 8.4295',
+        # f'T{detector_tally_header}34 0 150i 150',
+        f'F{detector_tally_header}36:p {detector_cell}',
+        f'CF{detector_tally_header}36:p', # put them here
+        f'E{detector_tally_header}36 0 1e-5 932i 8.4295',
+        # f'T{detector_tally_header}36 0 150i 150',
+        ]
+    # for each line, if CF is in the line, add the corresponding CF to the list
+    CF_indexs = [_ for _, e in enumerate(detector_tallies) if 'CF' in e]
+    
+    detector_tally_ids = []
+
+
     for i, e in enumerate(elem_ids):
         cell_id = f'{cell_header}{force_n_digits(i, nn)}{cell_footer}'
         cell_ids.append(cell_id)
@@ -378,105 +444,48 @@ def make_mcnp(
             density = np.sum(density, axis=-1)
             cells += f'{cell_id} {e} {mw*density} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
         
+        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}8'
+        tally_ids.append(tally_id)
+        tallies += f'F{tally_id}:p {cell_id} \n'
+        tallies += f'e{tally_id} {cell_id} \n'
+
+
+        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}4'
+        tally_ids.append(tally_id)
+        tallies += f'*F{tally_id}:p {cell_id} \n'
+        tallies += f'e{tally_id} {cell_id} \n'
+
+        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}06'
+        tally_ids.append(tally_id)
+        tallies += f'F{tally_id}:p {cell_id} \n'
+        tallies += f'e{tally_id} {cell_id} \n'
+
+        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}16'
+        tally_ids.append(tally_id)
+        tallies += f'+F{tally_id} {cell_id} \n'
+        tallies += f'e{tally_id} {cell_id} \n'
+
+    for cell_id in cell_ids:
+        detector_tallies[8] += f' -{cell_id}'
+        detector_tallies[11] += f' -{cell_id}'
+
+
+    
+    detector_tallies[8] = fold128(detector_tallies[8])
+    detector_tallies[11] = fold128(detector_tallies[11])
+
+    detector_tallies = '\n'.join(detector_tallies)+'\n'
+    detector_tallies += 'T0 0 150i 150\n'
+
+    detector_tallies = detector_tallies.split('\n')
+    detector_tallies = [e for e in detector_tallies if e != '']
+    detector_tallies = '\n'.join(detector_tallies)
+
+    tallies = tallies.split('\n')
+    tallies = [e for e in tallies if e != '']
+    tallies = '\n'.join(tallies)
 
     elems = np.reshape(elems, (res[0], res[1], res[2], elems.shape[-1]))
-    return cells, walls, surfaces, mats, avg_sample, elems
 
-
-
-def make_mcnp_montepy(f, extent, res, elem_labels, density = -2.156, x_fix = 0, y_fix = 0, z_fix=0, z_mul = 1, mw='w', surface_header='', surface_footer='', mat_header='', mat_footer='', cell_header='', cell_footer='', subsection_n=50):
-    """
-    Generates MCNP input file components for a given geometry and material distribution.
-    Parameters:
-    f (function): A function that takes points and returns elements.
-    extent (tuple): A tuple of six floats defining the extent of the geometry (x0, x1, y0, y1, z0, z1).
-    res (tuple): A tuple of three integers defining the resolution in each dimension (x_res, y_res, z_res).
-    elem_ids (list): A list of element IDs.
-    surface_header (str, optional): A string to prepend to surface IDs. Defaults to ''.
-    surface_footer (str, optional): A string to append to surface IDs. Defaults to ''.
-    mat_header (str, optional): A string to prepend to material IDs. Defaults to ''.
-    mat_footer (str, optional): A string to append to material IDs. Defaults to ''.
-    cell_header (str, optional): A string to prepend to cell IDs. Defaults to ''.
-    cell_footer (str, optional): A string to append to cell IDs. Defaults to ''.
-    Returns:
-    tuple: A tuple containing:
-        - cells (str): The MCNP cell definitions.
-        - cell_ids (list): A list of cell IDs.
-        - surfaces (str): The MCNP surface definitions.
-        - mats (str): The MCNP material definitions.
-    """
-
-    if mw == 'w':
-        mw = -1
-    elif mw == 'm':
-        mw = 1
-
-    x0, x1, y0, y1, z0, z1 = extent
-    x_res, y_res, z_res = res
-    xs, ys, zs = cut_bounds(extent, res)
-
-    n = int(np.ceil(np.log10(max(x_res+1, y_res+1, z_res+1))))
-    surfaces = ''
-    x_ids = []
-    y_ids = []
-    z_ids = []
-    for i, x in enumerate(xs):
-        surface_id = f'{surface_header}1{force_n_digits(i, n)}{surface_footer}'
-        x_ids.append(surface_id)
-        surfaces += (f'{int(surface_id)} px {x-x_fix}\n')
-    for i, y in enumerate(ys):
-        surface_id = f'{surface_header}2{force_n_digits(i, n)}{surface_footer}'
-        y_ids.append(surface_id)
-        surfaces += (f'{int(surface_id)} py {y-y_fix}\n')
-    for i, z in enumerate(zs):
-        surface_id = f'{surface_header}3{force_n_digits(i, n)}{surface_footer}'
-        z_ids.append(surface_id)
-        surfaces += (f'{int(surface_id)} pz {z_mul*(z)-z_fix}\n')
-
-    walls = (x_ids[0], x_ids[-1], y_ids[0], y_ids[-1], z_ids[0], z_ids[-1])
-
-    XX, midpoints = get_midpoints(
-        sides=(xs, ys, zs), res=res, extent=extent
-    )
-    xx, yy, zz = XX
-
-    xx_index, yy_index, zz_index = np.meshgrid(x_ids[:-1], y_ids[:-1], z_ids[:-1])
-    xx_index, yy_index, zz_index = xx_index.flatten(), yy_index.flatten(), zz_index.flatten()
-    xl_ids, yl_ids, zl_ids = x_ids[1:], y_ids[1:], z_ids[1:]
-    xxl_index, yyl_index, zzl_index = np.meshgrid(xl_ids, yl_ids, zl_ids)
-    xxl_index, yyl_index, zzl_index = xxl_index.flatten(), yyl_index.flatten(), zzl_index.flatten()
-    
-    x_pad = (x1-x0)/res[0]
-    y_pad = (y1-y0)/res[1]
-    z_pad = (z1-z0)/res[2]
-    pad = (x_pad, y_pad, z_pad)
-    elems = sample_section(f, midpoints, pad, subsection_n)
-    
-    avg_sample = np.mean(elems, axis=0)
-    mats = ''
-    nn = int(np.ceil(np.log10(len(elems))))
-    elem_ids = []
-    for i, elem in enumerate(elems):
-        elem_id = f'{mat_header}{force_n_digits(i, nn)}{mat_footer}'
-        elem_ids.append(elem_id)
-        mats += f'm{elem_id} '
-        for id, e in zip(elem_labels, elem):
-            if e == 0.0:
-                continue
-            else:
-                mats += f'{id} {e*mw} '
-        mats += '\n'
-
-    cells = ''
-    cell_ids = []
-    for i, e in enumerate(elem_ids):
-        cell_id = f'{cell_header}{force_n_digits(i, nn)}{cell_footer}'
-        cell_ids.append(cell_id)
-        cells += f'{cell_id} {e} {density} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
-        
-
-    elems = np.reshape(elems, (res[0], res[1], res[2], elems.shape[-1]))
-    return cells, walls, surfaces, mats, avg_sample, elems
-
-
+    return cells, walls, surfaces, mats, avg_sample, elems, tallies, detector_tallies
 
