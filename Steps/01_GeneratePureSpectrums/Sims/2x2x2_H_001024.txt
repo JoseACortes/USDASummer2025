@@ -1,44 +1,46 @@
 c CAS DETECTOR
 c w/ Shielding in Place and Wheels
 c
-c CELL CARDS
-c
-c @@@@@@@@@@ Detectors @@@@@@@@@@@@@@@@@
-c
-101 8 -5.08 -21 imp:n,p 1 $LaBr Detector #1 Active Region
-c
-c @@@@@@@@@ Shielding @@@@@@@@@@@@@@@@@
-c
-121 2 -4.78 -31 imp:n,p 1 $PE_Pb
-122 4 -11.29 -32 imp:n,p 1 $Pb1
-123 4 -11.29 -33 imp:n,p 1 $Pb2
-124 4 -11.29 -34 imp:n,p 1 $Pb3
-125 4 -11.29 -35 imp:n,p 1 $Pb4
-126 4 -11.29 -36 imp:n,p 1 $Pb5
-127 4 -11.29 -37 imp:n,p 1 $Pb6
-128 3 -1.5 -38 imp:n,p 1 $BA1
-129 3 -1.5 -39 imp:n,p 1 $BA2
-130 6 -2.7 -40 imp:n,p 1 $Al
-131 7 -7.92 301 -302 303 -304 imp:n,p 1 $Fe-tube
-132 5 -7.8 -401 imp:n,p 1 $Fe
-133 5 -7.8 -402 imp:n,p 1 $Fe
-c @@@@@@@@@@ Wheels @@@@@@@@@@@@@@@@@
-c
-21 13 -0.92 -41 42 imp:n,p 1 $Wheel 1
-211 13 -0.92 -421 422 imp:n,p 1 $Wheel 1
-212 13 -0.92 -423 424 imp:n,p 1 $Wheel 1
-22 13 -0.92 -43 44 imp:n,p 1 $Wheel 2
-221 13 -0.92 -441 442 imp:n,p 1 $Wheel 2
-222 13 -0.92 -443 444 imp:n,p 1 $Wheel 2
-23 13 -0.92 -45 46 imp:n,p 1 $Wheel 3
-231 13 -0.92 -461 462 imp:n,p 1 $Wheel 3
-232 13 -0.92 -463 464 imp:n,p 1 $Wheel 3
-24 13 -0.92 -47 48 imp:n,p 1 $Wheel 4
-241 13 -0.92 -481 482 imp:n,p 1 $Wheel 4
-242 13 -0.92 -483 484 imp:n,p 1 $Wheel 4
-c
-c @@@@@@@@@@ SOIL VOLUME @@@@@@@@@@@
-c
+CAS DETECTOR w/ Shielding in Place and Wheels		
+c		
+c CELL CARDS		
+c		
+c @@@@@@@@@@ Detectors @@@@@@@@@@@@@@@@@		
+c		
+101 8 -5.08 -21 imp:n,p 1 $LaBr Detector #1 Active Region"		
+c		
+c @@@@@@@@@ Shielding @@@@@@@@@@@@@@@@@		
+c		
+121 2 -4.78 -31 imp:n,p 1 $PE_Pb"		
+122 4 -11.29 -32 imp:n,p 1 $Pb1"		
+123 4 -11.29 -33 imp:n,p 1 $Pb2"		
+124 4 -11.29 -34 imp:n,p 1 $Pb3"		
+125 4 -11.29 -35 imp:n,p 1 $Pb4"		
+126 4 -11.29 -36 imp:n,p 1 $Pb5"		
+127 4 -11.29 -37 imp:n,p 1 $Pb6"		
+128 3 -1.5 -38 imp:n,p 1 $BA1"		
+129 3 -1.5 -39 imp:n,p 1 $BA2"		
+130 6 -2.7 -40 imp:n,p 1 $Al"		
+131 7 -7.92 301 -302 303 -304 imp:n,p 1 $Fe-tube"		
+132 5 -7.8 -401 imp:n,p 1 $Fe"		
+133 5 -7.8 -402 imp:n,p 1 $Fe"		
+c @@@@@@@@@@ Wheels @@@@@@@@@@@@@@@@@		
+c		
+21 13 -0.92 -41 42 imp:n,p 1 $Wheel 1"		
+211 13 -0.92 -421 422 imp:n,p 1 $Wheel 1"		
+212 13 -0.92 -423 424 imp:n,p 1 $Wheel 1"		
+22 13 -0.92 -43 44 imp:n,p 1 $Wheel 2"		
+221 13 -0.92 -441 442 imp:n,p 1 $Wheel 2"		
+222 13 -0.92 -443 444 imp:n,p 1 $Wheel 2"		
+23 13 -0.92 -45 46 imp:n,p 1 $Wheel 3"		
+231 13 -0.92 -461 462 imp:n,p 1 $Wheel 3"		
+232 13 -0.92 -463 464 imp:n,p 1 $Wheel 3"		
+24 13 -0.92 -47 48 imp:n,p 1 $Wheel 4"		
+241 13 -0.92 -481 482 imp:n,p 1 $Wheel 4"		
+242 13 -0.92 -483 484 imp:n,p 1 $Wheel 4"		
+c		
+c @@@@@@@@@@ SOIL VOLUME @@@@@@@@@@@		
+c		
 3000 4000 -0.001 20010 -20011 20020 -20021 -20030 20031 imp:n,p 1
 3001 4001 -0.001 20010 -20011 20020 -20021 -20031 20032 imp:n,p 1
 3002 4002 -0.001 20011 -20012 20020 -20021 -20030 20031 imp:n,p 1
@@ -270,4 +272,4 @@ E80836 0 1e-5 932i 8.4295
 T0 0 150i 150
 c ***********************************
 c mplot tal 78 freq 10000
-nps 1e1
+nps 1e9
