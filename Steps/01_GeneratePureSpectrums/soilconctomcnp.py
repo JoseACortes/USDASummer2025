@@ -300,8 +300,7 @@ def make_mcnp(
         extent, 
         res, 
         elem_labels, 
-        density = -2.156, 
-        density_map = None,
+        density = -1.0, 
         x_fix = 0, 
         y_fix = 0, 
         z_fix=0, 
@@ -326,6 +325,7 @@ def make_mcnp(
     extent (tuple): A tuple of six floats defining the extent of the geometry (x0, x1, y0, y1, z0, z1).
     res (tuple): A tuple of three integers defining the resolution in each dimension (x_res, y_res, z_res).
     elem_ids (list): A list of element IDs.
+    density (float or function or list): The density of the material. If a function, it should take a point and return a density. If a list, it should be the same length as elem_ids.
     surface_header (str, optional): A string to prepend to surface IDs. Defaults to ''.
     surface_footer (str, optional): A string to append to surface IDs. Defaults to ''.
     mat_header (str, optional): A string to prepend to material IDs. Defaults to ''.
@@ -437,12 +437,16 @@ def make_mcnp(
     for i, e in enumerate(elem_ids):
         cell_id = f'{cell_header}{force_n_digits(i, nn)}{cell_footer}'
         cell_ids.append(cell_id)
-        if density_map is None:
-            cells += f'{cell_id} {e} {density} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
-        else:
-            density = np.multiply(density_map, elems[i])
-            density = np.sum(density, axis=-1)
+
+        if isinstance(density, (int, float, np.floating, np.integer)):
             cells += f'{cell_id} {e} {mw*density} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
+        elif callable(density):
+            d = density(midpoints[i])
+            cells += f'{cell_id} {e} {mw*d} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
+        elif isinstance(density, (np.ndarray, list)):
+            d = np.multiply(density, elems[i])
+            d = np.sum(d, axis=-1)
+            cells += f'{cell_id} {e} {mw*d} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
         
         tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}8'
         tally_ids.append(tally_id)

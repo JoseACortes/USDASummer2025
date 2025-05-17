@@ -126,7 +126,7 @@ sp1   0  0.0  1.0
 c ********************
 c begin material cards
 c ********************
-c Pure Carbon
+c material sample:
 c ****************************************
 """
 
@@ -215,6 +215,8 @@ soil_resolution = (10, 10, 10)
 
 # Feldspars (Silt): 68% SiO2, 20% Al2O3, 7% Other, 5% Na2O
 
+# Coconut: 100% C 0.53 g/cm3
+
 
 # All the possible compounds in the soil
 # SiO2, Al2O3, H2O, Na2O, Fe2O3, MgO, Other
@@ -264,18 +266,20 @@ elem_chars_fns = {elem: None for elem in elem_names}
 
 # %%
 all_fns = {}
+alldensities = {}
 
 # %%
 for elem in elem_chars_fns:
     all_fns[elem] = lambda X, elem=elem: soil_characteristic_function(X, character=elem, elem_labels=elem_names)
+    alldensities[elem] = elem_densities[elem_names.index(elem)]
 
 # %%
 all_fns
 
 # %%
-compound_names = ['SiO2', 'Al2O3', 'H2O', 'Na2O', 'Fe2O3', 'MgO']
-compound_labels = [['14028', '8016'], ['13027', '8016'], ['1001', '8016'], ['11023', '8016'], ['26000', '8016'], ['12024', '8016']]
-compound_densities = [2.65, 3.95, 1.00, 2.16, 5.24, 2.74]
+compound_names = ['SiO2', 'Al2O3', 'H2O', 'Na2O', 'Fe2O3', 'MgO', 'C']
+compound_labels = [['14028', '8016'], ['13027', '8016'], ['1001', '8016'], ['11023', '8016'], ['26000', '8016'], ['12024', '8016'], ['6000']]
+compound_densities = [2.65, 3.95, 1.00, 2.16, 5.24, 2.74, 2.33]
 compound_mass_fractions = [chem.mass_fractions({elem_names[atomic_numbers.index(i)]: chem.Substance.from_formula(ical).composition[i] for i in chem.Substance.from_formula(ical).composition.keys()}) for ical in compound_names]
 
 # %%
@@ -298,7 +302,7 @@ def mass_frac_char_function(X, compound_mass_fraction, elem_labels=elem_names):
 for compound_i, compound in enumerate(compound_names):
     
     all_fns[compound] = lambda X, compound=compound: mass_frac_char_function(X, compound_mass_fractions[compound_i], elem_labels=elem_names)
-    
+    alldensities[compound] = compound_densities[compound_i]
 
 # %%
 all_fns
@@ -307,9 +311,18 @@ all_fns
 all_fns['Al2O3'](np.array([[0, 0, 0], [1, 1, 1]]))
 
 # %%
-material_names = ['Silica', 'Kaolinite', 'Smectite', 'Montmorillonite', 'Quartz', 'Chlorite', 'Mica', 'Feldspar']
-material_labels_pername = [['SiO2', 'Al2O3'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2'], ['SiO2', 'Al2O3', 'Fe2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3']]
-material_portions = [[0.97, 0.3], [0.465, 0.395, 0.14], [0.667, 0.283, 0.05], [0.435, 0.145, 0.01], [1.0], [0.25, 0.2, 0.194, 0.189], [0.464, 0.382, 0.102], [0.68, 1-0.68]]
+material_names = ['Silica', 'Kaolinite', 'Smectite', 'Montmorillonite', 'Quartz', 'Chlorite', 'Mica', 'Feldspar', 'Coconut']
+material_labels_pername = [['SiO2', 'Al2O3'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2'], ['SiO2', 'Al2O3', 'Fe2O3', 'H2O'], ['SiO2', 'Al2O3', 'H2O'], ['SiO2', 'Al2O3'], ['C']]
+material_portions = [[0.97, 0.3], [0.465, 0.395, 0.14], [0.667, 0.283, 0.05], [0.435, 0.145, 0.01], [1.0], [0.25, 0.2, 0.194, 0.189], [0.464, 0.382, 0.102], [0.68, 1-0.68], [1.0]]
+# aqua-calc.com, cameochemicals.noaa.gov geologyscience.com
+# smecite: https://store.astm.org/gtj10971j.html#:~:text=Measured%20specific%20gravity%20values%20of%20these%20smectite%20clays%2C,essential%20bound%20water%2C%20range%20from%201.98%20to%202.14.
+# montmorillonite: https://www.soilmanagementindia.com/soil-mineralogy-2/montmorillonite-structure-formation-and-uses-soil-minerals/13343#:~:text=Taking%20the%20density%20of%20soil%20solids%20as%202.7,the%20magnitude%20of%20total%20surface%20forces%20becomes%20more.
+# quartz: https://webmineral.com/data/Quartz.shtml
+# Chlorite: https://cameo.mfa.org/wiki/Chlorite
+# Mica: https://cameo.mfa.org/wiki/Mica
+# Feldspar: https://cameo.mfa.org/wiki/Feldspar
+
+material_densities = [2.32, 3.95, 2.785, 2.7, 2.62, 2.6, 2.7, 2.55, 0.53]
 
 # %%
 def material_function(
@@ -341,6 +354,7 @@ material_function(np.array([[0, 0, 0], [1, 1, 1]]), material_labels_pername[0], 
 
 for _, material in enumerate(material_names):
     all_fns[material] = lambda X: material_function(X, material_labels_pername[_], material_portions[_], elem_labels=elem_names)
+    alldensities[material] = material_densities[_]
 all_fns
 
 
@@ -403,8 +417,7 @@ for res in ress:
             extent,
             ress[res],
             elem_labels,
-            density = -2.156,
-            density_map=elem_densities,
+            density = alldensities[f],
             x_fix=0,
             y_fix=0,
             z_fix=-42,

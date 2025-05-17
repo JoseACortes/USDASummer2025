@@ -53,9 +53,6 @@ Im going to give the scripts from this step the id: 000000XX
 
 I have the scripts generated, Im not completely sure i made the right density calculations. I need to consult with galina.
 
-<<<<<<< HEAD
-next todo: add tallies to the make_mcnp function
-=======
 next todo: add tallies to the make_mcnp function
 
 05/09/2025
@@ -71,4 +68,17 @@ looking at the mcnp manual, it might be worth looking into using pinhole detecto
 alright i think i have the tallies correct, now its time to see if this runs
 
 Alot of fixes, but it looks like its working.
->>>>>>> 246f78b (wow)
+
+05/16/2025
+TODO:
+- Change density interpolation method
+- Fix incorrect materials
+
+according to Dr Yakubova my density calculations are incorrect. 
+
+I thought the materials were incorrect, but they are not, was it a stress dream?
+
+i added densities to the materials, it looks like I can use linear method for mixtures of materials, I added functional densities.
+
+I also added coconut as a material, by galinas request.
+Now its time to test the simulation.
