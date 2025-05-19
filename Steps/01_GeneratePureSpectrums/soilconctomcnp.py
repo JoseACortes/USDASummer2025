@@ -238,11 +238,11 @@ def get_midpoints(sides, res, extent):
     x_res, y_res, z_res = res
     xs, ys, zs = sides
     x_pad = (x1-x0)/x_res
-    xs = xs+x_pad
+    xs = xs+x_pad/2
     y_pad = (y1-y0)/y_res
-    ys = ys+y_pad
+    ys = ys+y_pad/2
     z_pad = (z1-z0)/z_res
-    zs = zs+z_pad
+    zs = zs+z_pad/2
     xx, yy, zz = np.meshgrid(xs[:-1], ys[:-1], zs[:-1])
     midpoints = np.column_stack((xx.flatten(), yy.flatten(), zz.flatten()))
     return (xx, yy, zz), midpoints
@@ -274,15 +274,14 @@ def fold128(text):
     Returns:
     str: The folded string.
     """
-    
-    # print('text', text)
     new_lines = []
     lines = text.split(' ')
     
     new_line = ''
     i=0
+    
     while i < len(lines):
-        if len('\t'+new_line + lines[i] + ' ') < 128:
+        if len('    '+new_line + lines[i] + ' ') < 128:
             new_line += lines[i] + ' '
             i += 1
         else:
@@ -290,8 +289,7 @@ def fold128(text):
             new_line = ''
             new_lines.append(lines[i])
             i += 1
-    # print('new_lines', new_lines)
-    
+    new_lines.append(new_line)
     return '\n\t'.join(new_lines)
 
 # %%
@@ -404,34 +402,25 @@ def make_mcnp(
     cells = ''
     cell_ids = []
 
-    tallies = ''
-    tally_ids = []
-
     
     detector_tallies = [
-        f'F{detector_tally_header}08:p {detector_cell}',
+        f'F{detector_tally_header}08:p {detector_cell}', # put them here
+        f'F{detector_tally_header}18:p {detector_cell}', # put them here
+        f'*F{detector_tally_header}28:p {detector_cell}',  # put them here
+        f'F{detector_tally_header}34:p {detector_cell}',  # put them here
+        f'F{detector_tally_header}36:p {detector_cell}', # put them here
         f'E{detector_tally_header}08 0 1e-5 932i 8.4295',
-        # f'T{detector_tally_header}08 0 150i 150',
-        f'F{detector_tally_header}18:p {detector_cell}',
         f'E{detector_tally_header}18 0 1e-5 932i 8.4295',
-        # f'T{detector_tally_header}18 0 150i 150',
-        f'FT{detector_tally_header}18 GEB -0.026198 0.059551 -0.037176',
-        f'*F{detector_tally_header}28:p {detector_cell}',
         f'E{detector_tally_header}28 0 1e-5 932i 8.4295',
-        # f'T{detector_tally_header}28 0 150i 150',
-        f'F{detector_tally_header}34:p {detector_cell}',
-        f'CF{detector_tally_header}34:p', # put them here
         f'E{detector_tally_header}34 0 1e-5 932i 8.4295',
-        # f'T{detector_tally_header}34 0 150i 150',
-        f'F{detector_tally_header}36:p {detector_cell}',
-        f'CF{detector_tally_header}36:p', # put them here
         f'E{detector_tally_header}36 0 1e-5 932i 8.4295',
-        # f'T{detector_tally_header}36 0 150i 150',
+        f'CF{detector_tally_header}34:p', # put them here
+        f'CF{detector_tally_header}36:p', # put them here
+        f'F{detector_tally_header}44:p',  # put them here
+        f'F{detector_tally_header}46:p', # put them here
         ]
-    # for each line, if CF is in the line, add the corresponding CF to the list
-    CF_indexs = [_ for _, e in enumerate(detector_tallies) if 'CF' in e]
     
-    detector_tally_ids = []
+    detector_tally_ids = [f'{detector_tally_header}{i}' for i in ['08', '18', '28', '34', '36', '44', '46']]
 
 
     for i, e in enumerate(elem_ids):
@@ -448,48 +437,49 @@ def make_mcnp(
             d = np.sum(d, axis=-1)
             cells += f'{cell_id} {e} {mw*d} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
         
-        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}8'
-        tally_ids.append(tally_id)
-        tallies += f'F{tally_id}:p {cell_id} \n'
-        tallies += f'e{tally_id} {cell_id} \n'
 
+    for i, cell_id in enumerate(cell_ids):
+        # detector_tallies[0] += f' {cell_id}'
+        # detector_tallies[1] += f' {cell_id}'
+        # detector_tallies[2] += f' {cell_id}'
+        # detector_tallies[3] += f' {cell_id}'
+        # detector_tallies[4] += f' {cell_id}'
 
-        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}4'
-        tally_ids.append(tally_id)
-        tallies += f'*F{tally_id}:p {cell_id} \n'
-        tallies += f'e{tally_id} {cell_id} \n'
-
-        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}06'
-        tally_ids.append(tally_id)
-        tallies += f'F{tally_id}:p {cell_id} \n'
-        tallies += f'e{tally_id} {cell_id} \n'
-
-        tally_id = f'{tally_header}{force_n_digits(i, nn)}{tally_footer}16'
-        tally_ids.append(tally_id)
-        tallies += f'+F{tally_id} {cell_id} \n'
-        tallies += f'e{tally_id} {cell_id} \n'
-
-    for cell_id in cell_ids:
-        detector_tallies[8] += f' -{cell_id}'
+        detector_tallies[10] += f' -{cell_id}'
         detector_tallies[11] += f' -{cell_id}'
+        detector_tallies[12] += f' {cell_id}'
+        detector_tallies[13] += f' {cell_id}'
 
+        # detector_tally_id = f'{detector_tally_header}{cell_id}08'
+        # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
+        # detector_tally_ids.append(detector_tally_id)
+        # detector_tally_id = f'{detector_tally_header}{cell_id}18'
+        # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
+        # detector_tally_ids.append(detector_tally_id)
+        # detector_tally_id = f'{detector_tally_header}{cell_id}28'
+        # detector_tallies.append(f'*F{detector_tally_id}:p {cell_id}')
+        # detector_tally_ids.append(detector_tally_id)
+        # detector_tally_id = f'{detector_tally_header}{cell_id}34'
+        # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
+        # detector_tally_ids.append(detector_tally_id)
+        # detector_tally_id = f'{detector_tally_header}{cell_id}36'
+        # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
+        # detector_tally_ids.append(detector_tally_id)
+        pass
+
+    detector_tallies = [fold128(e) for e in detector_tallies]
 
     
-    detector_tallies[8] = fold128(detector_tallies[8])
-    detector_tallies[11] = fold128(detector_tallies[11])
+    detector_tallies.append(f'FT{detector_tally_header}18 GEB -0.026198 0.059551 -0.037176')
 
     detector_tallies = '\n'.join(detector_tallies)+'\n'
-    detector_tallies += 'T0 0 150i 150\n'
+    # detector_tallies += 'T0 0 150i 150\n'
+    detector_tallies += 'E0 0 1e-5 932i 8.4295\n'
 
     detector_tallies = detector_tallies.split('\n')
     detector_tallies = [e for e in detector_tallies if e != '']
     detector_tallies = '\n'.join(detector_tallies)
 
-    tallies = tallies.split('\n')
-    tallies = [e for e in tallies if e != '']
-    tallies = '\n'.join(tallies)
 
-    elems = np.reshape(elems, (res[0], res[1], res[2], elems.shape[-1]))
-
-    return cells, walls, surfaces, mats, avg_sample, elems, tallies, detector_tallies
+    return cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, elems, detector_tallies, detector_tally_ids
 

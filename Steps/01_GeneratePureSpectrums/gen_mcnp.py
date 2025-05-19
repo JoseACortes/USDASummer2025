@@ -1,11 +1,10 @@
 # %%
 import numpy as np
+import json
 
 # %%
 mcnp_code_start = """c CAS DETECTOR
-c w/ Shielding in Place and Wheels
-c
-CAS DETECTOR w/ Shielding in Place and Wheels		
+c w/ Shielding in Place and Wheels	
 c		
 c CELL CARDS		
 c		
@@ -175,27 +174,18 @@ c
 rand seed=8674536546524321 $different initial random #; seed# - any less 18 digits
 c
 c ********** begin tallies *********************
-fc78 *********Broadened Pulse Height Tally Sum of Detectors 1,2 & 3 ***********
-e78 0 1e-5 932i 8.4295
-F78:p (101)
-FT78 GEB -0.026198 0.059551 -0.037176
-fc18 *********Unbroadened Pulse Height Tally Sum of Detectors 1,2 & 3 ***********
-e18 0 1e-5 932i 8.4295
-F18:p (101)
 """
 post_tallies = """
 c ***********************************
 c mplot tal 78 freq 10000
-nps 1e9"""
+nps 1e8"""
 
 # %%
 z_mul = -1
-mcnpgen = lambda cells, walls, surfaces, mats, tallies, detector_tallies: mcnp_code_start+cells+post_cells+" #("+str(walls[0])+" -"+str(walls[1])+" "+str(walls[2])+" -"+str(walls[3])+" "+str(z_mul*int(walls[4]))+" "+str(z_mul*-int(walls[5]))+")"+post_walls+surfaces+post_surfaces+data_card+mats+post_mats+tallies+'\n'+detector_tallies+post_tallies
+mcnpgen = lambda cells, walls, surfaces, mats, detector_tallies: mcnp_code_start+cells+post_cells+" #("+str(walls[0])+" -"+str(walls[1])+" "+str(walls[2])+" -"+str(walls[3])+" "+str(z_mul*int(walls[4]))+" "+str(z_mul*-int(walls[5]))+")"+post_walls+surfaces+post_surfaces+data_card+mats+post_mats+detector_tallies+post_tallies
 
 # %%
 default_file = "to_copy.mcnp"
-
-soil_resolution = (10, 10, 10)
 
 # %%
 # Pure Samples to generate:
@@ -286,7 +276,7 @@ compound_mass_fractions = [chem.mass_fractions({elem_names[atomic_numbers.index(
 compound_mass_fractions
 
 # %%
-def mass_frac_char_function(X, compound_mass_fraction, elem_labels=elem_names):
+def mass_frac_char_function(X, compound_mass_fraction, elem_labels=elem_names, compound=None):
     n = X.shape[0]
     out = np.zeros((n, len(elem_labels)))
     for key, value in compound_mass_fraction.items():
@@ -301,14 +291,12 @@ def mass_frac_char_function(X, compound_mass_fraction, elem_labels=elem_names):
 
 for compound_i, compound in enumerate(compound_names):
     
-    all_fns[compound] = lambda X, compound=compound: mass_frac_char_function(X, compound_mass_fractions[compound_i], elem_labels=elem_names)
+    all_fns[compound] = lambda X, compound=compound, compound_i=compound_i: mass_frac_char_function(X, compound_mass_fractions[compound_i], elem_labels=elem_names, compound=compound)
+    # print(compound, all_fns[compound](np.array([[0, 0, 0]])))
     alldensities[compound] = compound_densities[compound_i]
 
-# %%
-all_fns
-
-# %%
-all_fns['Al2O3'](np.array([[0, 0, 0], [1, 1, 1]]))
+# for f in all_fns:
+#     print(f, all_fns[f](np.array([[0, 0, 0]])))
 
 # %%
 material_names = ['Silica', 'Kaolinite', 'Smectite', 'Montmorillonite', 'Quartz', 'Chlorite', 'Mica', 'Feldspar', 'Coconut']
@@ -346,20 +334,17 @@ def material_function(
 
 # %%
 
-
-# %%
-material_function(np.array([[0, 0, 0], [1, 1, 1]]), material_labels_pername[0], material_portions[0], elem_labels=elem_names)
-
-# %%
+# print('a')
 
 for _, material in enumerate(material_names):
-    all_fns[material] = lambda X: material_function(X, material_labels_pername[_], material_portions[_], elem_labels=elem_names)
+    all_fns[material] = lambda X, material=material, _=_: material_function(X, material_labels_pername[_], material_portions[_], elem_labels=elem_names)
+    # print(all_fns[material](np.array([[0, 0, 0]])))
     alldensities[material] = material_densities[_]
-all_fns
 
+# print('b')
 
-# %%
-all_fns['Silica'](np.array([[0, 0, 0], [1, 1, 1]]))
+# for f in all_fns:
+#     print(all_fns[f](np.array([[0, 0, 0]])))
 
 # %%
 import soilconctomcnp as sm
@@ -377,12 +362,6 @@ extent = (
     center[2]-z_pad, 0,
 )
 
-
-# %%
-
-
-# %%
-all_fns
 
 # %%
 from tqdm import tqdm
@@ -412,7 +391,7 @@ count = 0
 sim_folder = "Sims/"
 for res in ress:
     for f in all_fns:
-        cells, walls, surfaces, mats, avg_sample, elems, tallies, detector_tallies = sm.make_mcnp(
+        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, elems, detector_tallies, detector_tally_ids = sm.make_mcnp(
             all_fns[f],
             extent,
             ress[res],
@@ -423,13 +402,12 @@ for res in ress:
             z_fix=-42,
             z_mul=-1,
             surface_header='200',
-            cell_header='300',
-            mat_header='400',
-            tally_header='500',
-            detector_tally_header='808',
+            cell_header='30',
+            mat_header='40',
+            detector_tally_header='8',
             detector_cell='101',
         )
-        script = mcnpgen(cells, walls, surfaces, mats, tallies, detector_tallies)
+        script = mcnpgen(cells, walls, surfaces, mats, detector_tallies)
 
         id = id_header+str(force_n_digits(count, 3))
 
@@ -443,17 +421,29 @@ for res in ress:
             "filename": filename,
         }
 
+        elems_table = {}
+        for _, id in enumerate(cell_ids):
+            elems_table[id] = elems[_].flatten().tolist()
+        elems_table = pd.DataFrame.from_dict(elems_table)
+        elems_table.index = elem_labels
+        elems_table.to_csv(f"ElemMaps/ELEMS_{f}_{res}.csv")  
+        
+
         with open(sim_folder+filename, "w") as f:
             f.write(script)
 
         count += 1
+
+    res_info = {
+        'soil_resolution': res,
+        'detector_tally_ids': detector_tally_ids,
+        'midpoints': midpoints.tolist(),
+        }
+    with open(f"ResInfo/res_info_{res}.json", "w") as f:
+        json.dump(res_info, f, indent=4)
         
 sims_df = pd.DataFrame.from_dict(sims_df, orient='index')
 sims_df.to_csv("sims_01.csv", index=False)
-
-# print(detector_tallies)
-# print(mcnpgen(cells, walls, surfaces, mats, tallies, detector_tallies))
-
 
 
 
