@@ -418,7 +418,7 @@ for res in ress:
             "soil_resolution": res,
             "function": f,
             'id': id,
-            "filename": filename,
+            "filename": f"{label}_{id}",
         }
 
         elems_table = {}
@@ -438,6 +438,7 @@ for res in ress:
         'soil_resolution': res,
         'detector_tally_ids': detector_tally_ids,
         'midpoints': midpoints.tolist(),
+        'cell_ids': cell_ids,
         }
     with open(f"ResInfo/res_info_{res}.json", "w") as f:
         json.dump(res_info, f, indent=4)

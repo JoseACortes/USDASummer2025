@@ -404,20 +404,20 @@ def make_mcnp(
 
     
     detector_tallies = [
-        f'F{detector_tally_header}08:p {detector_cell}', # put them here
-        f'F{detector_tally_header}18:p {detector_cell}', # put them here
-        f'*F{detector_tally_header}28:p {detector_cell}',  # put them here
-        f'F{detector_tally_header}34:p {detector_cell}',  # put them here
-        f'F{detector_tally_header}36:p {detector_cell}', # put them here
+        f'F{detector_tally_header}08:p,n {detector_cell}', # put them here
+        f'F{detector_tally_header}18:p,n {detector_cell}', # put them here
+        f'*F{detector_tally_header}28:p,n {detector_cell}',  # put them here
+        f'F{detector_tally_header}34:p,n {detector_cell}',  # put them here
+        f'F{detector_tally_header}36:p,n {detector_cell}', # put them here
         f'E{detector_tally_header}08 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}18 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}28 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}34 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}36 0 1e-5 932i 8.4295',
-        f'CF{detector_tally_header}34:p', # put them here
-        f'CF{detector_tally_header}36:p', # put them here
-        f'F{detector_tally_header}44:p',  # put them here
-        f'F{detector_tally_header}46:p', # put them here
+        f'CF{detector_tally_header}34:p,n', # put them here
+        f'CF{detector_tally_header}36:p,n', # put them here
+        f'F{detector_tally_header}44:p,n',  # put them here
+        f'F{detector_tally_header}46:p,n', # put them here
         ]
     
     detector_tally_ids = [f'{detector_tally_header}{i}' for i in ['08', '18', '28', '34', '36', '44', '46']]
