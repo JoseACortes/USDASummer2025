@@ -31,3 +31,11 @@ I start by fixing the scripts. You know what, ill add photons AND neutrons to th
 
 OMGGGG, the flags's are not seperated into seperate bins!?
 im gonna try to use ft tag on the tallies, also ill erase the geb card and the associated tally for now, that can definetly be post processed
+
+I added tags and the time went up from 188 to 3096 secconds. which is 3096/60 = 51 minutes. 
+
+I LEFT A SPACE IN THE TALLIES. running it again.
+
+Galina is asking about the si sp cards for mcnp.
+
+WHEW, DONE!!!!!

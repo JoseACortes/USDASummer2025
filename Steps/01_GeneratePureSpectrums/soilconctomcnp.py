@@ -290,6 +290,7 @@ def fold128(text):
             new_lines.append(lines[i])
             i += 1
     new_lines.append(new_line)
+    new_lines = [e for e in new_lines if e != '']
     return '\n\t'.join(new_lines)
 
 # %%
@@ -414,8 +415,7 @@ def make_mcnp(
         f'E{detector_tally_header}28 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}34 0 1e-5 932i 8.4295',
         f'E{detector_tally_header}36 0 1e-5 932i 8.4295',
-        f'CF{detector_tally_header}34:p,n', # put them here
-        f'CF{detector_tally_header}36:p,n', # put them here
+        f'FU{detector_tally_header}36', # put them here
         f'F{detector_tally_header}44:p,n',  # put them here
         f'F{detector_tally_header}46:p,n', # put them here
         ]
@@ -445,10 +445,9 @@ def make_mcnp(
         # detector_tallies[3] += f' {cell_id}'
         # detector_tallies[4] += f' {cell_id}'
 
-        detector_tallies[10] += f' -{cell_id}'
-        detector_tallies[11] += f' -{cell_id}'
+        detector_tallies[10] += f' {cell_id}00000'
+        detector_tallies[11] += f' {cell_id}'
         detector_tallies[12] += f' {cell_id}'
-        detector_tallies[13] += f' {cell_id}'
 
         # detector_tally_id = f'{detector_tally_header}{cell_id}08'
         # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
@@ -465,16 +464,18 @@ def make_mcnp(
         # detector_tally_id = f'{detector_tally_header}{cell_id}36'
         # detector_tallies.append(f'F{detector_tally_id}:p {cell_id}')
         # detector_tally_ids.append(detector_tally_id)
-        pass
+        # pass
+    detector_tallies[10] += f' 10000000000'
 
     detector_tallies = [fold128(e) for e in detector_tallies]
 
     
     detector_tallies.append(f'FT{detector_tally_header}18 GEB -0.026198 0.059551 -0.037176')
+    detector_tallies.append(f'FT{detector_tally_header}36 TAG 3')
 
     detector_tallies = '\n'.join(detector_tallies)+'\n'
     # detector_tallies += 'T0 0 150i 150\n'
-    detector_tallies += 'E0 0 1e-5 932i 8.4295\n'
+    detector_tallies += 'E0 0 1e-5 932i 8.4295 7i 15\n'
 
     detector_tallies = detector_tallies.split('\n')
     detector_tallies = [e for e in detector_tallies if e != '']

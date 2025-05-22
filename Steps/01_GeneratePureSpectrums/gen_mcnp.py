@@ -370,7 +370,7 @@ from tqdm import tqdm
 ress = {
     "1x1x1": (1, 1, 1), 
     "2x2x2": (2, 2, 2), 
-    "10x10x10": (10, 10, 10)}
+    "7x7x7": (7, 7, 7)}
 
 
 # %%
@@ -402,7 +402,7 @@ for res in ress:
             z_fix=-42,
             z_mul=-1,
             surface_header='200',
-            cell_header='30',
+            cell_header='9',
             mat_header='40',
             detector_tally_header='8',
             detector_cell='101',
