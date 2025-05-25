@@ -1,0 +1,1222 @@
+
+Running 7x7x7_Si_001000
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Si_001000.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Si_001000.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Si_001000.runtpe': No such file or directory
+Starting 7x7x7_Si_001000
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Si_001000.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Si_001000.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Si_001000.runtpe': No such file or directory
+
+Running 7x7x7_Al_001001
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Al_001001.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Al_001001.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Al_001001.runtpe': No such file or directory
+Starting 7x7x7_Al_001001
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Al_001001.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Al_001001.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Al_001001.runtpe': No such file or directory
+
+Running 7x7x7_H_001002
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_H_001002.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_H_001002.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_H_001002.runtpe': No such file or directory
+Starting 7x7x7_H_001002
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_H_001002.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_H_001002.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_H_001002.runtpe': No such file or directory
+
+Running 7x7x7_Na_001003
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Na_001003.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Na_001003.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Na_001003.runtpe': No such file or directory
+Starting 7x7x7_Na_001003
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Na_001003.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Na_001003.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Na_001003.runtpe': No such file or directory
+
+Running 7x7x7_O_001004
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_O_001004.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_O_001004.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_O_001004.runtpe': No such file or directory
+Starting 7x7x7_O_001004
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_O_001004.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_O_001004.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_O_001004.runtpe': No such file or directory
+
+Running 7x7x7_Fe_001005
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Fe_001005.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Fe_001005.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Fe_001005.runtpe': No such file or directory
+Starting 7x7x7_Fe_001005
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Fe_001005.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Fe_001005.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Fe_001005.runtpe': No such file or directory
+
+Running 7x7x7_Mg_001006
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Mg_001006.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Mg_001006.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Mg_001006.runtpe': No such file or directory
+Starting 7x7x7_Mg_001006
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Mg_001006.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Mg_001006.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Mg_001006.runtpe': No such file or directory
+
+Running 7x7x7_C_001007
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_C_001007.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_C_001007.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_C_001007.runtpe': No such file or directory
+Starting 7x7x7_C_001007
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_C_001007.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_C_001007.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_C_001007.runtpe': No such file or directory
+
+Running 7x7x7_SiO2_001008
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_SiO2_001008.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_SiO2_001008.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_SiO2_001008.runtpe': No such file or directory
+Starting 7x7x7_SiO2_001008
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_SiO2_001008.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_SiO2_001008.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_SiO2_001008.runtpe': No such file or directory
+
+Running 7x7x7_Al2O3_001009
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Al2O3_001009.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Al2O3_001009.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Al2O3_001009.runtpe': No such file or directory
+Starting 7x7x7_Al2O3_001009
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Al2O3_001009.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Al2O3_001009.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Al2O3_001009.runtpe': No such file or directory
+
+Running 7x7x7_H2O_001010
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_H2O_001010.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_H2O_001010.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_H2O_001010.runtpe': No such file or directory
+Starting 7x7x7_H2O_001010
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_H2O_001010.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_H2O_001010.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_H2O_001010.runtpe': No such file or directory
+
+Running 7x7x7_Na2O_001011
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Na2O_001011.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Na2O_001011.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Na2O_001011.runtpe': No such file or directory
+Starting 7x7x7_Na2O_001011
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Na2O_001011.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Na2O_001011.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Na2O_001011.runtpe': No such file or directory
+
+Running 7x7x7_Fe2O3_001012
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Fe2O3_001012.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Fe2O3_001012.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Fe2O3_001012.runtpe': No such file or directory
+Starting 7x7x7_Fe2O3_001012
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Fe2O3_001012.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Fe2O3_001012.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Fe2O3_001012.runtpe': No such file or directory
+
+Running 7x7x7_MgO_001013
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_MgO_001013.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_MgO_001013.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_MgO_001013.runtpe': No such file or directory
+Starting 7x7x7_MgO_001013
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_MgO_001013.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_MgO_001013.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_MgO_001013.runtpe': No such file or directory
+
+Running 7x7x7_Silica_001014
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Silica_001014.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Silica_001014.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Silica_001014.runtpe': No such file or directory
+Starting 7x7x7_Silica_001014
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Silica_001014.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Silica_001014.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Silica_001014.runtpe': No such file or directory
+
+Running 7x7x7_Kaolinite_001015
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Kaolinite_001015.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Kaolinite_001015.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Kaolinite_001015.runtpe': No such file or directory
+Starting 7x7x7_Kaolinite_001015
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Kaolinite_001015.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Kaolinite_001015.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Kaolinite_001015.runtpe': No such file or directory
+
+Running 7x7x7_Smectite_001016
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Smectite_001016.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Smectite_001016.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Smectite_001016.runtpe': No such file or directory
+Starting 7x7x7_Smectite_001016
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Smectite_001016.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Smectite_001016.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Smectite_001016.runtpe': No such file or directory
+
+Running 7x7x7_Montmorillonite_001017
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Montmorillonite_001017.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Montmorillonite_001017.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Montmorillonite_001017.runtpe': No such file or directory
+Starting 7x7x7_Montmorillonite_001017
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Montmorillonite_001017.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Montmorillonite_001017.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Montmorillonite_001017.runtpe': No such file or directory
+
+Running 7x7x7_Quartz_001018
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Quartz_001018.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Quartz_001018.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Quartz_001018.runtpe': No such file or directory
+Starting 7x7x7_Quartz_001018
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Quartz_001018.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Quartz_001018.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Quartz_001018.runtpe': No such file or directory
+
+Running 7x7x7_Chlorite_001019
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Chlorite_001019.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Chlorite_001019.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Chlorite_001019.runtpe': No such file or directory
+Starting 7x7x7_Chlorite_001019
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Chlorite_001019.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Chlorite_001019.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Chlorite_001019.runtpe': No such file or directory
+
+Running 7x7x7_Mica_001020
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Mica_001020.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Mica_001020.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Mica_001020.runtpe': No such file or directory
+Starting 7x7x7_Mica_001020
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is input file ../../Sims/7x7x7_Mica_001020.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Mica_001020.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Mica_001020.runtpe': No such file or directory
+
+Running 7x7x7_Feldspar_001021
+
+
+Sat May 24 11:32:47 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Feldspar_001021.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Feldspar_001021.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Feldspar_001021.runtpe': No such file or directory
+Starting 7x7x7_Feldspar_001021
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:47                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Feldspar_001021.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Feldspar_001021.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Feldspar_001021.runtpe': No such file or directory
+
+Running 7x7x7_Coconut_001022
+
+
+Sat May 24 11:32:48 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Coconut_001022.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Coconut_001022.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Coconut_001022.runtpe': No such file or directory
+Starting 7x7x7_Coconut_001022
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:32:48                   
+ Expire parameter is 
+ input file ../../Sims/7x7x7_Coconut_001022.txt does not exist.
+
+ bad trouble in subroutine exemes of mcnp                             
+
+ input file ../../Sims/7x7x7_Coconut_001022.txt does not exist.
+rm: cannot remove 'output/runtpe/7x7x7_Coconut_001022.runtpe': No such file or directory
+
+Running 7x7x7_Si_001000
+
+
+Sat May 24 11:34:20 AM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Si_001000.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Si_001000.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Si_001000.runtpe': No such file or directory
+Starting 7x7x7_Si_001000
+ mcnp     ver=6    , ld=02/20/18  05/24/25 11:34:20                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_Si_001000.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Si_001000.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.22
+
+ ctm =     1680.55   nrn =      240654378248
+ dump    2 on file output/runtpe/7x7x7_Si_001000.runtpe   nps =   767327367   coll =      18345483269
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     763.02 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2188.12   nrn =      313628082345
+ dump    3 on file output/runtpe/7x7x7_Si_001000.runtpe   nps =  1000000000   coll =      23908395986
+ tally data written to file output/mctal/7x7x7_Si_001000.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Al_001001
+
+
+Sat May 24 12:53:10 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Al_001001.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Al_001001.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Al_001001.runtpe': No such file or directory
+Starting 7x7x7_Al_001001
+ mcnp     ver=6    , ld=02/20/18  05/24/25 12:53:10                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_Al_001001.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Al_001001.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.22
+
+ ctm =     1680.10   nrn =      287020800658
+ dump    2 on file output/runtpe/7x7x7_Al_001001.runtpe   nps =   712789332   coll =      22675135403
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     708.54 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2357.34   nrn =      402667059617
+ dump    3 on file output/runtpe/7x7x7_Al_001001.runtpe   nps =  1000000000   coll =      31811305231
+ tally data written to file output/mctal/7x7x7_Al_001001.mctal
+ mcrun  is done
+
+
+Running 7x7x7_H_001002
+
+
+Sat May 24 02:18:02 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_H_001002.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_H_001002.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_H_001002.runtpe': No such file or directory
+Starting 7x7x7_H_001002
+ mcnp     ver=6    , ld=02/20/18  05/24/25 14:18:02                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_H_001002.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+      run terminated when  1000000000  particle histories were done.
+
+ =====>    1880.53 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =      881.49   nrn =       23171329389
+ dump    2 on file output/runtpe/7x7x7_H_001002.runtpe   nps =  1000000000   coll =        407957205
+ tally data written to file output/mctal/7x7x7_H_001002.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Na_001003
+
+
+Sat May 24 02:50:07 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Na_001003.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Na_001003.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Na_001003.runtpe': No such file or directory
+Starting 7x7x7_Na_001003
+ mcnp     ver=6    , ld=02/20/18  05/24/25 14:50:07                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_Na_001003.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Na_001003.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+
+ ctm =     1681.09   nrn =      154450259056
+ dump    2 on file output/runtpe/7x7x7_Na_001003.runtpe   nps =   717710661   coll =      10374217403
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     713.54 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2340.82   nrn =      215157213321
+ dump    3 on file output/runtpe/7x7x7_Na_001003.runtpe   nps =  1000000000   coll =      14454737099
+ tally data written to file output/mctal/7x7x7_Na_001003.mctal
+ mcrun  is done
+
+
+Running 7x7x7_O_001004
+
+
+Sat May 24 04:14:24 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_O_001004.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_O_001004.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_O_001004.runtpe': No such file or directory
+Starting 7x7x7_O_001004
+ mcnp     ver=6    , ld=02/20/18  05/24/25 16:14:24                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_O_001004.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+      run terminated when  1000000000  particle histories were done.
+
+ =====>    1884.34 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =      879.61   nrn =       22867913234
+ dump    2 on file output/runtpe/7x7x7_O_001004.runtpe   nps =  1000000000   coll =        391762059
+ tally data written to file output/mctal/7x7x7_O_001004.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Fe_001005
+
+
+Sat May 24 04:46:25 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Fe_001005.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Fe_001005.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Fe_001005.runtpe': No such file or directory
+Starting 7x7x7_Fe_001005
+ mcnp     ver=6    , ld=02/20/18  05/24/25 16:46:25                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_Fe_001005.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Fe_001005.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+
+ ctm =     1680.56   nrn =      348762066206
+ dump    2 on file output/runtpe/7x7x7_Fe_001005.runtpe   nps =   672502418   coll =      29206404788
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     669.20 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2496.90   nrn =      518595696218
+ dump    3 on file output/runtpe/7x7x7_Fe_001005.runtpe   nps =  1000000000   coll =      43428694258
+ tally data written to file output/mctal/7x7x7_Fe_001005.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Mg_001006
+
+
+Sat May 24 06:16:16 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Mg_001006.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Mg_001006.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Mg_001006.runtpe': No such file or directory
+Starting 7x7x7_Mg_001006
+ mcnp     ver=6    , ld=02/20/18  05/24/25 18:16:16                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_Mg_001006.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Mg_001006.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.22
+
+ ctm =     1680.05   nrn =      283940529697
+ dump    2 on file output/runtpe/7x7x7_Mg_001006.runtpe   nps =   781143228   coll =      21382753837
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     776.48 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2150.01   nrn =      363486112737
+ dump    3 on file output/runtpe/7x7x7_Mg_001006.runtpe   nps =  1000000000   coll =      27373149463
+ tally data written to file output/mctal/7x7x7_Mg_001006.mctal
+ mcrun  is done
+
+
+Running 7x7x7_C_001007
+
+
+Sat May 24 07:33:44 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_C_001007.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_C_001007.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_C_001007.runtpe': No such file or directory
+Starting 7x7x7_C_001007
+ mcnp     ver=6    , ld=02/20/18  05/24/25 19:33:44                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material    40000 has been set to a conductor.
+  warning.  material    40001 has been set to a conductor.
+  warning.  material    40002 has been set to a conductor.
+  warning.  material    40003 has been set to a conductor.
+  warning.  material    40004 has been set to a conductor.
+  warning.  material    40005 has been set to a conductor.
+  warning.  material    40006 has been set to a conductor.
+  warning.  material    40007 has been set to a conductor.
+ additional error messages on file output/outp/7x7x7_C_001007.outp
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_C_001007.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+      run terminated when  1000000000  particle histories were done.
+
+ =====>    1162.21 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     1433.48   nrn =      244953098826
+ dump    2 on file output/runtpe/7x7x7_C_001007.runtpe   nps =  1000000000   coll =      20938422055
+ tally data written to file output/mctal/7x7x7_C_001007.mctal
+ mcrun  is done
+
+
+Running 7x7x7_SiO2_001008
+
+
+Sat May 24 08:25:33 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_SiO2_001008.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_SiO2_001008.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_SiO2_001008.runtpe': No such file or directory
+Starting 7x7x7_SiO2_001008
+ mcnp     ver=6    , ld=02/20/18  05/24/25 20:25:33                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_SiO2_001008.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+
+ ctm =     1680.61   nrn =      274707218909
+ dump    2 on file output/runtpe/7x7x7_SiO2_001008.runtpe   nps =   816402542   coll =      20521742535
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     811.21 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2057.30   nrn =      336478794290
+ dump    3 on file output/runtpe/7x7x7_SiO2_001008.runtpe   nps =  1000000000   coll =      25136303361
+ tally data written to file output/mctal/7x7x7_SiO2_001008.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Al2O3_001009
+
+
+Sat May 24 09:39:42 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Al2O3_001009.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Al2O3_001009.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Al2O3_001009.runtpe': No such file or directory
+Starting 7x7x7_Al2O3_001009
+ mcnp     ver=6    , ld=02/20/18  05/24/25 21:39:42                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Al2O3_001009.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.24
+
+ ctm =     1680.79   nrn =      324478126174
+ dump    2 on file output/runtpe/7x7x7_Al2O3_001009.runtpe   nps =   778627146   coll =      24856292282
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     773.05 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2159.64   nrn =      416741794382
+ dump    3 on file output/runtpe/7x7x7_Al2O3_001009.runtpe   nps =  1000000000   coll =      31924024657
+ tally data written to file output/mctal/7x7x7_Al2O3_001009.mctal
+ mcrun  is done
+
+
+Running 7x7x7_H2O_001010
+
+
+Sat May 24 10:57:31 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_H2O_001010.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_H2O_001010.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_H2O_001010.runtpe': No such file or directory
+Starting 7x7x7_H2O_001010
+ mcnp     ver=6    , ld=02/20/18  05/24/25 22:57:31                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_H2O_001010.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.23
+      run terminated when  1000000000  particle histories were done.
+
+ =====>    1415.70 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     1174.58   nrn =      145848740902
+ dump    2 on file output/runtpe/7x7x7_H2O_001010.runtpe   nps =  1000000000   coll =       8739207706
+ tally data written to file output/mctal/7x7x7_H2O_001010.mctal
+ mcrun  is done
+
+
+Running 7x7x7_Na2O_001011
+
+
+Sat May 24 11:40:05 PM CDT 2025
+rm: cannot remove 'output/outp/7x7x7_Na2O_001011.outp': No such file or directory
+rm: cannot remove 'output/mctal/7x7x7_Na2O_001011.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/7x7x7_Na2O_001011.runtpe': No such file or directory
+Starting 7x7x7_Na2O_001011
+ mcnp     ver=6    , ld=02/20/18  05/24/25 23:40:05                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.          97 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/7x7x7_Na2O_001011.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.22

@@ -1,4 +1,14 @@
-# Intro
+# Intro/Title Slide
+
+Title: USDA Summer Intern Meeting
+Subtitle: Opening Presentation
+Author: Jose Andres Cortes^1
+CoAuthors: Dr. Korzeniowski^1, Dr. Tobert^2, Dr. Galina^2, Dr. Kravetski^2
+Affiliations:
+^1University of Texas at Arlington, Department of Mathematics
+^2United States Department of Agriculture, Agricultural Research Service in Auburn
+
+Date: May 27, 2025
 
 *Good Morning everyone! My name is Jose Andres Cortes, This will be my third summer with the USDA. I am currently a PhD student here at the math department, funded as a GRA by the USDA.*
 
@@ -12,15 +22,15 @@
 
 # Simulation:
 
-*First, simulation of the MINS machine using Monte Carlo methods. We use a Monte Carlo code called MCNP, which is a code that simulates the interaction of neutrons and gamma rays with matter, this is national code written for nuclear engineers, written on top of fortran. This allows us to simulate the MINS machine and its results, as well as predict the performance of the machine in different scenarios.*
+*First, simulation of the MINS machine using Monte Carlo methods. We use a Monte Carlo code called MCNP, which is a code that simulates the interaction of neutrons and gamma rays with matter. With this we simulate the MINS results, and predict the performance of the machine in different scenarios.*
 
 # Recent work in Simulation:
 
-*My most recent work on this area was to introduce functionalized soil samples. Before we would simulate the tested sample as homogeneous, but ive written code that allows us to simulate the tested sample as a function of spatial dimensions. This allows us to simulate the machine with more realistic samples.*
+*My most recent work on this area was to introduce functionalized soil samples. Before we would simulate the tested sample as chemically even, but ive written code that allows us to simulate the tested sample as a function of spatial dimensions. This expands the data to more realistic samples.*
 
 # Analysis:
 
-*The second area of my work is the analysis of the data obtained from the MINS machine. My previous work was focused on the application and augmentation of analysis methods for the spectrum that the machine records.*
+*The second area of my work is the analysis of the data obtained from the MINS. My work last year was focused on analysis methods for the spectrum that the machine records.*
 
 # Goals:
 
@@ -47,11 +57,11 @@
 8. Mapping Comparison
 9. Field Coverage Study
 
+# First Steps:
 
-# Paper-Presentation-Poster-Video Topics
+*I have already completed the first and seccond step, which was data augmentation, including a map of how the sample is scanned. This achives the goal of measuring range, and I hope to use it for a digital twin idea*
 
-*Here are some of the topics I am considering for my paper, presentation, poster and video:*
 
-1. Spectrum Convolution For Detector Simulation
-2. Analysis Methods for Mobile Spectral Analysis
-3. Core Harvesting Methods vs Spectral Analysis
+# Social Media:
+
+*Feel free to reach out to me on LinkedIn, or teams. I love talking about research. I also run the Pickardy Hall discord server for grad students, feel free to join us there. Any questions, comments concerns? Cool, thank you*

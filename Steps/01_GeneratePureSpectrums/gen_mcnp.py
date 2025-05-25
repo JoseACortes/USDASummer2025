@@ -178,7 +178,7 @@ c ********** begin tallies *********************
 post_tallies = """
 c ***********************************
 c mplot tal 78 freq 10000
-nps 1e8"""
+nps 1e9"""
 
 # %%
 z_mul = -1
@@ -351,8 +351,11 @@ import soilconctomcnp as sm
 
 # %%
 x_pad = 56
+# x_pad = 35
 y_pad = 45
+# y_pad = 35
 z_pad = 92-42
+# z_pad=35
 
 center = (0, 0, 0)
 
@@ -368,9 +371,10 @@ from tqdm import tqdm
 
 # %%
 ress = {
-    "1x1x1": (1, 1, 1), 
-    "2x2x2": (2, 2, 2), 
-    "7x7x7": (7, 7, 7)}
+    # "1x1x1": (1, 1, 1), 
+    # "2x2x2": (2, 2, 2), 
+    "7x7x7": (7, 7, 7)
+    }
 
 
 # %%

@@ -39,3 +39,23 @@ I LEFT A SPACE IN THE TALLIES. running it again.
 Galina is asking about the si sp cards for mcnp.
 
 WHEW, DONE!!!!!
+
+I got the effective map for deposition to detector, I still havent found an effective way to map this to the detectors tally 8 readings, but it at least shows the where the particles are coming from.
+
+Ive discovered the fmesh tally, which might fix my issues with the cell based methods, but I want to commit to the data I have now. but I will try it out when we need higher resolution data.
+
+Now I need to see if there is a significant difference between effective maps.
+
+My current goals for this step are to generate all the base specs at 10x10x10 (should take 17 hours) and then to finish visualizing the effective maps.
+
+Ill stop measuring the flux. 
+
+Later I might also measure the deposition of the air heat by the detector, It might be useful later.
+
+Ok, I have the sims running, ill make the visuals while they run on the test data.
+
+I should finish the visualizations of the effective maps, then ill put them into a presentation.
+
+
+ok, I just want to include the 50% barrier, the source cone and have a video cycle through the maps
+
