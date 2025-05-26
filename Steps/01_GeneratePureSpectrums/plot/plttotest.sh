@@ -5,7 +5,7 @@ echo ########
 echo ''
 # input_file=test.inp
 
-input_file=../Sims/10x10x10_Fe_001051.txt
+input_file=../Sims/7x7x7_Coconut_001022.txt
 
 # input_file=template.txt
 
