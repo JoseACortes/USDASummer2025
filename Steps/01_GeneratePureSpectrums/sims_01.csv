@@ -1,5 +1,4 @@
 soil_resolution,function,id,filename
-7x7x7,Si,001000,7x7x7_Si_001000
 7x7x7,Al,001001,7x7x7_Al_001001
 7x7x7,H,001002,7x7x7_H_001002
 7x7x7,Na,001003,7x7x7_Na_001003
@@ -18,7 +17,6 @@ soil_resolution,function,id,filename
 7x7x7,Smectite,001016,7x7x7_Smectite_001016
 7x7x7,Montmorillonite,001017,7x7x7_Montmorillonite_001017
 7x7x7,Quartz,001018,7x7x7_Quartz_001018
-7x7x7,Chlorite,001019,7x7x7_Chlorite_001019
 7x7x7,Mica,001020,7x7x7_Mica_001020
 7x7x7,Feldspar,001021,7x7x7_Feldspar_001021
 7x7x7,Coconut,001022,7x7x7_Coconut_001022

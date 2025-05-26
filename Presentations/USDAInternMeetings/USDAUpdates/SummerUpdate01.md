@@ -2,7 +2,7 @@ Hello All,
 Here are the updates for May 27 2025:
 
 1. **Step 1: Spectrum Generation**
-   - I have successfully generated spectrums measuring the samples as written in the paper [insertpaperher]. I have attached the simulations and resulting spectra in this email.
+   - I have successfully generated spectrums measuring common soil types. I have attached the simulations and resulting spectra in this email.
 
 2. **Step 2: Effective Map Generation**
     - The soil samples have been simulated with functionalized soil, at a resolution of 7x7x7. meaning the soil is divided into 343 cells. This allows us to measure the contribution of each cell to the deposition of particles in the detector.

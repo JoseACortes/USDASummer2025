@@ -179,3 +179,6 @@ montepy/
 Sims/*
 
 output/
+
+testMovie/
+*.mp4

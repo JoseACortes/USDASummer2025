@@ -17,7 +17,7 @@ mctal_folder = '../compute/output/mctal/'
 mctal_files = mctal_folder+sims_df['filename']+'.mctal'
 
 
-res_info_folder = '../../../01_GeneratePureSpectrums/ResInfo/'
+res_info_folder = '../ResInfo/'
 specs_folder = '../specs/'
 
 # %%
@@ -72,6 +72,7 @@ for i in tqdm.tqdm(range(len(sims_df)), desc="Processing simulations"):
     tally_bins = []
     tally_arrays = []
     for tally in tqdm.tqdm(res_infos[sims_df['soil_resolution'][i]]['detector_tally_ids'], desc="Processing tallies", leave=False):
+        # print(mctal_files[i])
         i_bins, i_array = readMCTAL(mctal_files[i], int(tally))
         tally_bins.append(i_bins)
         tally_arrays.append(i_array)
