@@ -59,3 +59,10 @@ I should finish the visualizations of the effective maps, then ill put them into
 
 ok, I just want to include the 50% barrier, the source cone and have a video cycle through the maps
 
+Ive got all the presentations rendered, i just need the last two spectrums, and to put my the output data into excel sheets so they can read it.
+
+Ive got it all running, i just need to update the excel sheet in the morning, and i can have all the emails in queve
+
+presentation went great, i have a couple of prespectrives. I need to download the video.
+
+Galina wants a 90% - 95% - 99% barrier, she also wants the detector and source included, so I will do that.

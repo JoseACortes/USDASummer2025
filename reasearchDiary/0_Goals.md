@@ -32,8 +32,8 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 
 1. Generate Pure Spectrums
 2. Generate Effective Map
-3. Verify Fast Spectrum Convolution
-4. Compare Analysis Methods
+3. Common Soil Data
+4. Compare Analysis Methods + Apply Deep Learning Method
 5. Variance Study
 6. Depth Study
 7. Core Harvesting Comparison (local)
@@ -43,4 +43,7 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 # 4. Replicability
 
 Every step is automated and documented
-A tool is created to do each step
+A tool is created to write all the relevant scripts in 3 packages:
+- Test: MCNP input generation
+- Read: MCNP output reading
+- Report: Spectral And Soil analysis

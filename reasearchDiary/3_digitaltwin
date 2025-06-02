@@ -1,0 +1,42 @@
+There are 8 elements, 
+
+The clouds are too different between densities, 
+
+There are 5 components to all soil:
+1. Sand - Silica
+2. Silt - Quartz, Kalinite, Smectite, Mica, Chlorite, Feldspar
+3. Clay - Kaolinite, Smectite, Montmorillonite
+4. Organic Matter - Coconut
+5. Water - H2O
+
+The soil is a complex mixture of these components
+
+- generate spectrums in a Sand - Silt - Clay space
+- add Hydration Evenly
+- add Organic Matter Evenly
+- add Organic Matter by Depth
+
+
+this is how it will affect the next steps:
+
+5. Variance Study - Each point in the soil component space will be varied around a data point
+6. Depth Study - Vary soc component by depth and connect this to the effective map
+
+I am retroactively going into step 1, I am investigating how linear convolution does on compunds, then materials. If they are good, then I will consider renaming this step to "Convolution Study" or something similar, to see how good the methods are at generating spectrums. Ill try to incorporate density into the convolution, but I am not sure how to do that yet. 
+
+
+WAIT YOU CAN USE EFFECTIVE CLOUDS TO PREDICT THE NEXT EFFECTIVE CLOUD!
+THATD BE HUGE!
+but it also feels like too big of a bite. save it for fall. for now convolution will have to stay at whole sample level.
+
+
+should i add "elem_info" so i can include the elements in the convolution?
+
+
+for korz, i need to have 0-10% carbon levels on one of the materials. Ill leave that running while I finish the convolution testing up to the material level, then Ill be able to test this convolution hypothesis on the mixture level.
+
+for galina, I need to show progress on the effective maps
+
+Meeting w/ korz went good, galina likes the figs, but wants to make sure it can be understood by a non-technical audience. I need to make sure the figures are clear and the analysis is easy to follow.
+
+I want to include density in the convolution. 

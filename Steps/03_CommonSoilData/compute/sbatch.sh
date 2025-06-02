@@ -1,0 +1,11 @@
+sbatch commands/7x7x7_C_0000_Feldspar_Fill_003000.sh
+sbatch commands/7x7x7_C_0060_Feldspar_Fill_003001.sh
+sbatch commands/7x7x7_C_0120_Feldspar_Fill_003002.sh
+sbatch commands/7x7x7_C_0180_Feldspar_Fill_003003.sh
+sbatch commands/7x7x7_C_0240_Feldspar_Fill_003004.sh
+sbatch commands/7x7x7_C_0300_Feldspar_Fill_003005.sh
+sbatch commands/7x7x7_C_0360_Feldspar_Fill_003006.sh
+sbatch commands/7x7x7_C_0420_Feldspar_Fill_003007.sh
+sbatch commands/7x7x7_C_0480_Feldspar_Fill_003008.sh
+sbatch commands/7x7x7_C_0540_Feldspar_Fill_003009.sh
+sbatch commands/7x7x7_C_0600_Feldspar_Fill_003010.sh

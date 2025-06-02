@@ -395,7 +395,7 @@ count = 0
 sim_folder = "Sims/"
 for res in ress:
     for f in all_fns:
-        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, elems, detector_tallies, detector_tally_ids = sm.make_mcnp(
+        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, detector_tallies, detector_tally_ids = sm.make_mcnp(
             all_fns[f],
             extent,
             ress[res],
@@ -443,12 +443,11 @@ for res in ress:
         'detector_tally_ids': detector_tally_ids,
         'midpoints': midpoints.tolist(),
         'cell_ids': cell_ids,
+        'sides': [side.tolist() for side in sides],
         }
     with open(f"ResInfo/res_info_{res}.json", "w") as f:
         json.dump(res_info, f, indent=4)
         
 sims_df = pd.DataFrame.from_dict(sims_df, orient='index')
 sims_df.to_csv("sims_01.csv", index=False)
-
-
 

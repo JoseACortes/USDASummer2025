@@ -22,7 +22,11 @@ imagelayout:
         AB
 ```
 
-*I am working with Dr Korzeniowski Dr. Tobert, Dr. Galina and Dr Kravetski on the MINS project. We are using gamma spectroscopy to measure soil carbon content in the field. This is the machine we're working on, this is me next to the machine when I went to visit the lab in Auburn, Alabama. The machine is called MINS, which stands for Mobile In Situ Spectroscopy.*
+*I am working with Dr Korzeniowski Dr. Tobert, Dr. Galina and Dr Kravetski on the MINS project.* 
+
+# Meet the machines
+
+*We are using gamma spectroscopy to measure soil carbon content in the field. This is the machine we're working on, this is me next to the machine when I went to visit the lab in Auburn, Alabama. The machine is called MINS, which stands for Mobile In Situ Spectroscopy.*
 
 # Development
 
