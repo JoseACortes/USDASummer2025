@@ -39,4 +39,7 @@ for galina, I need to show progress on the effective maps
 
 Meeting w/ korz went good, galina likes the figs, but wants to make sure it can be understood by a non-technical audience. I need to make sure the figures are clear and the analysis is easy to follow.
 
-I want to include density in the convolution. 
+It looks like the discrepancy is too big between convcolution and simulation :/.
+I really want to figure out how to make convolution more accurate, but for now Im need to move onto step 4.
+
+I also want to see how the levels affect the effective maps

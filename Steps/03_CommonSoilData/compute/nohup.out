@@ -757,3 +757,14 @@ Starting 7x7x7_C_0600_Feldspar_Fill_003010
 
  ctm =     1680.13   nrn =      229274655392
  dump    2 on file output/runtpe/7x7x7_C_0600_Feldspar_Fill_003010.runtpe   nps =   690088388   coll =      17114801343
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     685.79 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2435.71   nrn =      332236019923
+ dump    3 on file output/runtpe/7x7x7_C_0600_Feldspar_Fill_003010.runtpe   nps =  1000000000   coll =      24800474450
+ tally data written to file output/mctal/7x7x7_C_0600_Feldspar_Fill_003010.mctal
+ mcrun  is done
+

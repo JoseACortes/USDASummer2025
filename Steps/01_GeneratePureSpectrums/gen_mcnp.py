@@ -415,14 +415,14 @@ for res in ress:
 
         id = id_header+str(force_n_digits(count, 3))
 
-        label = f"{res}_{f}"
-        filename = f"{label}_{id}.txt"
+        label = f"{res}_{f}_{id}"
+        filename = f"{label}.txt"
 
         sims_df[label] = {
             "soil_resolution": res,
             "function": f,
             'id': id,
-            "filename": f"{label}_{id}",
+            "filename": f"{label}",
         }
 
         elems_table = {}
@@ -430,7 +430,7 @@ for res in ress:
             elems_table[id] = elems[_].flatten().tolist()
         elems_table = pd.DataFrame.from_dict(elems_table)
         elems_table.index = elem_labels
-        elems_table.to_csv(f"ElemMaps/ELEMS_{f}_{res}.csv")  
+        elems_table.to_csv(f"ElemMaps/ELEMS_{label}.csv")  
         
 
         with open(sim_folder+filename, "w") as f:
