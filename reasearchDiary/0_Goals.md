@@ -23,7 +23,7 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 
 ## 2. Paper-Presentation-Poster-Video Topics
 
-1. ~~Spectrum Convolution For Detector Simulation~~
+1. Spectrum Convolution For Detector Simulation
 2. Analysis Methods for Mobile Spectral Analysis
 3. Core Harvesting Methods vs Spectral Analysis
 
@@ -33,8 +33,8 @@ MCNP Datasets for 5 tasks: (based off what my USDA scientist requests)
 2. Generate Effective Map
 3. Common Soil Data
 4. Compare Analysis Methods + Apply Deep Learning Method
-5. Variance Study
-6. Depth Study
+5. Highest Res Cloud + Depth Study
+6. Variance Study
 7. Core Harvesting Comparison (local)
 8. Mapping Comparison
 9. Field Coverage Study

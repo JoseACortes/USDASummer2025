@@ -1,0 +1,100 @@
+Processing simulations:   0%|          | 0/11 [00:00<?, ?it/s]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.50it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.50it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:   9%|▉         | 1/11 [00:24<04:02, 24.27s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:03,  1.51it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.50it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:01<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:01,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  18%|█▊        | 2/11 [00:48<03:38, 24.28s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.50it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.50it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  27%|██▋       | 3/11 [01:12<03:14, 24.28s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.50it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.50it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  36%|███▋      | 4/11 [01:37<02:49, 24.28s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.49it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.49it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  45%|████▌     | 5/11 [02:01<02:25, 24.29s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.49it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.49it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.96s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  55%|█████▍    | 6/11 [02:25<02:01, 24.29s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.49it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.49it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.49it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.49it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  64%|██████▎   | 7/11 [02:49<01:37, 24.29s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.50it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.50it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.50it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.95s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:16<00:04,  4.43s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:24<00:00,  5.37s/it][A
+                                                                 [AProcessing simulations:  73%|███████▎  | 8/11 [03:14<01:12, 24.28s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:04,  1.49it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.49it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:02<00:02,  1.49it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:02,  1.49it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:09<00:05,  2.81s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:15<00:04,  4.12s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:22<00:00,  4.96s/it][A
+                                                                 [AProcessing simulations:  82%|████████▏ | 9/11 [03:36<00:47, 23.77s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:03,  1.62it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.62it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:01<00:02,  1.62it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:01,  1.62it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:08<00:05,  2.71s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:15<00:04,  4.06s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:22<00:00,  4.92s/it][A
+                                                                 [AProcessing simulations:  91%|█████████ | 10/11 [03:59<00:23, 23.31s/it]
+Processing tallies:   0%|          | 0/7 [00:00<?, ?it/s][A
+Processing tallies:  14%|█▍        | 1/7 [00:00<00:03,  1.61it/s][A
+Processing tallies:  29%|██▊       | 2/7 [00:01<00:03,  1.60it/s][A
+Processing tallies:  43%|████▎     | 3/7 [00:01<00:02,  1.61it/s][A
+Processing tallies:  57%|█████▋    | 4/7 [00:02<00:01,  1.62it/s][A
+Processing tallies:  71%|███████▏  | 5/7 [00:08<00:05,  2.71s/it][A
+Processing tallies:  86%|████████▌ | 6/7 [00:15<00:04,  4.07s/it][A
+Processing tallies: 100%|██████████| 7/7 [00:22<00:00,  4.94s/it][A
+                                                                 [AProcessing simulations: 100%|██████████| 11/11 [04:21<00:00, 23.01s/it]Processing simulations: 100%|██████████| 11/11 [04:21<00:00, 23.78s/it]

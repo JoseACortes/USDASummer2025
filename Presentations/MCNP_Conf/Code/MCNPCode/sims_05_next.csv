@@ -1,0 +1,7 @@
+soil_resolution,function,id,filename
+1x1x1,Gradient,005000,1x1x1_Gradient_005000
+1x1x1,Vs9,005001,1x1x1_Vs9_005001
+2x2x2,Gradient,005003,2x2x2_Gradient_005003
+9x9x9,Gradient,005006,9x9x9_Gradient_005006
+9x9x9,Vs9,005007,9x9x9_Vs9_005007
+9x9x9,Tilt,005008,9x9x9_Tilt_005008

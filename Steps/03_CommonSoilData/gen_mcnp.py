@@ -341,13 +341,24 @@ def material_function(
 
 
 # %%
-carbon_levels = np.linspace(0, 0.06, 11)
 
-for carbon_level in carbon_levels:
-    clstr = f'C_{carbon_level:.4f}'
-    clstr = clstr.split('.')[1]
-    all_fns[f'C_{clstr}_Feldspar_Fill'] = lambda X, carbon_level=carbon_level: (soil_characteristic_function(X, character='C', elem_labels=elem_names) * carbon_level)+(material_function(X, material_labels_pername[7], material_portions[7], elem_labels=elem_names) * (1-carbon_level))
-    alldensities[f'C_{clstr}_Feldspar_Fill'] = (0.53 * carbon_level) + (2.55 * (1-carbon_level))
+_material_names = material_names.copy()
+_material_names.pop(-1)
+
+low_carbon_levels = np.linspace(0.006, 0.06, 10).tolist()
+
+high_carbon_levels = np.linspace(0.1, 0.9, 9).tolist()
+
+carbon_levels = low_carbon_levels+high_carbon_levels
+
+for _, material in enumerate(_material_names):
+    for carbon_level in carbon_levels:
+        clstr = f'C_{carbon_level:.4f}'
+        clstr = clstr.split('.')[1]
+        _label = f'C_{clstr}_{material}_Fill'
+        # print(material_labels_pername[_], material_portions[_])
+        all_fns[_label] = lambda X, carbon_level=carbon_level, _=_: (soil_characteristic_function(X, character='C', elem_labels=elem_names) * carbon_level)+(material_function(X, material_labels_pername[_], material_portions[_], elem_labels=elem_names) * (1-carbon_level))
+        alldensities[_label] = (0.53 * carbon_level) + (2.55 * (1-carbon_level))
 
 # %%
 import soilconctomcnp as sm
@@ -398,7 +409,7 @@ count = 0
 sim_folder = "compute/input/"
 for res in ress:
     for f in all_fns:
-        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, detector_tallies, detector_tally_ids = sm.make_mcnp(
+        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, densities, detector_tallies, detector_tally_ids = sm.make_mcnp(
             all_fns[f],
             extent,
             ress[res],
@@ -428,13 +439,12 @@ for res in ress:
             "filename": f"{label}",
         }
 
-        elems_table = {}
+        densities_table = {}
         for _, id in enumerate(cell_ids):
-            elems_table[id] = elems[_].flatten().tolist()
-        elems_table = pd.DataFrame.from_dict(elems_table)
-        elems_table.index = elem_labels
-        elems_table.to_csv(f"ElemMaps/ELEMS_{label}.csv")  
-        
+            densities_table[id] = densities[_]
+        densities_table = pd.DataFrame.from_dict(densities_table, orient='index', columns=['Density'])
+        densities_table.index.name = 'cell_id'
+        densities_table.to_csv(f"Densities/DENSITIES_{label}.csv")        
 
         with open(sim_folder+filename, "w") as f:
             f.write(script)

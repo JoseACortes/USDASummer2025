@@ -43,3 +43,9 @@ It looks like the discrepancy is too big between convcolution and simulation :/.
 I really want to figure out how to make convolution more accurate, but for now Im need to move onto step 4.
 
 I also want to see how the levels affect the effective maps
+
+3d convolution can wait, I need to wrap up analysis first.
+
+Ive added the neural network version but its not training very well, not even overfitting, ill need to increase the data.
+
+i need to add high carbon levels for the decomposition.

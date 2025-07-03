@@ -395,7 +395,7 @@ count = 0
 sim_folder = "Sims/"
 for res in ress:
     for f in all_fns:
-        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, detector_tallies, detector_tally_ids = sm.make_mcnp(
+        cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, densities, detector_tallies, detector_tally_ids = sm.make_mcnp(
             all_fns[f],
             extent,
             ress[res],
@@ -432,6 +432,12 @@ for res in ress:
         elems_table.index = elem_labels
         elems_table.to_csv(f"ElemMaps/ELEMS_{label}.csv")  
         
+        densities_table = {}
+        for _, id in enumerate(cell_ids):
+            densities_table[id] = densities[_]
+        densities_table = pd.DataFrame.from_dict(densities_table, orient='index', columns=['Density'])
+        densities_table.index.name = 'cell_id'
+        densities_table.to_csv(f"Densities/DENSITIES_{label}.csv")
 
         with open(sim_folder+filename, "w") as f:
             f.write(script)

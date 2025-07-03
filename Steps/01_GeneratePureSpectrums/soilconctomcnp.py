@@ -440,20 +440,25 @@ def make_mcnp(
     
     detector_tally_ids = [f'{detector_tally_header}{i}' for i in ['08', '18', '28', '34', '36', '44', '46']]
 
+    densities = []
+
+    for i, e in enumerate(elem_ids):
+
+        if isinstance(density, (int, float, np.floating, np.integer)):
+            densities.append(density)
+        elif callable(density):
+            d = density(midpoints[i])
+            densities.append(d)
+        elif isinstance(density, (np.ndarray, list)):
+            d = np.multiply(density, elems[i])
+            d = np.sum(d, axis=-1)
+            densities.append(d)
+        
 
     for i, e in enumerate(elem_ids):
         cell_id = f'{cell_header}{force_n_digits(i, nn)}{cell_footer}'
         cell_ids.append(cell_id)
-
-        if isinstance(density, (int, float, np.floating, np.integer)):
-            cells += f'{cell_id} {e} {mw*density} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
-        elif callable(density):
-            d = density(midpoints[i])
-            cells += f'{cell_id} {e} {mw*d} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
-        elif isinstance(density, (np.ndarray, list)):
-            d = np.multiply(density, elems[i])
-            d = np.sum(d, axis=-1)
-            cells += f'{cell_id} {e} {mw*d} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
+        cells += f'{cell_id} {e} {mw*densities[i]} {xx_index[i]} -{xxl_index[i]} {yy_index[i]} -{yyl_index[i]} {z_mul*int(zz_index[i])} {z_mul*-int(zzl_index[i])} imp:n,p 1\n'
         
 
     for i, cell_id in enumerate(cell_ids):
@@ -500,5 +505,5 @@ def make_mcnp(
     detector_tallies = '\n'.join(detector_tallies)
 
 
-    return cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, detector_tallies, detector_tally_ids
+    return cells, cell_ids, walls, surfaces, mats, avg_sample, midpoints, sides, elems, densities, detector_tallies, detector_tally_ids
 

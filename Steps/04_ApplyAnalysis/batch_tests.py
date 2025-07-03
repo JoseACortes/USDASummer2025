@@ -56,15 +56,15 @@ testing_y = np.array(true_c_concentrations)[test_index]
 
 result = linregress(training_x, training_y)
 
-pt.fits_plotter(
-    df,
-    c_lines_df[c_lines_df.columns[1:]],
-    si_lines_df[si_lines_df.columns[1:]],
-    c_bins=c_lines_df['bins'],
-    si_bins=si_lines_df['bins'],
-    suptitle='Single Peak - Carbon and Silicone Fits',
-    output_folder='output/'
-    )
+# pt.fits_plotter(
+#     df,
+#     c_lines_df[c_lines_df.columns[1:]],
+#     si_lines_df[si_lines_df.columns[1:]],
+#     c_bins=c_lines_df['bins'],
+#     si_bins=si_lines_df['bins'],
+#     suptitle='Single Peak - Carbon and Silicone Fits',
+#     output_folder='output/'
+#     )
 
 analyze = lambda x: result.slope * x + result.intercept
 x_hat = fitting_df['Carbon Peak Area'].apply(analyze)
@@ -96,15 +96,15 @@ testing_y = np.array(true_c_concentrations)[test_index]
 
 result = linregress(training_x, training_y)
 
-pt.fits_plotter(
-    df,
-    c_lines_df[c_lines_df.columns[1:]],
-    si_lines_df[si_lines_df.columns[1:]],
-    c_bins=c_lines_df['bins'],
-    si_bins=si_lines_df['bins'],
-    suptitle='Exponential Falloff - Carbon and Silicone Fits',
-    output_folder='output/'
-    )
+# pt.fits_plotter(
+#     df,
+#     c_lines_df[c_lines_df.columns[1:]],
+#     si_lines_df[si_lines_df.columns[1:]],
+#     c_bins=c_lines_df['bins'],
+#     si_bins=si_lines_df['bins'],
+#     suptitle='Exponential Falloff - Carbon and Silicone Fits',
+#     output_folder='output/'
+#     )
 
 analyze = lambda x: result.slope * x + result.intercept
 x_hat = fitting_df['Carbon Peak Area'].apply(analyze)
@@ -119,7 +119,6 @@ predicted_concentrations.append(x_hat)
 
 
 # %% component analysis
-
 
 true_c_concentrations = np.array(true_c_concentrations)
 

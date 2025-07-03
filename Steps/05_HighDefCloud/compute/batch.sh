@@ -1,0 +1,2 @@
+bash commands/9x9x9_C_0060_Feldspar_Fill_003133.sh
+bash commands/9x9x9_C_0600_Feldspar_Fill_003142.sh

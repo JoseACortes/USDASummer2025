@@ -1,0 +1,580 @@
+
+Running 9x9x9_C_0600_Silica_Fill_003009
+
+
+Fri Jun 13 07:11:52 PM CDT 2025
+rm: cannot remove 'output/outp/9x9x9_C_0600_Silica_Fill_003009.outp': No such file or directory
+rm: cannot remove 'output/mctal/9x9x9_C_0600_Silica_Fill_003009.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Silica_Fill_003009
+ mcnp     ver=6    , ld=02/20/18  06/13/25 19:11:52                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  warning.  729 materials had unnormalized fractions. print table 40.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.41
+
+ ctm =     1680.51   nrn =      144508495567
+ dump    2 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =   545194845   coll =      10216280359
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     540.18 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     3081.05   nrn =      265047247273
+ dump    3 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =  1000000000   coll =      18737945500
+ tally data written to file output/mctal/9x9x9_C_0600_Silica_Fill_003009.mctal
+ mcrun  is done
+
+
+Running 9x9x9_C_0600_Silica_Fill_003009
+
+
+Fri Jun 13 10:01:04 PM CDT 2025
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Silica_Fill_003009
+ mcnp     ver=6    , ld=02/20/18  06/13/25 22:01:04                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  warning.  729 materials had unnormalized fractions. print table 40.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.41
+
+ ctm =     1680.26   nrn =      145064249614
+ dump    2 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =   547293569   coll =      10255568447
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     542.23 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     3069.22   nrn =      265047247273
+ dump    3 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =  1000000000   coll =      18737945500
+ tally data written to file output/mctal/9x9x9_C_0600_Silica_Fill_003009.mctal
+ mcrun  is done
+
+
+Running 9x9x9_C_0600_Silica_Fill_003009
+
+
+Sat Jun 14 02:31:44 PM CDT 2025
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Silica_Fill_003009
+ mcnp     ver=6    , ld=02/20/18  06/14/25 14:31:44                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  warning.  729 materials had unnormalized fractions. print table 40.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0600_Silica_Fill_003009.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.41
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+mcnp6              0000000000CB2AC1  Unknown               Unknown  Unknown
+mcnp6              0000000000CB0BFB  Unknown               Unknown  Unknown
+mcnp6              0000000000B707A4  Unknown               Unknown  Unknown
+mcnp6              0000000000B705B6  Unknown               Unknown  Unknown
+mcnp6              0000000000B0D879  Unknown               Unknown  Unknown
+mcnp6              0000000000B1754C  Unknown               Unknown  Unknown
+libc.so.6          00000C8776442520  Unknown               Unknown  Unknown
+mcnp6              0000000000A32901  track_                    486  track.f90
+mcnp6              00000000007A14DA  history_MP_neutro         215  hstory.f90
+mcnp6              0000000000A35B58  transport_mod_MP_         250  trnspt.f90
+mcnp6              000000000089FC3E  mcrun_                    113  mcrun.f90
+mcnp6              0000000000C3E033  Unknown               Unknown  Unknown
+mcnp6              0000000000BF5660  Unknown               Unknown  Unknown
+mcnp6              0000000000BF66E4  Unknown               Unknown  Unknown
+mcnp6              0000000000BD860F  Unknown               Unknown  Unknown
+mcnp6              000000000089FA9C  mcrun_                    112  mcrun.f90
+mcnp6              0000000000844A40  MAIN__                    329  main.f90
+mcnp6              0000000000410C9E  Unknown               Unknown  Unknown
+libc.so.6          00000C8776429D90  Unknown               Unknown  Unknown
+libc.so.6          00000C8776429E40  __libc_start_main     Unknown  Unknown
+mcnp6              0000000000410BA9  Unknown               Unknown  Unknown
+batch.sh: line 2: h: command not found
+
+Running 9x9x9_C_0600_Feldspar_Fill_003142
+
+
+Sat Jun 14 02:40:38 PM CDT 2025
+rm: cannot remove 'output/outp/9x9x9_C_0600_Feldspar_Fill_003142.outp': No such file or directory
+rm: cannot remove 'output/mctal/9x9x9_C_0600_Feldspar_Fill_003142.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Feldspar_Fill_003142
+ mcnp     ver=6    , ld=02/20/18  06/14/25 14:40:38                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.44
+
+Running 9x9x9_C_0060_Feldspar_Fill_003133
+
+
+Sat Jun 14 02:41:04 PM CDT 2025
+rm: cannot remove 'output/outp/9x9x9_C_0060_Feldspar_Fill_003133.outp': No such file or directory
+rm: cannot remove 'output/mctal/9x9x9_C_0060_Feldspar_Fill_003133.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe': No such file or directory
+Starting 9x9x9_C_0060_Feldspar_Fill_003133
+ mcnp     ver=6    , ld=02/20/18  06/14/25 14:41:04                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.52
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+mcnp6              0000000000CB2AC1  Unknown               Unknown  Unknown
+mcnp6              0000000000CB0BFB  Unknown               Unknown  Unknown
+mcnp6              0000000000B707A4  Unknown               Unknown  Unknown
+mcnp6              0000000000B705B6  Unknown               Unknown  Unknown
+mcnp6              0000000000B0D879  Unknown               Unknown  Unknown
+mcnp6              0000000000B1754C  Unknown               Unknown  Unknown
+libc.so.6          00000FEB1FA42520  Unknown               Unknown  Unknown
+libc.so.6          00000FEB1FB08C9B  __sched_yield         Unknown  Unknown
+mcnp6              0000000000BDF4BA  Unknown               Unknown  Unknown
+mcnp6              0000000000BEE379  Unknown               Unknown  Unknown
+mcnp6              0000000000BD997F  Unknown               Unknown  Unknown
+mcnp6              00000000009E3429  smmp_MP_threading         118  smmp.f90
+mcnp6              0000000000A35C4B  transport_mod_MP_         350  trnspt.f90
+mcnp6              000000000089FC3E  mcrun_                    113  mcrun.f90
+mcnp6              0000000000C3E033  Unknown               Unknown  Unknown
+mcnp6              0000000000BF5660  Unknown               Unknown  Unknown
+mcnp6              0000000000BF66E4  Unknown               Unknown  Unknown
+mcnp6              0000000000BD860F  Unknown               Unknown  Unknown
+mcnp6              000000000089FA9C  mcrun_                    112  mcrun.f90
+mcnp6              0000000000844A40  MAIN__                    329  main.f90
+mcnp6              0000000000410C9E  Unknown               Unknown  Unknown
+libc.so.6          00000FEB1FA29D90  Unknown               Unknown  Unknown
+libc.so.6          00000FEB1FA29E40  __libc_start_main     Unknown  Unknown
+mcnp6              0000000000410BA9  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+mcnp6              0000000000CB2AC1  Unknown               Unknown  Unknown
+mcnp6              0000000000CB0BFB  Unknown               Unknown  Unknown
+mcnp6              0000000000B707A4  Unknown               Unknown  Unknown
+mcnp6              0000000000B705B6  Unknown               Unknown  Unknown
+mcnp6              0000000000B0D879  Unknown               Unknown  Unknown
+mcnp6              0000000000B1754C  Unknown               Unknown  Unknown
+libc.so.6          00000A25C9042520  Unknown               Unknown  Unknown
+mcnp6              0000000000A3F7B6  utask_                     72  utask.f90
+mcnp6              0000000000A357A3  transport_mod_MP_          80  trnspt.f90
+mcnp6              000000000089FC3E  mcrun_                    113  mcrun.f90
+mcnp6              0000000000C3E033  Unknown               Unknown  Unknown
+mcnp6              0000000000BF5660  Unknown               Unknown  Unknown
+mcnp6              0000000000BF66E4  Unknown               Unknown  Unknown
+mcnp6              0000000000BD860F  Unknown               Unknown  Unknown
+mcnp6              000000000089FA9C  mcrun_                    112  mcrun.f90
+mcnp6              0000000000844A40  MAIN__                    329  main.f90
+mcnp6              0000000000410C9E  Unknown               Unknown  Unknown
+libc.so.6          00000A25C9029D90  Unknown               Unknown  Unknown
+libc.so.6          00000A25C9029E40  __libc_start_main     Unknown  Unknown
+mcnp6              0000000000410BA9  Unknown               Unknown  Unknown
+
+Running 9x9x9_C_0600_Feldspar_Fill_003142
+
+
+Sat Jun 14 02:42:07 PM CDT 2025
+rm: cannot remove 'output/mctal/9x9x9_C_0600_Feldspar_Fill_003142.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Feldspar_Fill_003142
+ mcnp     ver=6    , ld=02/20/18  06/14/25 14:42:07                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+mcnp6              0000000000CB2AC1  Unknown               Unknown  Unknown
+mcnp6              0000000000CB0BFB  Unknown               Unknown  Unknown
+mcnp6              0000000000B707A4  Unknown               Unknown  Unknown
+mcnp6              0000000000B705B6  Unknown               Unknown  Unknown
+mcnp6              0000000000B0D879  Unknown               Unknown  Unknown
+mcnp6              0000000000B1754C  Unknown               Unknown  Unknown
+libc.so.6          000007B0AB442520  Unknown               Unknown  Unknown
+mcnp6              000000000099B391  searching_MP_bina         110  searching.f90
+mcnp6              000000000096C54A  qpol_mod_MP_qpol_          68  qpol.f90
+mcnp6              000000000066EA1C  brem_                     223  brem.f90
+mcnp6              0000000000A6359C  xsgen_                    330  xsgen.f90
+mcnp6              0000000000A53DCC  xact_                     214  xact.f90
+mcnp6              0000000000844A55  MAIN__                    325  main.f90
+mcnp6              0000000000410C9E  Unknown               Unknown  Unknown
+libc.so.6          000007B0AB429D90  Unknown               Unknown  Unknown
+libc.so.6          000007B0AB429E40  __libc_start_main     Unknown  Unknown
+mcnp6              0000000000410BA9  Unknown               Unknown  Unknown
+
+Running 9x9x9_C_0060_Feldspar_Fill_003133
+
+
+Sat Jun 14 02:43:07 PM CDT 2025
+rm: cannot remove 'output/mctal/9x9x9_C_0060_Feldspar_Fill_003133.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe': No such file or directory
+Starting 9x9x9_C_0060_Feldspar_Fill_003133
+ mcnp     ver=6    , ld=02/20/18  06/14/25 14:43:07                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.40
+
+ ctm =     1680.14   nrn =      150265384387
+ dump    2 on file output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe   nps =   539559978   coll =      10652909789
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     534.51 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     3114.29   nrn =      278488306324
+ dump    3 on file output/runtpe/9x9x9_C_0060_Feldspar_Fill_003133.runtpe   nps =  1000000000   coll =      19743133339
+ tally data written to file output/mctal/9x9x9_C_0060_Feldspar_Fill_003133.mctal
+ mcrun  is done
+
+
+Running 9x9x9_C_0600_Feldspar_Fill_003142
+
+
+Sat Jun 14 04:35:48 PM CDT 2025
+rm: cannot remove 'output/mctal/9x9x9_C_0600_Feldspar_Fill_003142.mctal': No such file or directory
+rm: cannot remove 'output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe': No such file or directory
+Starting 9x9x9_C_0600_Feldspar_Fill_003142
+ mcnp     ver=6    , ld=02/20/18  06/14/25 16:35:48                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.42
+
+ ctm =     1680.48   nrn =      145701314253
+ dump    2 on file output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe   nps =   546506153   coll =      10316207731
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     541.28 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     3074.71   nrn =      266601109193
+ dump    3 on file output/runtpe/9x9x9_C_0600_Feldspar_Fill_003142.runtpe   nps =  1000000000   coll =      18876317214
+ tally data written to file output/mctal/9x9x9_C_0600_Feldspar_Fill_003142.mctal
+ mcrun  is done
+
