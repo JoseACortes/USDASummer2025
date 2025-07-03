@@ -777,3 +777,6 @@ Starting 9x9x9_Tilt_005008
  xact   is done
 
  cp0 =   0.43
+
+ ctm =     1682.04   nrn =       69559148671
+ dump    2 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =   692339422   coll =       4586642078

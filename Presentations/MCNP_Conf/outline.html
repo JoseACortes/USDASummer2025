@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>outline.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="outline">Outline</h1>
+<h2 id="mesh-cells-to-augment-in-situ-spectroscopy">Mesh Cells to Augment in Situ Spectroscopy</h2>
+<p>Presenter: Jose Andres Cortes
+Advisors: Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kavetskiy
+Groups: UTA Mathematics, USDA Agriculture Research Service
+Date: July 8, 2025</p>
+<p><em>Good Morning, My name is Jose Andres Cortes. I'm a second year grad student in mathematics from the University of Texas at Arlington. I am also an intern for the US Department of Agriculture. My advisors are doctors Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kavetskiy.</em></p>
+<h2 id="background">Background</h2>
+<p><img src="Figures/Misc/infrontofthemachine.png" alt="Visit to Auburn Lab in Alabama"></p>
+<ul>
+<li>Collaborating with USDA Agriculture Research Service</li>
+<li>Developing an in situ spectroscopy device for soil analysis</li>
+</ul>
+<p><em>For the last two years my advisor and I have collaborated with the USDA Agriculture Research Service, assisting them in the development of an in situ spectroscopy device.</em></p>
+<h2 id="core-harvesting">Core Harvesting</h2>
+<p><img src="Figures/Misc/SoilCore.jpg" alt="Core Harvest"></p>
+<ul>
+<li>Traditional method: “Core Harvesting”</li>
+<li>Large soil cores extracted and analyzed in lab</li>
+<li>Time-consuming, labor-intensive</li>
+</ul>
+<p><em>Currently the method of measuring carbon in a field is &quot;Core Harvesting&quot;. Core harvesting is where large tubes called &quot;cores&quot; are dug into the soil and taken to a lab for analysis.</em></p>
+<h2 id="in-situ-spectroscopy-device">In Situ Spectroscopy Device</h2>
+<p><img src="Figures/Misc/MINSInField.png" alt="MINS on Field"></p>
+<ul>
+<li>Fast, nondestructive, cost-effective alternative</li>
+<li>“Mobile Inelastic Neutron Scattering System”</li>
+<li>Uses gamma ray spectroscopy to measure soil composition directly</li>
+</ul>
+<p><em>In situ spectroscopy is a fast, nondestructive, and cheap alternative to core harvesting. Called the &quot;Mobile Inelastic Neutron Scattering System&quot;. This device uses gamma ray spectroscopy in order to measure soil composition directly on the soil.</em></p>
+<h2 id="simulation-is-done-in-mcnp">Simulation is done in MCNP</h2>
+<ul>
+<li>My role: Mathematical support and simulation</li>
+<li>Analyze and generate spectroscopy results
+Simulations performed in MCNP6.2</li>
+<li>Presenting challenges addressed with MCNP</li>
+</ul>
+<p><em>As an intern I have ben tasked with mathematical support of the project. This includes analysis of the the spectroscopy results and also the generation of spectroscopy results in simulation.Simulation is done in MCNP6.2 and today i will be presenting some challenges that I answered with the software.</em></p>
+<h2 id="soil-is-a-nonhomogenous-material">Soil is a Nonhomogenous Material</h2>
+<p><img src="Figures/CaseStudy/fieldstudy.png" alt="Carbon case study over a field">
+<img src="Figures/CaseStudy/depthstudy.png" alt="Carbon case study over depth"></p>
+<ul>
+<li>MCNP cells assume homogeneous material
+Real soil: heterogeneous at many scales</li>
+<li>Carbon often decreases exponentially with depth</li>
+</ul>
+<p><em>In MCNP, cells are used to define geometry and material properties.But it assumes that a cells material is homogeneous within the cell.In reality, soil is heterogeneous, with varying properties at different scales. This can be true over whole fields, but even within the range of detection, carbon content can be varied. Particularly in depth, where most of the carbon that is deposited can be modeled as exponentially decreasing.</em></p>
+<h2 id="functionally-defined-soil">Functionally Defined Soil</h2>
+<p><img src="Figures/FunctionallyDefinedSoil/Carbonasafunctioninthesoil.png" alt="Carbon as a function in the soil"></p>
+<ul>
+<li>Soil characteristics can be described as functions of 3D space</li>
+<li>Needed a way to translate this into MCNP input</li>
+</ul>
+<p><em>Mathematically we can describe the soil characteristics with a function dependent on 3 dimensional space. I needed a method to translate this description into MCNP.</em></p>
+<h2 id="mesh-cells">Mesh Cells</h2>
+<p><img src="Figures/MCNP/SingleToManyCells.png" alt="Single to many cells"></p>
+<ul>
+<li>Divide soil into a mesh of smaller cells
+Approximate functional characteristics in discrete space</li>
+<li>Higher mesh resolution = more accurate representation</li>
+</ul>
+<p><em>Instead of modeling the soil as a single cell, we can cut it into a mesh of smaller cells, from here we can approximate functional characteristics into discrete space. We start with a function describing relevant soil characteristics that are varied spatially. We then describe the geometry of the sample. The geometry is cut into sections of an arbitrary resolution. The higher the resolution, the more accurate the results would be to the functional description.</em></p>
+<h2 id="defining-cell-characteristics">Defining cell characteristics</h2>
+<p><img src="Figures/FunctionallyDefinedSoil/IndividualCellSampling.png" alt="Individual Cell Sampling"></p>
+<ul>
+<li>Use Monte Carlo sampling to average properties in each mesh cell</li>
+<li>Assign average values to each cell
+Results in a more detailed, accurate soil mode</li>
+</ul>
+<p><em>in each section, we use monte carlo to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section. Mesh cells create a more detailed representation of the soil sample. This allows for more accurate modeling of the interaction between the radiation and the soil, leading to better predictions of spectral readings.</em></p>
+<h2 id="effects-on-detection">effects on detection</h2>
+<p><img src="Figures/MCNP/Effectsofresolutionondetection.png" alt="Effects of resolution on detection"></p>
+<ul>
+<li>Start with a homogeneous cell, then subdivide</li>
+<li>As mesh resolution increases, carbon density approaches true function</li>
+<li>Spectral readings become more accurate</li>
+<li>Readings are sensitive to local variations</li>
+</ul>
+<p><em>Here, we begin with a homogeneous cell, which is then cut into a mesh of smaller cells. As we increase he resolution of the method, the discrete characterisic of carbon density approahes the functional. We can see the effects on spectral readings. This imples that the readings are heavily dependent on proximity.</em></p>
+<h2 id="soil-is-a-semi-infinite-sample">Soil is a Semi-Infinite Sample</h2>
+<p><img src="Figures/Misc/LabSpectros.png" alt="Lab Spectroscopy">
+<img src="Figures/Misc/FieldSpectros.png" alt="Field Spectroscopy"></p>
+<ul>
+<li>Investigate detection range of the device</li>
+<li>Lab: detector covers entire sample</li>
+<li>Field: soil is semi-infinite, detection range is finite</li>
+</ul>
+<p><em>One of the focuses of my work has been on the range of the machine. In lab spectroscopy, the detector can be situated such that the entire sample is within range. On the field, soil is semi-infinite but the probing done by the detection system is still finite.</em></p>
+<h2 id="cell-mesh-vs-fmesh">Cell Mesh vs FMESH</h2>
+<p><img src="" alt="Cell Mesh vs FMESH code"></p>
+<ul>
+<li>MCNP FMESH: tally results in mesh bins (for imaging, range studies)</li>
+<li>Cell meshes: can also tally per cell</li>
+<li>Both methods help analyze detection range</li>
+</ul>
+<p><em>So how can you measure range in MCNP? The FMESH feature allows you to tally based on a predefined mesh that cuts a cell into sections, becoming bins in a tally. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH.</em></p>
+<h2 id="independent-cell-functionality">Independent Cell Functionality</h2>
+<p><img src="Figures/MCNP/CellRatioMesh.png" alt="Cell Ratio Mesh Detection"></p>
+<ul>
+<li>Treat mesh cells as independent</li>
+<li>CU card: bins tally by cell of interaction</li>
+<li>Allows investigation of where detections originate</li>
+</ul>
+<p><em>The added functionality on top of this is the treatment of the cell mesh as independent cells. The CU card bins a tally based on the cell where the interacting particle was generated. By setting the parameters of the CU card to the cells in the mesh, we can investigate where the detectors are detecting.</em></p>
+<h2 id="cell-clouds">Cell clouds</h2>
+<p><img src="Figures/MCNP/CellClouds.png" alt="Cell Clouds"></p>
+<p><em>We can order the cells by their detection ratios, and get a better grasp of where the top 90, 95 and 99% of unimpeded signal is originating.</em></p>
+<h2 id="range-measurement">Range measurement</h2>
+<p><img src="Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png" alt="Gradient Weighed Avg vs Homogeneous Avg"></p>
+<ul>
+<li>Example: measure energy deposition in detector, binned by mesh cell</li>
+<li>Weighted sum of tallies per bin</li>
+</ul>
+<p>Figure: Comparison of homogeneous vs. meshed cell with same measured carbon content</p>
+<p><em>In this example I measure the heating deposition into the detector, binned by mesh cells. I take the weighted sum of tallies per bin. Relatively, i use these values to describe the proportional effect on the detector result. Lets compare the spectral readings and range of a homogeneous cell with a cell mesh with the same amount of measured carbon.</em></p>
+<h2 id="usage-example">Usage Example</h2>
+<ul>
+<li>When machine design changes, simulate new detection results</li>
+<li>Range can be re-evaluated</li>
+<li>Example: pointing emitter under detector changes detection range</li>
+</ul>
+<p><img src="" alt="Detector Direction to Measured Density"></p>
+<p><em>Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emmiter under the detector, we see the effects on the range.</em></p>
+<h2 id="code">Code</h2>
+<p><em>Examples and a tool for cell and tally generation can be found on my github</em></p>
+<h2 id="acknoledgements">Acknoledgements</h2>
+<p><em>Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research</em></p>
+<h2 id="references">References</h2>
+<p>[^1] - Yakubova et al. - 2014 - Field Testing a Mobile Inelastic Neutron Scattering System to Measure Soil Carbon.</p>
+
+</body>
+</html>
