@@ -91,7 +91,6 @@ Approximate functional characteristics in discrete space
 
 - Use Monte Carlo sampling to average properties in each mesh cell
 - Assign average values to each cell
-Results in a more detailed, accurate soil mode
 
 *So how do we pick a soils characteristic? To generalize this to any type of function, in each section, we use a monte carlo method to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section.*
 
@@ -132,7 +131,7 @@ Results in a more detailed, accurate soil mode
 - Cell meshes: can also tally per cell
 - Both methods help analyze detection range
 
-*So how can you measure range in MCNP? The FMESH feature allows you to tally with bins on a mesh in space. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH. The main limit being the number of cells you can use on certain cards such as the CU card.*
+*So how can you measure range in MCNP? The FMESH feature allows you to tally with bins on a mesh in space. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH.*
 
 ## Independent Cell Functionality
 
@@ -142,7 +141,7 @@ Results in a more detailed, accurate soil mode
 - CU card: bins tally by cell of interaction
 - Allows investigation of where detections originate
 
-*The novel functionality is the treatment of the mesh as independent cells. The CU card on the detector creates bins based on the cell where the interacting particle was generated. By setting the parameters of the CU card to the cells in the mesh, we can investigate where the detectors are detecting.*
+*The novel functionality is the treatment of the mesh as independent cells. The CU card on the detector creates bins based on the cell where the interacting particle was generated. By setting the parameters of the CU card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method is the number of cells you can use on certain cards such as the CU card.*
 
 ## Cell clouds
 
@@ -153,14 +152,14 @@ Results in a more detailed, accurate soil mode
 
 *We can order the cells by their influence on the detector, and get a better grasp of where the top 90, 95 and 99% of unimpeded signal is originating.*
 
-## Range measurement
+## Measured Characteristic
 
 ![Gradient Weighed Avg vs Homogeneous Avg](Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png)
 
 - Sum(Cell detector influence * Cell Carbon weight) = Measured Carbon
 - Compare with homogeneous cell readings
 
-*In the 9 by 9 by 9 mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the carbon content. If I set this value as the characteristic of a single homogenous cell, it aligns well with the heterogenous meshed model.*
+*In the 9 by 9 by 9 mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the measured carbon content. If I set this value as the characteristic of a single homogenous cell, it aligns well with the heterogenous meshed model.*
 
 ## Usage Example
 
@@ -170,7 +169,7 @@ Results in a more detailed, accurate soil mode
 
 ![Detector Direction to Measured Density](Figures/MCNP/DetectorDirectiontoMeasuredDensity.png)
 
-*Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emitter under the detector, we see the effects on the range.*
+*Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emitter under the detector, we see its effects on the mesh.*
 
 # Conclusion
 
@@ -196,14 +195,14 @@ Results in a more detailed, accurate soil mode
 - Email: jose.cortes@uta.edu
 - linkedin.com/in/cortesjoseandres
 
-*If you would like access to the scripts, please feel free to contact me*
+*If you would like access to the scripts, please feel free to contact me.*
 
 ## Acknowledgements
 
-- Thanks to my advisors for guiding me through this process. 
+- Thanks to my advisors for guiding me through this process.
 - Thank you to UTA and USDA-ARS for funding my research
 
-*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research*
+*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research. And a special thanks to yall for listening. Any Questions?*
 
 ## References
 
