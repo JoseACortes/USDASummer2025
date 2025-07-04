@@ -780,3 +780,14 @@ Starting 9x9x9_Tilt_005008
 
  ctm =     1682.04   nrn =       69559148671
  dump    2 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =   692339422   coll =       4586642078
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     683.56 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2426.30   nrn =      100463049484
+ dump    3 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =  1000000000   coll =       6624386163
+ tally data written to file output/mctal/9x9x9_Tilt_005008.mctal
+ mcrun  is done
+

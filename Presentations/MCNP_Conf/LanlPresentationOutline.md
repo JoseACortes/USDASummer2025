@@ -1,4 +1,4 @@
-# Lanl Presentation Outline
+# Introduction
 
 ## Mesh Cells to Augment in Situ Spectroscopy
 
@@ -45,18 +45,27 @@ Date: July 8, 2025
 Simulations performed in MCNP6.2
 - Presenting challenges addressed with MCNP
 
-*As an intern I have ben tasked with mathematical support of the project. This includes analysis of the the spectroscopy results and also the generation of spectroscopy results in simulation.Simulation is done in MCNP6.2 and today i will be presenting some challenges that I answered with the software.*
+*As an intern I have ben tasked with mathematical support of the project. Generation and analysis of the the spectroscopy results.Simulation is done in MCNP6.2 and today I'll be presenting some challenges that I answered with the software.*
+
+
+# Soil in MCNP
 
 ## Soil is a Nonhomogenous Material
 
 ![Carbon case study over a field](Figures/CaseStudy/fieldstudy.png)
-![Carbon case study over depth](Figures/CaseStudy/depthstudy.png)
 
 - MCNP cells assume homogeneous material
-Real soil: heterogeneous at many scales
+- Real soil: heterogeneous
+
+*In MCNP, cells are used to define geometry and material properties. But it assumes that a cells material is homogeneous within the cell. In reality, soil is heterogeneous, with varied properties at different parts of the field.*
+
+## Carbon by Depth
+
+![Carbon case study over depth](Figures/CaseStudy/depthstudy.png)
+
 - Carbon often decreases exponentially with depth
 
-*In MCNP, cells are used to define geometry and material properties.But it assumes that a cells material is homogeneous within the cell.In reality, soil is heterogeneous, with varying properties at different scales. This can be true over whole fields, but even within the range of detection, carbon content can be varied. Particularly in depth, where most of the carbon that is deposited can be modeled as exponentially decreasing.*
+*But even within the range of detection, carbon content can be varied. Particularly in depth, where most of the carbon that is deposited can be modeled as exponentially decreasing.*
 
 ## Functionally Defined Soil
 
@@ -75,7 +84,7 @@ Real soil: heterogeneous at many scales
 Approximate functional characteristics in discrete space
 - Higher mesh resolution = more accurate representation
 
-*Instead of modeling the soil as a single cell, we can cut it into a mesh of smaller cells, from here we can approximate functional characteristics into discrete space. We start with a function describing relevant soil characteristics that are varied spatially. We then describe the geometry of the sample. The geometry is cut into sections of an arbitrary resolution. The higher the resolution, the more accurate the results would be to the functional description.*
+*Instead of modeling the soil as a single cell, we can cut it into a mesh of smaller cells, from here we can approximate functional characteristics into discrete space. We start with a function describing relevant soil characteristics that are varied spatially. We then describe the geometry of the sample. The geometry is cut into sections of an arbitrary resolution. The higher the resolution, the closer the results would be to the functional description.*
 
 ## Defining cell characteristics
 
@@ -85,39 +94,46 @@ Approximate functional characteristics in discrete space
 - Assign average values to each cell
 Results in a more detailed, accurate soil mode
 
-*in each section, we use monte carlo to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section. Mesh cells create a more detailed representation of the soil sample. This allows for more accurate modeling of the interaction between the radiation and the soil, leading to better predictions of spectral readings.*
+*To generalize this to any type of function, in each section, we use monte carlo to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section.*
+
+# Results
 
 ## effects on detection
 
 ![Effects of resolution on detection](Figures/MCNP/Effectsofresolutionondetection.png)
 
-- Start with a homogeneous cell, then subdivide
 - As mesh resolution increases, carbon density approaches true function
-- Spectral readings become more accurate
-- Readings are sensitive to local variations
+- Effects on spectral readings around key energy ranges (e.g., 4.4 MeV)
 
-*Here, we begin with a homogeneous cell, which is then cut into a mesh of smaller cells. As we increase he resolution of the method, the discrete characterisic of carbon density approahes the functional. We can see the effects on spectral readings. This imples that the readings are heavily dependent on proximity.*
+*We can see the effects of this technique on spectral readings. Particularly around 4.44 MeV range where we see the carbon indication peak.*
 
-## Soil is a Semi-Infinite Sample
+## Lab spectroscopy can cover entire sample
 
 ![Lab Spectroscopy](Figures/Misc/LabSpectros.png)
-![Field Spectroscopy](Figures/Misc/FieldSpectros.png)
 
 - Investigate detection range of the device
 - Lab: detector covers entire sample
+
+*One of the focuses of my work has been on the range of the machine. In lab spectroscopy, the detector can be situated such that the entire sample is within range.*
+
+## Soil is a Semi-Infinite Sample
+
+![Field Spectroscopy](Figures/Misc/FieldSpectros.png)
+
+- Investigate detection range of the device
 - Field: soil is semi-infinite, detection range is finite
 
-*One of the focuses of my work has been on the range of the machine. In lab spectroscopy, the detector can be situated such that the entire sample is within range. On the field, soil is semi-infinite but the probing done by the detection system is still finite.*
+*On the field, soil is semi-infinite while the probing is still finite.*
 
 ## Cell Mesh vs FMESH
 
-![Cell Mesh vs FMESH code]()
+![Cell Mesh vs FMESH code](Figures/MCNP/maxfmesh.png)
 
 - MCNP FMESH: tally results in mesh bins (for imaging, range studies)
 - Cell meshes: can also tally per cell
 - Both methods help analyze detection range
 
-*So how can you measure range in MCNP? The FMESH feature allows you to tally based on a predefined mesh that cuts a cell into sections, becoming bins in a tally. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH.*
+*So how can you measure range in MCNP? The FMESH feature allows you to tally based on a predefined mesh that cuts a cell into sections, becoming bins in a tally. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH. The main limit being the number of cells you can use on the U cards.*
 
 ## Independent Cell Functionality
 
@@ -133,18 +149,19 @@ Results in a more detailed, accurate soil mode
 
 ![Cell Clouds](Figures/MCNP/CellClouds.png)
 
+- Cells can be grouped into "clouds" by influence
+- 90%, 95%, 99% detection ratios
+
 *We can order the cells by their detection ratios, and get a better grasp of where the top 90, 95 and 99% of unimpeded signal is originating.*
 
 ## Range measurement
 
 ![Gradient Weighed Avg vs Homogeneous Avg](Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png)
 
-- Example: measure energy deposition in detector, binned by mesh cell
-- Weighted sum of tallies per bin
+- Sum(Cell detector ratio * Cell Carbon weight) = Measured Carbon
+- Compare with homogeneous cell readings
 
-Figure: Comparison of homogeneous vs. meshed cell with same measured carbon content
-
-*In this example I measure the heating deposition into the detector, binned by mesh cells. I take the weighted sum of tallies per bin. Relatively, i use these values to describe the proportional effect on the detector result. Lets compare the spectral readings and range of a homogeneous cell with a cell mesh with the same amount of measured carbon.*
+*In this example I measure the heating deposition into the detector, binned by mesh cells. For every cell, I multiply the ratio of the energy deposition with the carbon content, and then sum these values. This gives me a weighted sum of the carbon content. If I set this value as the characteristic of a single homogenous cell, it aligns well with the heterogenous sectioned model.*
 
 ## Usage Example
 
@@ -152,15 +169,39 @@ Figure: Comparison of homogeneous vs. meshed cell with same measured carbon cont
 - Range can be re-evaluated
 - Example: pointing emitter under detector changes detection range
 
-![Detector Direction to Measured Density]()
+![Detector Direction to Measured Density](Figures/MCNP/DetectorDirectiontoMeasuredDensity.png)
 
 *Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emmiter under the detector, we see the effects on the range.*
 
-## Code
+# Conclusion
 
-*Examples and a tool for cell and tally generation can be found on my github*
+## Summary
 
-## Acknoledgements
+- Mesh cells allow for detailed soil modeling in MCNP
+- Enables accurate simulation of in situ spectroscopy
+- Helps understand detection range and sensitivity
+
+*In conclusion, mesh cells allow for detailed soil modeling in MCNP, enabling accurate simulation of in situ spectroscopy. This helps us understand the detection range and sensitivity of the device.*
+
+## Future Work
+
+- Further refine mesh resolution for improved accuracy
+- Explore additional soil characteristics (hydration)
+- Accurate comparison with core harvesting results
+
+*Future work includes further refining the mesh resolution for improved accuracy, exploring additional soil characteristics such as hydration, and making accurate comparisons with core harvesting results.*
+
+## Contact
+
+- Jose Andres Cortes
+- Email: jose.cortes@uta.edu
+- linkedin.com/in/cortesjoseandres
+
+*If you would like access to the scripts, please feel free to contact me*
+
+## Acknowledgements
+
+Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research
 
 *Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research*
 
