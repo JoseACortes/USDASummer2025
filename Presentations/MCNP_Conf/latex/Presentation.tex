@@ -24,18 +24,17 @@
 \setbeamertemplate{theorems}[numbered]
 
 
-\author[Pei Feng Tong]{Pei Feng Tong}
-\title{Peking University Beamer Template}
-\subtitle{lightweight designed}
-\institute{Guanghua School of Management, Peking University}
-\date{
-2024/01/15}
+\author[Jose Andres Cortes]{Jose Andres Cortes, Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kavetskiy}
+\title{Mesh Cells to Augment in Situ Spectroscopy}
+\subtitle{MCNP Simulation of Soil Carbon Detection}
+\institute{UT Arlington, USDA-ARS}
+\date{July 8th, 2025}
 
 \newif\ifplacelogo % create a new conditional
 \placelogotrue % set it to true
 \logo{
 \ifplacelogo
-\includegraphics[width=2cm]{../Figures/PKU-China-logo.png}
+\includegraphics[width=2cm]{../Figures/Misc/UTASeal.png}
 \fi
 }
 % official colors match with the PKU red
@@ -53,7 +52,7 @@
     \titlepage
     \begin{figure}[htpb]
         \begin{center}
-            \includegraphics[width=0.2\linewidth]{Figures/PKUlogo.png}
+            \includegraphics[width=0.2\linewidth]{../Figures/Misc/UTASeal.png}
         \end{center}
     \end{figure}
 \end{frame}
@@ -65,7 +64,7 @@
 \begin{frame}{Background}
 \begin{figure}[Visit to Auburn Lab in Alabama]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/Misc/infrontofthemachine.png}
+\includegraphics[width=.2\linewidth]{../Figures/Misc/infrontofthemachine.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -76,7 +75,7 @@
 \begin{frame}{Core Harvesting}
 \begin{figure}[Core Harvest]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/Misc/SoilCore.jpg}
+\includegraphics[width=.2\linewidth]{../Figures/Misc/SoilCore.jpg}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -88,7 +87,7 @@
 \begin{frame}{In Situ Spectroscopy Device}
 \begin{figure}[MINS on Field]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/Misc/MINSInField.png}
+\includegraphics[width=.5\linewidth]{../Figures/Misc/MINSInField.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -106,27 +105,31 @@ Simulations performed in MCNP6.2
 \end{enumerate}
 \end{frame}
 \section{Soil in MCNP}
-\begin{frame}{Soil is a Nonhomogenous Material}
+\begin{frame}{Soil is a Nonhomogeneous Material}
 \begin{figure}[Carbon case study over a field]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/CaseStudy/fieldstudy.png}
+\includegraphics[width=.5\linewidth]{../Figures/CaseStudy/fieldstudy.png}
 \end{center}
 \end{figure}
+\begin{enumerate}
+\item MCNP cells assume homogeneous material
+\item Real soil: heterogeneous
+\end{enumerate}
+\end{frame}
+\begin{frame}{Carbon by Depth}
 \begin{figure}[Carbon case study over depth]
 \begin{center}
 \includegraphics[width=1\linewidth]{../Figures/CaseStudy/depthstudy.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
-\item MCNP cells assume homogeneous material
-Real soil: heterogeneous at many scales
 \item Carbon often decreases exponentially with depth
 \end{enumerate}
 \end{frame}
 \begin{frame}{Functionally Defined Soil}
 \begin{figure}[Carbon as a function in the soil]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/FunctionallyDefinedSoil/Carbonasafunctioninthesoil.png}
+\includegraphics[width=.5\linewidth]{../Figures/FunctionallyDefinedSoil/Carbonasafunctioninthesoil.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -155,44 +158,46 @@ Approximate functional characteristics in discrete space
 \begin{enumerate}
 \item Use Monte Carlo sampling to average properties in each mesh cell
 \item Assign average values to each cell
-Results in a more detailed, accurate soil mode
 \end{enumerate}
 \end{frame}
 \section{Results}
 \begin{frame}{effects on detection}
 \begin{figure}[Effects of resolution on detection]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/MCNP/Effectsofresolutionondetection.png}
+\includegraphics[width=.5\linewidth]{../Figures/MCNP/Effectsofresolutionondetection.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
-\item Start with a homogeneous cell, then subdivide
 \item As mesh resolution increases, carbon density approaches true function
-\item Spectral readings become more accurate
-\item Readings are sensitive to local variations
+\item Effects on spectral readings around key energy ranges (e.g., 4.4 MeV)
 \end{enumerate}
 \end{frame}
-\begin{frame}{Soil is a Semi-Infinite Sample}
+\begin{frame}{Lab spectroscopy can cover entire sample}
 \begin{figure}[Lab Spectroscopy]
 \begin{center}
 \includegraphics[width=1\linewidth]{../Figures/Misc/LabSpectros.png}
 \end{center}
 \end{figure}
+\begin{enumerate}
+\item Investigate detection range of the device
+\item Lab: detector covers entire sample
+\end{enumerate}
+\end{frame}
+\begin{frame}{Soil is a Semi-Infinite Sample}
 \begin{figure}[Field Spectroscopy]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/Misc/FieldSpectros.png}
+\includegraphics[width=.5\linewidth]{../Figures/Misc/FieldSpectros.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
 \item Investigate detection range of the device
-\item Lab: detector covers entire sample
 \item Field: soil is semi-infinite, detection range is finite
 \end{enumerate}
 \end{frame}
 \begin{frame}{Cell Mesh vs FMESH}
 \begin{figure}[Cell Mesh vs FMESH code]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/MCNP/maxfmesh.png}
+\includegraphics[width=.6\linewidth]{../Figures/MCNP/maxfmesh.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
@@ -209,26 +214,39 @@ Results in a more detailed, accurate soil mode
 \end{figure}
 \begin{enumerate}
 \item Treat mesh cells as independent
-\item CU card: bins tally by cell of interaction
+\item U card: bins tally by cell of interaction
 \item Allows investigation of where detections originate
 \end{enumerate}
 \end{frame}
-\begin{frame}{Cell clouds}
+\begin{frame}{Cell influence clouds}
 \begin{figure}[Cell Clouds]
 \begin{center}
 \includegraphics[width=1\linewidth]{../Figures/MCNP/CellClouds.png}
 \end{center}
 \end{figure}
+\begin{enumerate}
+\item Cells can be grouped into "clouds" by influence
+\item 90, 95, 99 percent detection influence
+\end{enumerate}
 \end{frame}
-\begin{frame}{Range measurement}
-\begin{figure}[Gradient Weighed Avg vs Homogeneous Avg]
+\begin{frame}{Measured Characteristic}
+\begin{figure}[Influence Times Carbon Level]
 \begin{center}
-\includegraphics[width=1\linewidth]{../Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png}
+\includegraphics[width=.5\linewidth]{../Figures/MCNP/InfluenceTimesCarbonLevel.png}
 \end{center}
 \end{figure}
 \begin{enumerate}
-\item Example: measure energy deposition in detector, binned by mesh cell
-\item Weighted sum of tallies per bin
+\item Sum(Cell detector influence * Cell Carbon weight) = Measured Carbon
+\end{enumerate}
+\end{frame}
+\begin{frame}{Gradient vs Homogeneous Characteristic from Gradient Weighed Avg}
+\begin{figure}[Gradient Weighed Avg vs Homogeneous Avg]
+\begin{center}
+\includegraphics[width=.5\linewidth]{../Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png}
+\end{center}
+\end{figure}
+\begin{enumerate}
+\item Weighted sum of homogeneous cell returns similar results to heterogeneous mesh
 \end{enumerate}
 \end{frame}
 \begin{frame}{Usage Example}
@@ -253,22 +271,49 @@ Results in a more detailed, accurate soil mode
 \end{frame}
 \begin{frame}{Future Work}
 \begin{enumerate}
-\item Further refine mesh resolution for improved accuracy
+\item Further refine mesh resolution for improved accuracy (theoretical limit of 10,000 cells)
 \item Explore additional soil characteristics (hydration)
 \item Accurate comparison with core harvesting results
 \end{enumerate}
 \end{frame}
-\begin{frame}{Code}
+\begin{frame}{Contact}
+\begin{enumerate}
+\item Jose Andres Cortes
+\item Email: jose.cortes@uta.edu
+\item linkedin.com/in/cortesjoseandres
+\end{enumerate}
 \end{frame}
-\begin{frame}{Acknoledgements}
+\begin{frame}{Acknowledgements}
+\begin{enumerate}
+\item Thanks to my advisors for guiding me through this process.
+\item Thank you to UTA and USDA-ARS for funding my research
+\end{enumerate}
 \end{frame}
-\begin{frame}{References}
+\begin{frame}{References 1}
+\begin{enumerate}
+\item Yakubova et al. - 2014 - Field Testing a Mobile Inelastic Neutron Scattering System to Measure Soil Carbon.
+\item d2399-1 by USDAgov is licensed under CC BY 2.0.
+\item J. Copley, Introduction to Neutron Scattering, presented at the Summer School on the Fundamentals of Neutron Scattering, NIST Center for Neutron Research, Jul. 17, 2013. Available: https://www.ncnr.nist.gov/summerschool/ss13/pdf/SS2013_Lecture_Copley.pdf
+\end{enumerate}
 \end{frame}
-\begin{frame}{References}%[allowframebreaks] if too many references
-    \renewcommand*{\bibfont}{\footnotesize}
-    \bibliography{ref}
-    \bibliographystyle{apalike}
-    % \tiny\bibliographystyle{alpha}
+\begin{frame}{References 2}
+\begin{enumerate}
+\item C. J. Werner et al., MCNP User's Manual Code Version 6.2. Los Alamos National Laboratory Tech. Rep. LA-UR-17-29981, Los Alamos, NM, USA, Oct. 2017.
+\item C. R. Bates, S. R. Bolding, C. J. Josey, J. A. Kulesza, C. J. Solomon Jr., and A. J. Zukaitis, ``The MCNPTools Package: Installation and Use,'' Los Alamos National Laboratory Tech. Rep. LA-UR-22-28935, Los Alamos, NM, USA, Aug. 2022, doi: https://doi.org/10.2172/1884737.
+\item A. G. Kavetskiy, G. N. Yakubova, S. A. Prior, and H. A. Torbert III, ``Monte-Carlo simulations for soil content determinations on Atlas,'' SCINet Newsletter, 2024. Available: https://scinet.usda.gov/news/newsletter
+\end{enumerate}
+\end{frame}
+\begin{frame}{References 3}
+\begin{enumerate}
+\item R. J. Gehl and C. W. Rice, ``Emerging technologies for in situ measurement of soil carbon,'' Climatic Change, vol. 80, pp. 43--54, 2007, doi: https://doi.org/10.1007/s10584-006-9150-2.
+\item L. Wielopolski, A. Chatterjee, S. Mitra, and R. Lal, ``In situ determination of Soil carbon pool by inelastic neutron scattering: Comparison with dry combustion,'' Geoderma, vol. 160, no. 3, pp. 394--399, 2011, doi: https://doi.org/10.1016/j.geoderma.2010.10.009.
+\end{enumerate}
+\end{frame}
+\begin{frame}{References 4}
+\begin{enumerate}
+\item I. Matejovic, ``Determination of carbon and nitrogen in samples of various soils by the dry combustion,'' Communications in Soil Science and Plant Analysis, vol. 28, no. 17--18, pp. 1499--1511, 1997.
+\item A. Kavetskiy, G. Yakubova, S. A. Prior, and H. A. Torbert, ‘Neutron gamma analysis of soil carbon: Post-irradiation physicochemical effects’, Environmental Technology & Innovation, vol. 31, p. 103219, Aug. 2023, doi: 10.1016/j.eti.2023.103219.
+\end{enumerate}
 \end{frame}
 
 \end{document}

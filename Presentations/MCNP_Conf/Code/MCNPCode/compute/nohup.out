@@ -791,3 +791,71 @@ Starting 9x9x9_Tilt_005008
  tally data written to file output/mctal/9x9x9_Tilt_005008.mctal
  mcrun  is done
 
+
+Running 9x9x9_Tilt_005008
+
+
+Fri Jul  4 11:21:38 AM CDT 2025
+rm: cannot remove 'output/runtpe/9x9x9_Tilt_005008.runtpe': No such file or directory
+Starting 9x9x9_Tilt_005008
+ mcnp     ver=6    , ld=02/20/18  07/04/25 11:21:38                   
+          Code Name & Version = MCNP_6.20, 6.2.0
+          Copyright LANS/LANL/DOE - see output file
+  
+     _/      _/        _/_/_/       _/      _/       _/_/_/         _/_/_/ 
+    _/_/  _/_/      _/             _/_/    _/       _/    _/     _/        
+   _/  _/  _/      _/             _/  _/  _/       _/_/_/       _/_/_/     
+  _/      _/      _/             _/    _/_/       _/           _/    _/    
+ _/      _/        _/_/_/       _/      _/       _/             _/_/       
+  
+  comment.  Physics models disabled.
+ mode n p                                                             
+  comment.  photonuclear physics may be needed (phys:p).
+ cut:n 1j 0.1                                                         
+  warning.  neutron energy cutoff >0 in this neutron-photon problem.
+ 
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+  warning.  f8 tally unreliable since neutron transport nonanalog.
+ comment. using random number generator  1, initial seed = 8674536546524321    
+  comment.  total nubar used if fissionable isotopes are present.
+  comment.         100 surfaces were deleted for being the same as others.
+  warning.    6000.  c and   6000.50c are both called for.
+  warning.   26000.  c and  26000.50c are both called for.
+  comment.  threading will be used when possible in portions of mcnp6.
+  comment.  threading will be used for n/p/e table physics.
+  comment.  threading will generally not be used for model physics.
+  comment.  unresolved resonances with variance reduction with f8 tally.
+  warning.  Force analog capture for pulse height tallies
+  warning.  Pulse-height tally variance reduction forced off. F8 tallies not reliable.
+ imcn   is done
+
+  warning.   35079.80c lacks gamma-ray production cross sections.
+  warning.   35081.80c lacks gamma-ray production cross sections.
+  warning.   57139.80c lacks gamma-ray production cross sections.
+  warning.   58140.80c lacks gamma-ray production cross sections.
+  warning.  material        4 has been set to a conductor.
+  warning.  material        5 has been set to a conductor.
+  warning.  material        6 has been set to a conductor.
+  warning.  material        7 has been set to a conductor.
+  comment.  setting up hash-based fast table search for xsec tables
+
+ ctm =        0.00   nrn =                 0
+ dump    1 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =           0   coll =                0
+ xact   is done
+
+ cp0 =   0.42
+
+ ctm =     1680.49   nrn =      113040999464
+ dump    2 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =   568152260   coll =       8139803300
+      run terminated when  1000000000  particle histories were done.
+
+ =====>     562.29 M histories/hr    (based on wall-clock time in mcrun)
+
+
+
+ ctm =     2957.54   nrn =      198962712777
+ dump    3 on file output/runtpe/9x9x9_Tilt_005008.runtpe   nps =  1000000000   coll =      14326747972
+ tally data written to file output/mctal/9x9x9_Tilt_005008.mctal
+ mcrun  is done
+

@@ -45,3 +45,5 @@ Figures:
         - Figures/MCNP/DetectorDirectiontoMeasuredDensity.png
     7. [x] Cell Clouds
         - Figures/MCNP/CellClouds.png
+    8. [ ] Influence Times Carbon Level
+        - Figures/MCNP/InfluenceTimesCarbonLevel.png

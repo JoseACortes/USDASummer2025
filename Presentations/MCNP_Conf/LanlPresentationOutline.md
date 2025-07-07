@@ -49,7 +49,7 @@ Simulations performed in MCNP6.2
 
 # Soil in MCNP
 
-## Soil is a Nonhomogenous Material
+## Soil is a Nonhomogeneous Material
 
 ![Carbon case study over a field](Figures/CaseStudy/fieldstudy.png)
 
@@ -92,7 +92,7 @@ Approximate functional characteristics in discrete space
 - Use Monte Carlo sampling to average properties in each mesh cell
 - Assign average values to each cell
 
-*So how do we pick a soils characteristic? To generalize this to any type of function, in each section, we use a monte carlo method to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section.*
+*So how do we pick a cells characteristic? To generalize this to any type of function, in each section, we use a monte carlo method to randomly and uniformly pick many points inside the volume to find the average characteristic. The average characteristics are then set as the defenition of the section.*
 
 # Results
 
@@ -138,12 +138,12 @@ Approximate functional characteristics in discrete space
 ![Cell Ratio Mesh Detection](Figures/MCNP/CellRatioMesh.png)
 
 - Treat mesh cells as independent
-- CU card: bins tally by cell of interaction
+- U card: bins tally by cell of interaction
 - Allows investigation of where detections originate
 
-*The novel functionality is the treatment of the mesh as independent cells. The CU card on the detector creates bins based on the cell where the interacting particle was generated. By setting the parameters of the CU card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method is the number of cells you can use on certain cards such as the CU card.*
+*The novel functionality is the treatment of the mesh as independent cells. The U card on the detector creates bins based on the cell where the interacting particle was generated. By setting the parameters of the U card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method are the number of cells you can use on the U card.*
 
-## Cell clouds
+## Cell influence clouds
 
 ![Cell Clouds](Figures/MCNP/CellClouds.png)
 
@@ -154,12 +154,19 @@ Approximate functional characteristics in discrete space
 
 ## Measured Characteristic
 
-![Gradient Weighed Avg vs Homogeneous Avg](Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png)
+![Influence Times Carbon Level](Figures/MCNP/InfluenceTimesCarbonLevel.png)
 
 - Sum(Cell detector influence * Cell Carbon weight) = Measured Carbon
-- Compare with homogeneous cell readings
 
-*In the 9 by 9 by 9 mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the measured carbon content. If I set this value as the characteristic of a single homogenous cell, it aligns well with the heterogenous meshed model.*
+*In the 9 by 9 by 9 mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the measured carbon content.*
+
+## Gradient vs Homogeneous Characteristic from Gradient Weighed Avg
+
+![Gradient Weighed Avg vs Homogeneous Avg](Figures/MCNP/GradientWeighedAvgvsHomogeneousAvg.png)
+
+- Weighted sum of homogeneous cell returns similar results to heterogeneous mesh
+
+*If I set this value as the characteristic of a single homogeneous cell, it aligns well with the heterogeneous meshed model.*
 
 ## Usage Example
 
@@ -183,11 +190,11 @@ Approximate functional characteristics in discrete space
 
 ## Future Work
 
-- Further refine mesh resolution for improved accuracy
+- Further refine mesh resolution for improved accuracy (theoretical limit of 10,000 cells)
 - Explore additional soil characteristics (hydration)
 - Accurate comparison with core harvesting results
 
-*Future work includes further refining the mesh resolution for improved accuracy, exploring additional soil characteristics such as hydration, and making accurate comparisons with core harvesting results.*
+*Future work includes refining the mesh resolution for improved accuracy, exploring additional soil characteristics such as hydration, and making accurate comparisons with core harvesting results.*
 
 ## Contact
 
@@ -202,9 +209,34 @@ Approximate functional characteristics in discrete space
 - Thanks to my advisors for guiding me through this process.
 - Thank you to UTA and USDA-ARS for funding my research
 
-*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research. And a special thanks to yall for listening. Any Questions?*
+*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research. And a special thanks to yall for listening. Any Questions? For safety a study was published in 2024, The detector is run in short bursts. In a worst case senario, it was left running in a single spot for an hour. Within the next hour, radioactivity decreased to natural background levels.*
 
-## References
+## References 1
 
-[^1] - Yakubova et al. - 2014 - Field Testing a Mobile Inelastic Neutron Scattering System to Measure Soil Carbon.
+- Yakubova et al. - 2014 - Field Testing a Mobile Inelastic Neutron Scattering System to Measure Soil Carbon.
+- d2399-1 by USDAgov is licensed under CC BY 2.0.
+- J. Copley, Introduction to Neutron Scattering, presented at the Summer School on the Fundamentals of Neutron Scattering, NIST Center for Neutron Research, Jul. 17, 2013. Available: https://www.ncnr.nist.gov/summerschool/ss13/pdf/SS2013_Lecture_Copley.pdf
 
+*Here are the references.*
+
+## References 2
+
+- C. J. Werner et al., MCNP User's Manual Code Version 6.2. Los Alamos National Laboratory Tech. Rep. LA-UR-17-29981, Los Alamos, NM, USA, Oct. 2017.
+- C. R. Bates, S. R. Bolding, C. J. Josey, J. A. Kulesza, C. J. Solomon Jr., and A. J. Zukaitis, ``The MCNPTools Package: Installation and Use,'' Los Alamos National Laboratory Tech. Rep. LA-UR-22-28935, Los Alamos, NM, USA, Aug. 2022, doi: https://doi.org/10.2172/1884737.
+- A. G. Kavetskiy, G. N. Yakubova, S. A. Prior, and H. A. Torbert III, ``Monte-Carlo simulations for soil content determinations on Atlas,'' SCINet Newsletter, 2024. Available: https://scinet.usda.gov/news/newsletter
+
+*Here are the references.*
+
+## References 3
+
+- R. J. Gehl and C. W. Rice, ``Emerging technologies for in situ measurement of soil carbon,'' Climatic Change, vol. 80, pp. 43--54, 2007, doi: https://doi.org/10.1007/s10584-006-9150-2.
+- L. Wielopolski, A. Chatterjee, S. Mitra, and R. Lal, ``In situ determination of Soil carbon pool by inelastic neutron scattering: Comparison with dry combustion,'' Geoderma, vol. 160, no. 3, pp. 394--399, 2011, doi: https://doi.org/10.1016/j.geoderma.2010.10.009.
+
+*Here are the references.*
+
+## References 4
+
+- I. Matejovic, ``Determination of carbon and nitrogen in samples of various soils by the dry combustion,'' Communications in Soil Science and Plant Analysis, vol. 28, no. 17--18, pp. 1499--1511, 1997.
+- A. Kavetskiy, G. Yakubova, S. A. Prior, and H. A. Torbert, ‘Neutron gamma analysis of soil carbon: Post-irradiation physicochemical effects’, Environmental Technology & Innovation, vol. 31, p. 103219, Aug. 2023, doi: 10.1016/j.eti.2023.103219.
+
+*Here are the references.*

@@ -866,7 +866,7 @@ Cut:n 1j 0.1
 c analog neutron transport
 phys:n 1j 14
 phys:p
-sdef pos=0 0 0 erg=14.0 vec= 0 .5 .5 dir=d1
+sdef pos=0 0 0 erg=14.0 vec= .5 0 .5 dir=d1
 si1  -1 .93 1
 sp1   0  0.0  1.0
 c ********************

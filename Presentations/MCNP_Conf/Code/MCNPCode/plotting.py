@@ -12,7 +12,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from scipy.spatial import ConvexHull
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-
+z_label_pad = -10
 
 def plot_box(ax, xmin, xmax, ymin, ymax, zmin, zmax, color, alpha=1, label=None, zorder=None):
     # Draw a rectangular box (RPP)
@@ -38,7 +38,7 @@ def plot_box(ax, xmin, xmax, ymin, ymax, zmin, zmax, color, alpha=1, label=None,
     ]:
         ax.plot3D(*zip(s, e), color=color, alpha=alpha, zorder=zorder)
     if label:
-        ax.text((xmin+xmax)/2, (ymin+ymax)/2, zmax, label, color=color, zorder=zorder)
+        ax.text((xmin+xmax)/2, (ymin+ymax)/2, zmin+z_label_pad, label, color=color, zorder=zorder)
 
 
 
@@ -96,7 +96,7 @@ def plot_cylinder(ax, base, vec, radius, height, color, alpha=1, label=None, zor
         ax.add_collection3d(poly)
 
     if label:
-        ax.text(x0, y0, z0+height/2, label, color=color)
+        ax.text(x0, y0, z0+z_label_pad, label, color=color)
 
 def plot_cone(ax, pos, vec, dir, length, color='red', alpha=1, label=None, zorder=None):
     """
@@ -137,7 +137,7 @@ def plot_cone(ax, pos, vec, dir, length, color='red', alpha=1, label=None, zorde
     for i in range(len(x_circle)):
         ax.plot([x0, x_circle[i]], [y0, y_circle[i]], [z0, z_circle[i]], color=color, alpha=alpha, zorder=zorder)
     if label:
-        ax.text(x0, y0, z0 + dz * length / 2, label, color=color)
+        ax.text(x0, y0, (z0 * length / 2)+z_label_pad, label, color=color)
     
 
 
