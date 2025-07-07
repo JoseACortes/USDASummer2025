@@ -16,7 +16,7 @@ Date: July 8, 2025
 - Collaborating with USDA Agriculture Research Service
 - Developing an in situ spectroscopy device for soil analysis
 
-*For the last two years UTA my advisor and I have collaborated with the USDA Agriculture Research Service, assisting them in the development of an in situ spectroscopy device.*
+*For the last two years my UTA advisor and I have collaborated with the USDA Agriculture Research Service, assisting them in the development of an in situ spectroscopy device.*
 
 ## Core Harvesting
 
@@ -45,7 +45,7 @@ Date: July 8, 2025
 Simulations performed in MCNP6.2
 - Presenting challenges addressed with MCNP
 
-*As an intern I have been tasked with mathematical support of the project. Including generation and analysis of the the spectroscopy results. Simulation is done in MCNP6.2 and today I'll be presenting some challenges that I answered with the software.*
+*As an intern I have been tasked with mathematical support of the project. Including simulation and analysis of the the spectroscopy results. Simulation is done in MCNP6.2 and today I'll be presenting some challenges that I answered with the software.*
 
 # Soil in MCNP
 
@@ -56,7 +56,7 @@ Simulations performed in MCNP6.2
 - MCNP cells assume homogeneous material
 - Real soil: heterogeneous
 
-*In MCNP, cells are used to define geometry and material properties. But it assumes that a cells material is homogeneous within the cell. In reality, soil is heterogeneous, with varied properties at different parts of the field.*
+*In MCNP, cells are used to define geometry and material properties. But it assumes that a cells material is homogeneous within the cell. In reality, soil is heterogeneous, with varied properties, Including Carbon Content, at different parts of the field.*
 
 ## Carbon by Depth
 
@@ -83,7 +83,7 @@ Simulations performed in MCNP6.2
 Approximate functional characteristics in discrete space
 - Higher mesh resolution = more accurate representation
 
-*Instead of modeling the soil as a single cell, we can cut it into a mesh of smaller cells, from here we can approximate functional characteristics into discrete space. We start with a function describing relevant soil characteristics that are varied spatially. We then describe the geometry of the sample. The geometry is cut into sections of an arbitrary resolution. The higher the resolution, the closer the model would be to the functional description.*
+*This was my solution, Instead of modeling the soil as a single cell, we can cut it into a mesh of smaller cells, from here we can approximate functional characteristics into discrete space. We start with a function describing relevant soil characteristics that are varied spatially. We then describe the geometry of the sample. The geometry is cut into sections of an arbitrary resolution. The higher the resolution, the closer the model would be to the functional description.*
 
 ## Defining cell characteristics
 
@@ -103,7 +103,7 @@ Approximate functional characteristics in discrete space
 - As mesh resolution increases, carbon density approaches true function
 - Effects on spectral readings around key energy ranges (e.g., 4.4 MeV)
 
-*We can see the effects of this technique on spectral readings. Particularly around 4.44 MeV range where we see the carbon indication peak.*
+*We can see the effects of this technique on the F8 tally of the detector, which is closest to spectral readings. Particularly around 4.44 MeV range where we see the carbon indication peak significantly rise, despite the average of the entire sample being the same. Why does that happen?*
 
 ## Lab spectroscopy can cover entire sample
 
@@ -131,7 +131,7 @@ Approximate functional characteristics in discrete space
 - Cell meshes: can also tally per cell
 - Both methods help analyze detection range
 
-*So how can you measure range in MCNP? The FMESH feature allows you to tally with bins on a mesh in space. This feature is meant for imaging on the detector side, and can also be used to investigate the range from the neutron source into the sample. Similarly, cell meshes can have tallies applied to them, accomplishing the same thing as FMESH.*
+*So how can you measure range in MCNP? The FMESH feature allows you to tally with bins on a mesh in space. This feature is meant for imaging on the detector side, and to measure activity in the simulation. Similarly, cell meshes can have tallies applied to them, accomplishing FMESH like tallies at least within the cell.*
 
 ## Independent Cell Functionality
 
@@ -141,7 +141,7 @@ Approximate functional characteristics in discrete space
 - U card: bins tally by cell of interaction
 - Allows investigation of where detections originate
 
-*The novel functionality is the treatment of the mesh as independent cells. The U card on the detector creates bins based on the cell where the interacting particle was generated. By setting the parameters of the U card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method are the number of cells you can use on the U card.*
+*The novel functionality is the treatment of the mesh as independent cells. The U card on the detector creates bins based on the cell where the detected particle was generated. By setting the parameters of the U card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method are the number of cells you can use on the U card. In this case I go up to 9 by 9 by 9.*
 
 ## Cell influence clouds
 
@@ -150,7 +150,7 @@ Approximate functional characteristics in discrete space
 - Cells can be grouped into "clouds" by influence
 - 90%, 95%, 99% detection influence
 
-*We can order the cells by their influence on the detector, and get a better grasp of where the top 90, 95 and 99% of unimpeded signal is originating.*
+*Focusing on the 9 by 9 by 9. We can group the cells by their influence on the detector, and get a better grasp of where the top 90, 95 and 99% of the unimpeded signal is originating. But How useful is that information?*
 
 ## Measured Characteristic
 
@@ -158,7 +158,7 @@ Approximate functional characteristics in discrete space
 
 - Sum(Cell detector influence * Cell Carbon weight) = Measured Carbon
 
-*In the 9 by 9 by 9 mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the measured carbon content.*
+*In the mesh, I multiply each cells influence by its carbon content, and then sum these values. This gives me a weighted sum of the measured carbon content.*
 
 ## Gradient vs Homogeneous Characteristic from Gradient Weighed Avg
 
@@ -176,7 +176,7 @@ Approximate functional characteristics in discrete space
 
 ![Detector Direction to Measured Density](Figures/MCNP/DetectorDirectiontoMeasuredDensity.png)
 
-*Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emitter under the detector, we see its effects on the mesh.*
+*Moving forward, when the architecture of the machine is changed and the detection results are simulated, range can also be determined. In this example, as we point the emitter under the detector, we see its effects on the mesh. After a single run, the measured influence can give us quick insight on how the changes in design impact the detection capabilities.*
 
 # Conclusion
 
@@ -186,7 +186,7 @@ Approximate functional characteristics in discrete space
 - Enables accurate simulation of in situ spectroscopy
 - Helps understand detection range and sensitivity
 
-*In conclusion, mesh cells allow for detailed soil modeling in MCNP, enabling accurate simulation of in situ spectroscopy. This helps us understand the detection range and sensitivity of the device.*
+*In conclusion, mesh cells increase detail on soil modeling in MCNP, enabling accurate simulation of in situ spectroscopy. This helps us understand the detection range and sensitivity of the device.*
 
 ## Future Work
 
@@ -209,7 +209,7 @@ Approximate functional characteristics in discrete space
 - Thanks to my advisors for guiding me through this process.
 - Thank you to UTA and USDA-ARS for funding my research
 
-*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research. And a special thanks to yall for listening. Any Questions? For safety a study was published in 2024, The detector is run in short bursts. In a worst case senario, it was left running in a single spot for an hour. Within the next hour, radioactivity decreased to natural background levels.*
+*Thanks to my advisors for guiding me through this process. Thank you to UTA and USDA-ARS for funding my research. And a special thanks to yall for listening. Any Questions? Q1. For safety a study was published in 2024, The detector is run in short bursts. In a worst case senario, it was left running in a single spot for an hour. Within the next hour, radioactivity decreased to natural background levels. Q2. At 1e9 histories, a single cell took about 3500 secconds, while the 9 by 9 by 9 mesh took double that time just under 7000 seconds.*
 
 ## References 1
 

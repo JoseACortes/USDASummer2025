@@ -30,7 +30,7 @@ Figures:
         - Figures/FunctionallyDefinedSoil/Carbonasafunctioninthesoil.png
     2. [x] Individual Cell Sampling
         - Figures/FunctionallyDefinedSoil/IndividualCellSampling.png
-4. [ ] MCNP gen figures
+4. [x] MCNP gen figures
     1. [x] Single to many cells
         - Figures/MCNP/SingleToManyCells.png
     2. [x] Effects of resolution on detection
@@ -45,5 +45,5 @@ Figures:
         - Figures/MCNP/DetectorDirectiontoMeasuredDensity.png
     7. [x] Cell Clouds
         - Figures/MCNP/CellClouds.png
-    8. [ ] Influence Times Carbon Level
+    8. [x] Influence Times Carbon Level
         - Figures/MCNP/InfluenceTimesCarbonLevel.png
