@@ -7,7 +7,7 @@ Advisors: Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kave
 Groups: UTA Mathematics, USDA Agriculture Research Service
 Date: July 8, 2025
 
-*Good Morning, My name is Jose Andres Cortes. I'm a second year grad student in mathematics from the University of Texas at Arlington. I am also an intern for the US Department of Agriculture. My advisors are doctors Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kavetskiy.*
+*Hello Everyone, My name is Jose Andres Cortes. I'm a second year grad student in mathematics from the University of Texas at Arlington. I am also an intern for the US Department of Agriculture. My advisors are doctors Andrej Korzeniowski, Allen Torbert, Galina Yakubova and Aleksandr Kavetskiy.*
 
 ## Background
 
@@ -26,7 +26,7 @@ Date: July 8, 2025
 - Large soil cores extracted and analyzed in lab
 - Time-consuming, labor-intensive
 
-*Currently the method of measuring carbon in a field is "Core Harvesting". Core harvesting is where large tubes called "cores" are dug into the soil and taken to a lab for analysis.*
+*Currently the common method of measuring carbon in a field is "Core Harvesting". Core harvesting is where large tubes called "cores" are dug into the soil and taken to a lab for analysis.*
 
 ## In Situ Spectroscopy Device
 
@@ -56,7 +56,7 @@ Simulations performed in MCNP6.2
 - MCNP cells assume homogeneous material
 - Real soil: heterogeneous
 
-*In MCNP, cells are used to define geometry and material properties. But it assumes that a cells material is homogeneous within the cell. In reality, soil is heterogeneous, with varied properties, Including Carbon Content, at different parts of the field.*
+*In MCNP, cells are used to define geometry and material properties. But it assumes that a cells material is homogeneous within the cell. In reality, soil is heterogeneous, with varied properties. Including varied Carbon Content, at different parts of the field.*
 
 ## Carbon by Depth
 
@@ -73,7 +73,7 @@ Simulations performed in MCNP6.2
 - Soil characteristics can be described as functions of 3D space
 - Needed a way to translate this into MCNP input
 
-*Mathematically we can describe the soil characteristics with a function dependent on 3 dimensional space. I needed a method to translate this description into MCNP.*
+*Mathematically we can describe the soil characteristics with a function dependent on 3 dimensional space, In this case decreasing. I needed a method to translate this description into MCNP.*
 
 ## Mesh Cells
 
@@ -141,7 +141,7 @@ Approximate functional characteristics in discrete space
 - U card: bins tally by cell of interaction
 - Allows investigation of where detections originate
 
-*The novel functionality is the treatment of the mesh as independent cells. The U card on the detector creates bins based on the cell where the detected particle was generated. By setting the parameters of the U card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method are the number of cells you can use on the U card. In this case I go up to 9 by 9 by 9.*
+*The novel functionality is the treatment of the mesh as independent cells. The U card on the detectors f6 tally creates bins based on the cell where the detected particle was generated. By setting the parameters of the U card to the cells in the mesh, we can investigate how each cell influences the detector. Currently the main limit to resolution of this method are the number of cells you can use on the U card. In this case I go up to 9 by 9 by 9.*
 
 ## Cell influence clouds
 
