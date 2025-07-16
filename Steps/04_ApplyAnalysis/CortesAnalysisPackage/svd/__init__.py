@@ -1,1 +1,1 @@
-from svd import *
+from .svd import *

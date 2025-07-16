@@ -7,7 +7,10 @@ def SVD(
     df: pd.DataFrame, 
     target_window,
     weak_window= None,
-    bins= None
+    bins= None,
+    geb_a = -0.026198,
+    geb_b = 0.059551,
+    geb_c = -0.037176,
     ):
 
     if bins is None:
@@ -17,7 +20,7 @@ def SVD(
         weak_window = [0, len(df) - 1]
 
     weak_bins = bins[(bins >= weak_window[0]) & (bins <= weak_window[1])]
-    weak_df = df.loc[(bins >= weak_bins[0]) & (bins <= weak_bins[1])]
+    weak_df = df.loc[(bins >= weak_window[0]) & (bins <= weak_window[1])]
     
     
     Y = weak_df.values
@@ -25,12 +28,9 @@ def SVD(
     num_channels = num_bins  # or set as needed
     R = np.eye(num_bins)
 
-    geb_a = -0.026198
-    geb_b = 0.059551
-    geb_c = -0.037176
 
     # Calculate FWHM for each energy bin
-    FWHM = geb_a + geb_b * np.sqrt(weak_bins) + geb_c * bins**2
+    FWHM = geb_a + geb_b * np.sqrt(weak_bins) + geb_c * weak_bins**2
     sigma = FWHM / 2.355 
     sigma = np.abs(sigma) 
 
@@ -71,3 +71,12 @@ def SVD(
 
     _X = X_est[:, target_energy_bins]
     X = _X.sum(axis=1)
+
+    fitting_df = pd.DataFrame(X, index=df.columns, columns=['Carbon Peak Area'])
+    
+    decomposed_df = pd.DataFrame(X_est, index=df.columns, columns=weak_bins.flatten())
+
+    responses = pd.DataFrame(R, index=weak_bins, columns=weak_bins)
+
+    # return X, X_est, R
+    return fitting_df, decomposed_df, responses

@@ -8,6 +8,7 @@ from CortesAnalysisPackage import plot as pt
 from CortesAnalysisPackage import peakfitting as pfa
 from CortesAnalysisPackage import componentfitting as ca
 from CortesAnalysisPackage import classical as cla
+from CortesAnalysisPackage import svd as svd
 # Import
 import pandas as pd
 import numpy as np
@@ -190,7 +191,7 @@ analyze = lambda x: result.slope * x + result.intercept
 x_hat = fitting_df['Carbon Peak Area'].apply(analyze)
 x_hat = np.array(x_hat)
 mae_test = np.mean(np.abs(testing_y - analyze(testing_x)))
-test_names.append('PD')
+test_names.append('Pepindicular Drop')
 mses.append(mae_test)
 r2s.append(result.rvalue**2)
 predicted_concentrations.append(x_hat)
@@ -221,12 +222,37 @@ analyze = lambda x: result.slope * x + result.intercept
 x_hat = fitting_df['Carbon Peak Area'].apply(analyze)
 x_hat = np.array(x_hat)
 mae_test = np.mean(np.abs(testing_y - analyze(testing_x)))
-test_names.append('TS')
+test_names.append('Tangent Skim')
 mses.append(mae_test)
 r2s.append(result.rvalue**2)
 predicted_concentrations.append(x_hat)
 
-results = pd.DataFrame({'Test': test_names, 'MSE': mses, 'R2': r2s})
+
+strong_window = [4.2, 4.7]
+weak_window = [2, 10]
+
+fitting_df, decomposed_df, responses = svd.SVD(df, strong_window, weak_window, bins)
+
+train_mask = np.array([True if i in train_index else False for i in range(len(fitting_df))])
+test_mask = np.array([True if i in test_index else False for i in range(len(fitting_df))])
+
+training_x = fitting_df['Carbon Peak Area'].iloc[train_index]
+training_y = np.array(true_c_concentrations)[train_index]
+testing_x = fitting_df['Carbon Peak Area'].iloc[test_index]
+testing_y = np.array(true_c_concentrations)[test_index]
+
+result = linregress(training_x, training_y)
+
+analyze = lambda x: result.slope * x + result.intercept
+x_hat = fitting_df['Carbon Peak Area'].apply(analyze)
+x_hat = np.array(x_hat)
+mae_test = np.mean(np.abs(testing_y - analyze(testing_x)))
+test_names.append('Singular Value Decomposition')
+mses.append(mae_test)
+r2s.append(result.rvalue**2)
+predicted_concentrations.append(x_hat)
+
+results = pd.DataFrame({'Method': test_names, 'MSE': mses, 'R2': r2s})
 # print table
 print(tabulate(results, headers='keys', tablefmt='plain'))
 
@@ -236,7 +262,7 @@ print(tabulate(results, headers='keys', tablefmt='plain'))
 plt.figure(frameon=False, figsize=(6.3, 6.3))
 plt.plot(true_c_concentrations, true_c_concentrations, label='Ideal', linestyle='dashed', color='black', linewidth=2, alpha=0.1)
 for i in range(len(test_names)):
-    plt.scatter(true_c_concentrations, predicted_concentrations[i], label=results.Test[i], marker='x', s = 150)
+    plt.scatter(true_c_concentrations, predicted_concentrations[i], label=results.Method[i], marker='x', s = 150)
 
 plt.xlabel('True Concentration')
 plt.ylabel('Predicted Concentration')

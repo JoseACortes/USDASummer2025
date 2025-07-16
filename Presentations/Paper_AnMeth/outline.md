@@ -7,10 +7,11 @@ contents:
     2. Spectral Analysis as a Measurement Technique
     3. Objectives of the Paper
 2. Data Generation
-    1. Simulation in MCNP6
-    2. Spectral Readings
-    3. Common Soil Types
+    1. Common Soil Types
+    2. Simulation in MCNP6
+    3. Spectral Readings
     4. Data Convolution
+    5. Training Data
 3. Analysis Methods of Spectral Readings
     1. Peak Fitting
         - Strong Window
@@ -34,7 +35,46 @@ This paper explores the use of spectral analysis techniques to measure SOC level
 
 ## 2. Data Generation
 
-### 2.1. Simulation in MCNP
+### 2.1. Common Soil Types
+
+To investigate the effectiveness of spectral analysis methods for SOC measurement, we simulate a range of common soil types. The simulated data includes spectral readings across different wavelengths, capturing the unique spectral signatures of each soil type. This data serves as a foundation for applying various spectral analysis techniques.
+
+| Element | MCNP Identifier | Density (g/cm^3) |
+|---------|------------------|------------------|
+| Si | 14028 | 2.33 |
+| Al | 13027 | 2.7 |
+| H | 1001 | 0.001 |
+| Na | 11023 | 0.97 |
+| O | 8016 | 0.00143 |
+| Fe | 26000 | 7.87 |
+| Mg | 12024 | 1.74 |
+| C | 6000 | 2.33 |
+
+| Compound | Density (g/cm^3) |
+|----------|------------------|
+| SiO2 | 2.65 |
+| Al2O3 | 3.95 |
+| H2O | 1.0 |
+| Na2O | 2.16 |
+| Fe2O3 | 5.24 |
+| MgO | 2.74 |
+| C | 2.33 |
+
+| Material | Compound Makeup (by weight) | Density (g/cm^3) |
+|----------|------------------|------------------|
+| Silica | SiO2 (76.4%), Al2O3 (23.6%) | 2.32 |
+| Kaolinite | SiO2 (46.5%), Al2O3 (39.5%), H2O (14.0%) | 3.95 |
+| Smectite | SiO2 (66.7%), Al2O3 (28.3%), H2O (5.0%) | 2.785 |
+| Montmorillonite | SiO2 (73.7%), Al2O3 (24.6%), H2O (1.7%) | 2.7 |
+| Quartz | SiO2 (100.0%) | 2.62 |
+| Chlorite | SiO2 (30.0%), Al2O3 (24.0%), Fe2O3 (23.3%), H2O (22.7%) | 2.6 |
+| Mica | SiO2 (48.9%), Al2O3 (40.3%), H2O (10.8%) | 2.7 |
+| Feldspar | SiO2 (68.0%), Al2O3 (32.0%) | 2.55 |
+| Coconut | C (100.0%) | 0.53 |
+
+To measure the effectiveness of spectral analysis methods for carbon measurement, we simulate combinations of soil materials with varying carbon content (coconut).
+
+### 2.2. Simulation in MCNP
 
 MCNP6 was used to simulate gamma-ray spectra resulting from neutron activation of soil samples. Each simulation modeled a soil matrix with varying concentrations of carbon and other common soil constituents. The geometry was set up to mimic in situ measurement conditions, with a neutron source placed above a soil slab and a detector positioned to capture emitted gamma rays.
 
@@ -48,25 +88,26 @@ Key simulation parameters included:
 
 This approach enables the generation of realistic spectral data for a variety of soil compositions, forming the basis for evaluating different spectral analysis techniques.
 
-### 2.2. Common Soil Types
+## 2.3. Spectral Readings
 
-To investigate the effectiveness of spectral analysis methods for SOC measurement, we simulate a range of common soil types. The simulated data includes spectral readings across different wavelengths, capturing the unique spectral signatures of each soil type. This data serves as a foundation for applying various spectral analysis techniques.
+The spectral readings obtained from the MCNP simulations provide a detailed representation of the gamma-ray emissions from the soil samples. Mathematically it is a probability density function (PDF) of the energy distribution of the emitted gamma rays.
 
-elem_names = ['Si', 'Al', 'H', 'Na', 'O', 'Fe', 'Mg', 'C']
-compound_names = ['SiO2', 'Al2O3', 'H2O', 'Na2O', 'Fe2O3', 'MgO', 'C']
-material_names = ['Silica', 'Kaolinite', 'Smectite', 'Montmorillonite', 'Quartz', 'Chlorite', 'Mica', 'Feldspar', 'Coconut']
-
-Table: compositions of soils, compounds, and elements
-
-## 2.3. Data Convolution
-
-Figure: Simulated vs Convoluted data
-
-In the context of spectral analysis, MCNP can be used to simulate the interaction of radiation with soil materials, providing spectrums to analyze. Linear Convolution is used to quickly predict spectral readings for material mixtures by combining the spectral signatures of individual components. This does not account for the complex interactions between materials, but it provides a simplified approach to generate spectral data for analysis. The error metric for this convolution method is based on the difference between the simulated spectral readings and the readings obtained from MCNP simulations. The affects of convolution on the analysis results will be investigated in the results section.
+![MCNP Spectral Reading](Figures/MCNPSpectralReading.png)
 
 ## 2.4 Training Data
 
 The training data for the spectral analysis methods is picked from the edge cases of the simulated data. This includes the highest and lowest carbon levels both as would be found in simulation as well as natural soils.
+
+| Carbon Level | Associated Amount |
+|--------------|-------------------|
+| Natural      | 0%-6% Carbon      |
+| Medium       | 6%-100% Carbon    |
+
+## 2.5. Data Convolution
+
+Figure: Simulated vs Convoluted data
+
+In the context of spectral analysis, MCNP can be used to simulate the interaction of radiation with soil materials, providing spectrums to analyze. Linear Convolution is used to quickly predict spectral readings for material mixtures by combining the spectral signatures of individual components. This does not account for the complex interactions between materials, but it provides a simplified approach to generate spectral data for analysis. The error metric for this convolution method is based on the difference between the simulated spectral readings and the readings obtained from MCNP simulations. The affects of convolution on the analysis results will be investigated in the results section.
 
 ## 3. Analysis Methods of Spectral Readings
 

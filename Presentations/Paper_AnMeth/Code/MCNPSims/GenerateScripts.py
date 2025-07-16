@@ -24,6 +24,31 @@ material_portions = [[0.97, 0.3], [0.465, 0.395, 0.14], [0.667, 0.283, 0.05], [0
 material_densities = [2.32, 3.95, 2.785, 2.7, 2.62, 2.6, 2.7, 2.55, 0.53]
 
 
+# make a table of the Different elems, compounds and materials and their properties
+table = "| Element | MCNP Identifier | Density (g/cm^3) |\n"
+table += "|---------|------------------|------------------|\n"
+for elem in zip(elem_names, elem_labels, elem_densities):
+    table += f"| {elem[0]} | {elem[1]} | {elem[2]} |\n"
+    
+table += "\n| Compound | Density (g/cm^3) |\n"
+table += "|----------|------------------|\n"
+for comp in zip(compound_names, compound_densities):
+    table += f"| {comp[0]} | {comp[1]} |\n"
+
+table += "\n| Material | Compound Makeup | Density (g/cm^3) |\n"
+table += "|----------|------------------|------------------|\n"
+for mat, makeup, density in zip(material_names, material_labels_pername, material_densities):
+    portions = material_portions[material_names.index(mat)]
+    # Ensure the lengths match, pad with 1.0 if needed
+    if len(makeup) != len(portions):
+        portions = list(portions) + [1.0] * (len(makeup) - len(portions))
+    total = sum(portions)
+    makeup_portions = [f"{comp} ({(portion/total*100):.1f}%)" for comp, portion in zip(makeup, portions)]
+    makeup_str = ', '.join(makeup_portions)
+    table += f"| {mat} | {makeup_str} | {density} |\n"
+print(table)
+
+
 # %%
 def soil_characteristic_function(X, character=None, elem_labels=elem_labels):
     n = X.shape[0]

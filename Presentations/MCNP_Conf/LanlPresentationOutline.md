@@ -23,8 +23,8 @@ Date: July 8, 2025
 ![Core Harvest](Figures/Misc/SoilCore.jpg)
 
 - Traditional method: “Core Harvesting”
-- Large soil cores extracted and analyzed in lab
-- Time-consuming, labor-intensive
+- Soil cores extracted and analyzed in lab
+- Time-consuming, labor-intensive, destructive
 
 *Currently the common method of measuring carbon in a field is "Core Harvesting". Core harvesting is where large tubes called "cores" are dug into the soil and taken to a lab for analysis.*
 
