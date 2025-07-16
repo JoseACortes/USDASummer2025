@@ -92,7 +92,7 @@ This approach enables the generation of realistic spectral data for a variety of
 
 The spectral readings obtained from the MCNP simulations provide a detailed representation of the gamma-ray emissions from the soil samples. Mathematically it is a probability density function (PDF) of the energy distribution of the emitted gamma rays.
 
-![MCNP Spectral Reading](Figures/MCNPSpectralReading.png)
+![MCNP Spectral Reading](Figures/DataGenerationMCNPSpectralReading.png)
 
 ## 2.4 Training Data
 
