@@ -238,6 +238,7 @@ for res in ress:
         for _, id in enumerate(cell_ids):
             elems_table[id] = elems[_].flatten().tolist()
         soil['elems'] = elems_table
+        
         densities_table = {}
         for _, id in enumerate(cell_ids):
             densities_table[id] = densities[_]
