@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{kavetskiy2018}
+A.~Kavetskiy, G.~Yakubova, S.~B. Sarker, K.~Truong, W.~Ezekoye, D.~Prior,
+  G.~Lin, A.~Torbert, Energy correlated timing method for neutron induced
+  prompt gamma ray spectroscopy, Applied Radiation and Isotopes 132 (2018)
+  177--183.
+\newblock \href {https://doi.org/10.1016/j.apradiso.2017.11.022}
+  {\path{doi:10.1016/j.apradiso.2017.11.022}}.
+
+\bibitem{yakubova2025}
+G.~Yakubova, A.~Kavetskiy, S.~B. Sarker, D.~Prior, A.~Torbert, Measuring and
+  mapping moisture content in agricultural soils by neutron-gamma method,
+  Radiation Physics and Chemistry 187 (2025) 110349, forthcoming.
+
+\end{thebibliography}

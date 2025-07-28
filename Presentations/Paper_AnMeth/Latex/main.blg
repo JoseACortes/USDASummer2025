@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: elsarticle-num.bst
+Database file #1: references.bib
+You're missing a field name---line 26 of file references.bib
+ : 
+ : %    title = {Title of the article},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 38 of file references.bib
+ : 
+ : %    title = {Title of the book},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 47 of file references.bib
+ : 
+ : %    title = {Title of the conference paper},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 2 entries,
+            2952 wiz_defined-function locations,
+            685 strings with 5654 characters,
+and the built_in function-call counts, 773 in all, are:
+= -- 67
+> -- 41
+< -- 0
++ -- 15
+- -- 13
+* -- 66
+:= -- 133
+add.period$ -- 3
+call.type$ -- 2
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 2
+duplicate$ -- 17
+empty$ -- 67
+format.name$ -- 15
+if$ -- 176
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 15
+num.names$ -- 2
+pop$ -- 8
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 40
+stack$ -- 0
+substring$ -- 45
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 5
+width$ -- 3
+write$ -- 26
+(There were 3 error messages)

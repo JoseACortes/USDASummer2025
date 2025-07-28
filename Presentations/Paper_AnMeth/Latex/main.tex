@@ -13,7 +13,7 @@
 % For line numbers
 \modulolinenumbers[5]
 
-\journal{Journal of Environmental Science and Technology}
+\journal{Radiation Physics and Chemistry}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Elsevier bibliography style
@@ -67,16 +67,25 @@
 %% \address[label1]{}
 %% \address[label2]{}
 
-\author[first]{Your Name\corref{cor1}}
-\ead{your.email@university.edu}
+\author[uta]{Jose A Cortes\corref{cor1}}
+\ead{jose.cortes@uta.edu}
 
-\author[second]{Co-Author Name}
-\ead{coauthor@university.edu}
+\author[uta]{Andrzej Korzeniowski}
+\ead{andrzej.korzeniowski@uta.edu}
+
+\author[usda]{Galina Yakubova}
+\ead{galina.yakubova@usda.gov}
+
+\author[usda]{Aleksandr Kavetskiy}
+\ead{aleksandr.kavetskiy@usda.gov}
+
+\author[usda]{Allen Tobert}
+\ead{allen.tobert@usda.gov}
 
 \cortext[cor1]{Corresponding author}
 
-\address[first]{Department, University Name, City, State, Country}
-\address[second]{Department, University Name, City, State, Country}
+\address[uta]{University of Texas at Arlington, Arlington TX, USA}
+\address[usda]{USDA ARS Auburn Lab, Auburn AL, USA}
 
 \begin{abstract}
 Soil organic carbon (SOC) is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of SOC is essential for understanding soil health, fertility, and its impact on climate change. Traditional methods for measuring SOC are often time-consuming, expensive, and require laboratory analysis. In situ spectral analysis offers a promising alternative for rapid and non-destructive measurement of SOC. This paper explores the use of spectral analysis techniques to measure SOC levels in various soil types. We simulate common soil types and apply different spectral analysis methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring SOC. The results demonstrate the potential of spectral analysis methods for measuring soil carbon levels, with component fitting and peak fitting methods showing the best performance.
@@ -172,7 +181,7 @@ MCNP6 was used to simulate gamma-ray spectra resulting from neutron activation o
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/DataGeneration/MCNPGeometry.png}
+\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/MCNPGeometry.png}
 \caption{Geometry of MCNP simulation setup}
 \label{fig:mcnp_geometry}
 \end{figure}
@@ -194,7 +203,7 @@ The spectral readings obtained from the MCNP simulations provide a detailed repr
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/DataGeneration/MCNPSpectralReading.png}
+\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/MCNPSpectralReading.png}
 \caption{MCNP spectral reading example}
 \label{fig:mcnp_spectral}
 \end{figure}
@@ -219,7 +228,7 @@ High & 6\%--100\% Carbon \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/DataGeneration/FeldsparSpectralReadingByCarbonLevel.png}
+\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/FeldsparSpectralReadingByCarbonLevel.png}
 \caption{Feldspar spectral reading by carbon level}
 \label{fig:feldspar_carbon}
 \end{figure}
@@ -228,7 +237,7 @@ High & 6\%--100\% Carbon \\
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Figures/DataGeneration/Sim_vs_Convoluted_FeldsparSpectralReadings_Combined.png}
+\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/Sim_vs_Convoluted_FeldsparSpectralReadings_Combined.png}
 \caption{Simulated vs convoluted data comparison}
 \label{fig:sim_vs_conv}
 \end{figure}
@@ -273,11 +282,46 @@ Gaussian & Amplitude, Center, Width, Height & $a \cdot \exp(-((x - b)^{-p})^2) +
 \end{tabular}
 \end{table}
 
+\begin{table}[H]
+\centering
+\caption{Peak fitting parameter bounds and starting values}
+\label{tab:peak_param_bounds}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Function Type & Parameter & Starting Parameter (p0) & Lower Bound & Upper Bound \\
+\midrule
+Linear & Slope & 0 & $-\infty$ & 0 \\
+ & Intercept & window minimum & 0 & $\infty$ \\
+Gaussian & Amplitude & gaus\_fix\_term $\times$ (window max - min) & 0 & (window max - min) \\
+ & Center & Average of Bins & Min Bin & Max Bin \\
+ & Width & (Max Bin - Min Bin)/6 & (Max Bin - Min Bin)/100 & (Max Bin - Min Bin)/2 \\
+Exp Falloff & Center & Min Bin & $-\infty$ & $\infty$ \\
+ & Amplitude & gaus\_fix\_term $\times$ (window max - min) & $-\infty$ & $\infty$ \\
+ & Width & 1 & $-\infty$ & $\infty$ \\
+ & Height & window minimum & $-\infty$ & $\infty$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 This method relies on parameterized functions, which are fitted to the spectral data to identify the peaks corresponding to specific elements or compounds. The fitting function is a combination of a peak function (e.g., Gaussian) and a baseline function (e.g., linear or exponential falloff). Starting parameters are generated automatically such that the initial fitting function is within the bounds of the spectrum in the strong window. Parameters are also constrained to ensure they remain within reasonable limits based on the expected spectral characteristics of the soil components.
 
 The Scipy python package is used for the optimization process, leveraging its curve fitting capabilities to refine the initial parameter estimates. The baseline function is subtracted from the fitted function to isolate the peak, and the area under the peak is calculated to quantify the concentration of the corresponding element or compound in the soil.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../Figures/Analysis/peak_fitting_feldspar.png}
+\caption{Fitted peak example for Feldspar sample}
+\label{fig:peak_fitting}
+\end{figure}
+
 An activation layer of linear regression is used to compare the peak areas to known soil carbon concentrations, allowing for the calibration of the model's predictions.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../Figures/Analysis/PF_Exponential_Falloff_Agricultural_Carbon_Levels.jpg}
+\caption{Peak Fitting prediction results for agricultural carbon levels}
+\label{fig:peak_fitting_results}
+\end{figure}
 
 \subsection{Component Fitting}
 
@@ -297,11 +341,32 @@ Where:
 
 Components can be any known spectral signature, this can be from pure elemental samples or from the average of a set of soil samples. The fitting process involves adjusting the coefficients $A_i$ to minimize the difference between the combined spectral function $F_c$ and the observed spectral data. This method also benefits from filtering of low energy signals which are generally more likely to be caused by noise.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../Figures/Analysis/linear_combination_feldspar.png}
+\caption{Component Fitting process applied to Feldspar sample}
+\label{fig:component_fitting}
+\end{figure}
+
 The carbon coefficient $A_C$ is then used to estimate the carbon level in the soil. This method is particularly useful for analyzing complex soil mixtures where multiple known components contribute to the spectral signature. This method is also generalizable to study other elements or compounds.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../Figures/Analysis/CA_Agricultural_Carbon_Levels.jpg}
+\caption{Component Analysis prediction results for agricultural carbon levels}
+\label{fig:component_analysis_results}
+\end{figure}
 
 \subsection{Singular Value Decomposition (SVD)}
 
 Singular Value Decomposition is a mathematical technique used to decompose the spectral data into its constituent components. The resulting singular values inside the strong window can be summed to provide a measure of the concentration of carbon in the soil.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{../Figures/Analysis/decomposed_feldspar_svd.jpg}
+\caption{SVD process applied to Feldspar sample}
+\label{fig:svd_decomposition}
+\end{figure}
 
 \subsection{Deep Learning}
 
@@ -313,23 +378,115 @@ The effectiveness of each method in measuring carbon levels is evaluated based o
 
 \begin{table}[H]
 \centering
-\caption{Results summary for all analysis methods}
+\caption{Results summary for best performing methods}
 \label{tab:results_summary}
-\begin{tabular}{@{}lc@{}}
+\begin{tabular}{@{}llll@{}}
 \toprule
-Method & MSE \\
+method & carbon level & datasets used & mse \\
 \midrule
-Component Fitting & 0.0x \\
-Peak Fitting & 0.0x \\
-Singular Value Decomposition & 0.0x \\
-Deep Learning & 0.0x \\
+Component Analysis - Average Training & Agricultural & Feldspar & 7.48497e-07 \\
+Component Analysis - Elemental Maps & Agricultural & Feldspar & 7.91956e-07 \\
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Feldspar & 3.43383e-05 \\
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Convolution Training & 7.25777e-05 \\
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Material Mixes & 7.65971e-05 \\
+Component Analysis - Elemental Maps & Agricultural & Convolution Training & 0.000191402 \\
+Component Analysis - Elemental Maps & Agricultural & Material Mixes & 0.000209907 \\
+SVD & Agricultural & Convolution Training & 0.000293279 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Peak Fitting Results Table
+\begin{table}[H]
+\centering
+\caption{Peak Fitting results by method, carbon level, and dataset}
+\label{tab:peak_fitting_results}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+method & carbon level & datasets used & mse \\
+\midrule
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Feldspar & 3.43383e-05 \\
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Convolution Training & 7.25777e-05 \\
+Peak Fitting - Exponential Falloff Baseline & Agricultural & Material Mixes & 7.65971e-05 \\
+Peak Fitting - linear Baseline & Agricultural & Convolution Training & 0.000350061 \\
+Peak Fitting - linear Baseline & Agricultural & Material Mixes & 0.000351535 \\
+Peak Fitting - linear Baseline & Agricultural & Feldspar & 0.00036 \\
+Peak Fitting - Exponential Falloff Baseline & All & Feldspar & 0.00194593 \\
+Peak Fitting - Exponential Falloff Baseline & All & Convolution Training & 0.00331505 \\
+Peak Fitting - linear Baseline & All & Convolution Training & 0.00585135 \\
+Peak Fitting - Exponential Falloff Baseline & All & Material Mixes & 0.014231 \\
+Peak Fitting - linear Baseline & All & Feldspar & 0.0187823 \\
+Peak Fitting - linear Baseline & All & Material Mixes & 0.0347815 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Component Fitting Results Table
+\begin{table}[H]
+\centering
+\caption{Component Fitting results by method, carbon level, and dataset}
+\label{tab:component_fitting_results}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+method & carbon level & datasets used & mse \\
+\midrule
+Component Analysis - Average Training & Agricultural & Feldspar & 7.48497e-07 \\
+Component Analysis - Elemental Maps & Agricultural & Feldspar & 7.91956e-07 \\
+Component Analysis - Elemental Maps & Agricultural & Convolution Training & 0.000191402 \\
+Component Analysis - Elemental Maps & Agricultural & Material Mixes & 0.000209907 \\
+Component Analysis - Average Training & Agricultural & Convolution Training & 0.000295299 \\
+Component Analysis - Average Training & Agricultural & Material Mixes & 0.000343431 \\
+Component Analysis - Elemental Maps & All & Feldspar & 0.00302435 \\
+Component Analysis - Average Training & All & Feldspar & 0.00303636 \\
+Component Analysis - Elemental Maps & All & Convolution Training & 0.0037997 \\
+Component Analysis - Average Training & All & Convolution Training & 0.00385569 \\
+Component Analysis - Average Training & All & Material Mixes & 0.0191523 \\
+Component Analysis - Elemental Maps & All & Material Mixes & 0.0192477 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% SVD Results Table
+\begin{table}[H]
+\centering
+\caption{SVD results by carbon level and dataset}
+\label{tab:svd_results}
+\begin{tabular}{@{}lll@{}}
+\toprule
+carbon level & datasets used & mse \\
+\midrule
+Agricultural & Convolution Training & 0.000293279 \\
+Agricultural & Material Mixes & 0.000427226 \\
+Agricultural & Feldspar & 0.0021363 \\
+All & Convolution Training & 0.0106654 \\
+All & Feldspar & 0.0115547 \\
+All & Material Mixes & 0.0264083 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% Deep Learning Results Table
+\begin{table}[H]
+\centering
+\caption{Deep Learning results by carbon level and dataset}
+\label{tab:deep_learning_results}
+\begin{tabular}{@{}lll@{}}
+\toprule
+carbon level & datasets used & mse \\
+\midrule
+Agricultural & Material Mixes & 0.000358874 \\
+Agricultural & Convolution Training & 0.0003602 \\
+Agricultural & Feldspar & 0.000890089 \\
+All & Convolution Training & 0.0889994 \\
+All & Material Mixes & 0.101728 \\
+All & Feldspar & 0.524807 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Comparing Analysis Methods}
 
-The X method is the most effective for measuring carbon levels in soil, achieving the lowest MSE. The Y method also performs well, but is slightly less accurate than X. The Deep Learning method shows promise but requires further optimization to improve its performance.
+The Component Analysis methods are the most effective for measuring carbon levels in soil, achieving the lowest MSE values especially when using the Feldspar dataset. The Peak Fitting methods with Exponential Falloff Baseline also perform well, but are slightly less accurate. The SVD method shows promise but requires further optimization to improve its performance.
 
 \subsection{Effects of Carbon Levels on Results}
 
@@ -339,33 +496,34 @@ The X method is the most effective for measuring carbon levels in soil, achievin
 \label{tab:carbon_level_results}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Carbon Level & Component Fitting MSE & Peak Fitting MSE & SVD MSE & Deep Learning MSE \\
+Carbon Level & Peak Fitting - Linear & Peak Fitting - Exp Falloff & Component Analysis & SVD \\
 \midrule
-Low & 0.0x & 0.0x & 0.0x & 0.0x \\
-High & 0.0x & 0.0x & 0.0x & 0.0x \\
+Agricultural & 0.000351535 & 7.65971e-05 & 0.000209907 & 0.000427226 \\
+All & 0.0347815 & 0.014231 & 0.0191523 & 0.0264083 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Lower carbon levels tend to result in higher MSE values across all methods, indicating that the spectral signatures of low-carbon soils are less distinct and more challenging to analyze accurately. The methods generally perform better with higher carbon concentrations, where the spectral features are more pronounced.
+Lower carbon levels (agricultural range) tend to result in lower MSE values across all methods, indicating that the spectral signatures in the agricultural carbon range (0-6\%) are more distinct and easier to analyze accurately. The methods generally perform worse with higher carbon concentrations included in the analysis.
 
 \subsection{Effects of Convolution on Results}
 
 \begin{table}[H]
 \centering
-\caption{MSE values with and without convolution}
+\caption{MSE values by dataset type}
 \label{tab:convolution_results}
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Convolution & Component Fitting MSE & Peak Fitting MSE & SVD MSE & Deep Learning MSE \\
+Datasets Used & Peak Fitting & Component Analysis & SVD & Machine Learning \\
 \midrule
-No & 0.0x & 0.0x & 0.0x & 0.0x \\
-Yes & 0.0x & 0.0x & 0.0x & 0.0x \\
+Material Mixes & 0.014231 & 0.0191523 & 0.0264083 & 0.0971477 \\
+Convolution Training & 0.00331505 & 0.00385569 & 0.0106654 & 0.0893365 \\
+Feldspar & 0.00194593 & 0.00303636 & 0.0115547 & 0.416227 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Convolution generally improves the accuracy of spectral analysis methods by smoothing out noise and enhancing the signal-to-noise ratio. The results show that convolution leads to lower MSE values across all methods, indicating that it is beneficial for spectral analysis in soil carbon measurement.
+Using the Feldspar dataset generally improves the accuracy of spectral analysis methods for peak fitting, while the Convolution Training dataset works better for component analysis and SVD. The Machine Learning method performs better with the Convolution Training dataset but shows poor performance with the Feldspar dataset, indicating that it requires more diverse training data to be effective.
 
 \section{Discussion}
 
@@ -391,22 +549,7 @@ We acknowledge the contributions of the USDA scientists for their guidance and s
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
-\bibliographystyle{elsarticle-num} 
 \bibliography{references}
 
-%% else use the following coding to input the bibitems directly in the
-%% TeX file.
-
-\begin{thebibliography}{00}
-
-\bibitem{kavetskiy2018}
-Kavetskiy, A., et al. Energy correlated timing. 2018.
-
-\bibitem{yakubova2025}
-Yakubova et al. Measuring and mapping moisture. 2025.
-
-%% \bibitem{label}
-%% Text of bibliographic item
-
-\end{thebibliography}
+%% Note: We're using BibTeX for references management, so manual bibliography is not needed.
 \end{document}

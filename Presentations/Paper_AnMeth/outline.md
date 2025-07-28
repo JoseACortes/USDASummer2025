@@ -1,29 +1,21 @@
 # In Situ Spectral Analysis for Soil Carbon Measurement
 
+Authors: Jose A Cortes[1], Dr. Andrzej Korzeniowski[1], Dr. Galina Yakubova[2], Dr. Aleksandr Kavetskiy[2], Dr. Allen Tobert[2]
+
+[1. University of Texas at Arlington, Arlington TX, USA](https://www.uta.edu/)  
+[2. USDA ARS Auburn Lab, Auburn AL, USA](https://www.ars.usda.gov/southeast-area/auburn-al/)
+
+journal: Radiation Physics and Chemistry
+
+date: August 30, 2025
+
 contents:
 
 1. Background
-    1. Soil Organic Carbon (SOC)
-    2. Spectral Analysis as a Measurement Technique
-    3. Objectives of the Paper
 2. Data Generation
-    1. Common Soil Types
-    2. Simulation in MCNP6
-    3. Spectral Readings
-    4. Data Convolution
-    5. Training Data
 3. Analysis Methods of Spectral Readings
-    1. Peak Fitting
-    2. Component Fitting
-    3. Singular Value Decomposition
-    4. Deep Learning
 4. Results
-    1. Comparing Analysis Methods
-    2. Effects of Carbon Levels on Results
-    3. Effects of Convolution on Results
 5. Discussion
-    2. Conclusions
-    3. Future Work
 6. Acknowledgments and References
 
 ## 1. Background
