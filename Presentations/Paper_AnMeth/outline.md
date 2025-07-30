@@ -20,7 +20,7 @@ contents:
 
 ## 1. Background
 
-Soil organic carbon (SOC) is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of SOC is essential for understanding soil health, fertility, and its impact on climate change. Traditional methods for measuring SOC are often time-consuming, expensive, and require laboratory analysis. In situ spectral analysis offers a promising alternative for rapid and non-destructive measurement of SOC.
+Soil organic carbon (SOC) is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of SOC is essential for measuring soil quality, and its impact on the environment[3]. Traditional methods for measuring SOC are often time-consuming, expensive, and require laboratory analysis. In situ spectral analysis offers a promising alternative for rapid and non-destructive measurement of SOC.
 This paper explores the use of spectral analysis techniques to measure SOC levels in various soil types. We simulate common soil types and apply different spectral analysis methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring SOC.
 
 ## 2. Data Generation
@@ -173,7 +173,7 @@ Where:
 
 ![Common Soil Spectra vs Average Soil Spectrum]()
 
-Components can be any known spectral signature, this can be from pure elemental samples or from the average of a set of soil samples. The fitting process involves adjusting the coefficients A_i to minimize the difference between the combined spectral function F_c and the observed spectral data. This method also benefits from filtering of low energy signals which are generally more likely to be caused by noise.
+Components can be any known spectral signature, this can be from pure elemental samples [4] or from the average of a set of soil samples. The fitting process involves adjusting the coefficients A_i to minimize the difference between the combined spectral function F_c and the observed spectral data. This method also benefits from filtering of low energy signals which are generally more likely to be caused by noise.
 
 ![Component Fitting Process](Figures/Analysis/linear_combination_feldspar.png)
 
@@ -287,3 +287,5 @@ We acknowledge the contributions of the USDA scientists for their guidance and s
 References:
 1. Kavetskiy, A., et al. - 2018 - Energy correlated timing
 2. Yakubova et al. - 2025 - Measuring and mapping moistur
+3. Seybold, C.A et al. Soil Processes and the Carbon Cycle /. Boca Raton, FL : CRC Press, 1998. Print.
+4. Kavetskiy et al. - 2023 - Neutron gamma analysis of soil 

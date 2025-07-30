@@ -259,20 +259,20 @@ def PeakFit(
     for i in range(len(si_peak_p0)):
         si_fitting_df[f"Peak {alphabet[i]}"] = np.array(si_popts)[:, i+len(si_baseline_p0)]
 
-    c_lines_df = pd.DataFrame()
-    c_lines_df["bins"] = c_bins
+    c_lines_dict = {"bins": c_bins}
     for i in range(len(df.columns)):
-        c_lines_df[df.columns[i]+" baseline"] = c_baseline_lines[i]
-        c_lines_df[df.columns[i]+" peak"] = c_peak_lines[i]
-        c_lines_df[df.columns[i]+" true"] = c_df[df.columns[i]].values
-    
-    si_lines_df = pd.DataFrame()
-    si_lines_df["bins"] = si_bins
-    for i in range(len(df.columns)):
-        si_lines_df[df.columns[i]+" baseline"] = si_baseline_lines[i]
-        si_lines_df[df.columns[i]+" peak"] = si_peak_lines[i]
-        si_lines_df[df.columns[i]+" true"] = si_df[df.columns[i]].values
+        c_lines_dict[df.columns[i] + " baseline"] = c_baseline_lines[i]
+        c_lines_dict[df.columns[i] + " peak"] = c_peak_lines[i]
+        c_lines_dict[df.columns[i] + " true"] = c_df[df.columns[i]].values
+    c_lines_df = pd.DataFrame(c_lines_dict)
 
+    # Silicon lines
+    si_lines_dict = {"bins": si_bins}
+    for i in range(len(df.columns)):
+        si_lines_dict[df.columns[i] + " baseline"] = si_baseline_lines[i]
+        si_lines_dict[df.columns[i] + " peak"] = si_peak_lines[i]
+        si_lines_dict[df.columns[i] + " true"] = si_df[df.columns[i]].values
+    si_lines_df = pd.DataFrame(si_lines_dict)
     return fitting_df, carbon_fitting_df, si_fitting_df, c_lines_df, si_lines_df
 
 # def Analyze(
