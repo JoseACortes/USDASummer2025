@@ -16,85 +16,96 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\bibstyle{elsarticle-num}
-\emailauthor{jose.cortes@uta.edu}{Jose A Cortes\corref {cor1}}
-\emailauthor{andrzej.korzeniowski@uta.edu}{Andrzej Korzeniowski}
+\emailauthor{jose.cortes@mavs.uta.edu}{Jose A. Cortes}
+\emailauthor{akorzeni@uta.edu}{Andrzej Korzeniowski}
 \emailauthor{galina.yakubova@usda.gov}{Galina Yakubova}
 \emailauthor{aleksandr.kavetskiy@usda.gov}{Aleksandr Kavetskiy}
-\emailauthor{allen.tobert@usda.gov}{Allen Tobert}
-\Newlabel{cor1}{1}
+\emailauthor{allen.torbert@usda.gov}{H. Allen Torbert}
+\citation{lal_soil_2018}
+\citation{de_ros_advancing_2025}
+\citation{yakubova_tagged_2019}
 \Newlabel{uta}{a}
 \Newlabel{usda}{b}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Data Generation}{2}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Common Soil Types}{2}{subsection.2.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Elemental properties used in MCNP simulations}}{3}{table.1}\protected@file@percent }
-\newlabel{tab:elements}{{1}{3}{Elemental properties used in MCNP simulations}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Compound properties used in MCNP simulations}}{3}{table.2}\protected@file@percent }
-\newlabel{tab:compounds}{{2}{3}{Compound properties used in MCNP simulations}{table.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Material compositions and densities}}{4}{table.3}\protected@file@percent }
-\newlabel{tab:materials}{{3}{4}{Material compositions and densities}{table.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Simulation in MCNP}{4}{subsection.2.2}\protected@file@percent }
-\citation{kavetskiy2018}
-\citation{yakubova2025}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Geometry of MCNP simulation setup}}{5}{figure.1}\protected@file@percent }
-\newlabel{fig:mcnp_geometry}{{1}{5}{Geometry of MCNP simulation setup}{figure.1}{}}
+\citation{werner_mcnp_2017}
+\citation{kavetskiy_neutron-stimulated_2017}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Elemental compositions used in MCNP simulations}}{3}{table.1}\protected@file@percent }
+\newlabel{tab:elements}{{1}{3}{Elemental compositions used in MCNP simulations}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Material compositions for soil simulation}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:materials}{{2}{3}{Material compositions for soil simulation}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Simulation in MCNP}{3}{subsection.2.2}\protected@file@percent }
+\citation{kavetskiy_energy_2018}
+\citation{yakubova_measuring_2025}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Geometry of MCNP simulation setup showing neutron source, soil slab, and detector configuration}}{4}{figure.1}\protected@file@percent }
+\newlabel{fig:mcnp_geometry}{{1}{4}{Geometry of MCNP simulation setup showing neutron source, soil slab, and detector configuration}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Spectral Readings}{5}{subsection.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MCNP spectral reading example}}{6}{figure.2}\protected@file@percent }
-\newlabel{fig:mcnp_spectral}{{2}{6}{MCNP spectral reading example}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Training Data}{6}{subsection.2.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Carbon level classifications}}{6}{table.4}\protected@file@percent }
-\newlabel{tab:carbon_levels}{{4}{6}{Carbon level classifications}{table.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Feldspar spectral reading by carbon level}}{7}{figure.3}\protected@file@percent }
-\newlabel{fig:feldspar_carbon}{{3}{7}{Feldspar spectral reading by carbon level}{figure.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Data Convolution}{7}{subsection.2.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Simulated vs convoluted data comparison}}{7}{figure.4}\protected@file@percent }
-\newlabel{fig:sim_vs_conv}{{4}{7}{Simulated vs convoluted data comparison}{figure.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Analysis Methods of Spectral Readings}{8}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Peak Fitting}{8}{subsection.3.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Peak fitting function components}}{8}{table.5}\protected@file@percent }
-\newlabel{tab:peak_functions}{{5}{8}{Peak fitting function components}{table.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Function parameterizations}}{8}{table.6}\protected@file@percent }
-\newlabel{tab:function_params}{{6}{8}{Function parameterizations}{table.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Peak fitting parameter bounds and starting values}}{9}{table.7}\protected@file@percent }
-\newlabel{tab:peak_param_bounds}{{7}{9}{Peak fitting parameter bounds and starting values}{table.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Fitted peak example for Feldspar sample}}{10}{figure.5}\protected@file@percent }
-\newlabel{fig:peak_fitting}{{5}{10}{Fitted peak example for Feldspar sample}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Peak Fitting prediction results for agricultural carbon levels}}{11}{figure.6}\protected@file@percent }
-\newlabel{fig:peak_fitting_results}{{6}{11}{Peak Fitting prediction results for agricultural carbon levels}{figure.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Component Fitting}{11}{subsection.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Component Fitting process applied to Feldspar sample}}{12}{figure.7}\protected@file@percent }
-\newlabel{fig:component_fitting}{{7}{12}{Component Fitting process applied to Feldspar sample}{figure.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Component Analysis prediction results for agricultural carbon levels}}{13}{figure.8}\protected@file@percent }
-\newlabel{fig:component_analysis_results}{{8}{13}{Component Analysis prediction results for agricultural carbon levels}{figure.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Singular Value Decomposition (SVD)}{13}{subsection.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces SVD process applied to Feldspar sample}}{14}{figure.9}\protected@file@percent }
-\newlabel{fig:svd_decomposition}{{9}{14}{SVD process applied to Feldspar sample}{figure.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example MCNP spectral reading showing gamma-ray energy distribution}}{5}{figure.2}\protected@file@percent }
+\newlabel{fig:mcnp_spectral}{{2}{5}{Example MCNP spectral reading showing gamma-ray energy distribution}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Training and Testing Data}{5}{subsection.2.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Carbon level classifications}}{5}{table.3}\protected@file@percent }
+\newlabel{tab:carbon_levels}{{3}{5}{Carbon level classifications}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Feldspar spectral reading by carbon level showing the variation in spectral signatures with different carbon concentrations}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:feldspar_carbon}{{3}{6}{Feldspar spectral reading by carbon level showing the variation in spectral signatures with different carbon concentrations}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Data Convolution}{6}{subsection.2.5}\protected@file@percent }
+\citation{gardner_use_2011}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of simulated vs convoluted data for Feldspar spectral readings}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:sim_vs_conv}{{4}{7}{Comparison of simulated vs convoluted data for Feldspar spectral readings}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Analysis Methods of Spectral Readings}{7}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Peak Fitting}{7}{subsection.3.1}\protected@file@percent }
+\citation{virtanen_scipy_2020}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Function parameterizations for peak fitting}}{8}{table.4}\protected@file@percent }
+\newlabel{tab:functions}{{4}{8}{Function parameterizations for peak fitting}{table.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Peak fitting example showing fitted peak and baseline for feldspar spectrum}}{8}{figure.5}\protected@file@percent }
+\newlabel{fig:peak_fitting}{{5}{8}{Peak fitting example showing fitted peak and baseline for feldspar spectrum}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Peak fitting prediction results showing carbon level vs predicted values}}{9}{figure.6}\protected@file@percent }
+\newlabel{fig:peak_predictions}{{6}{9}{Peak fitting prediction results showing carbon level vs predicted values}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Component Fitting}{9}{subsection.3.2}\protected@file@percent }
+\citation{kavetskiy_neutron_2023}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Common soil spectra vs average soil spectrum showing the spectral signatures of different soil components}}{10}{figure.7}\protected@file@percent }
+\newlabel{fig:common_soil_spectra}{{7}{10}{Common soil spectra vs average soil spectrum showing the spectral signatures of different soil components}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Component fitting process showing linear combination of spectral components for feldspar analysis}}{11}{figure.8}\protected@file@percent }
+\newlabel{fig:component_fitting}{{8}{11}{Component fitting process showing linear combination of spectral components for feldspar analysis}{figure.8}{}}
+\citation{liu_deconvolution_2020}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Component fitting prediction results showing carbon level vs predicted values}}{12}{figure.9}\protected@file@percent }
+\newlabel{fig:component_predictions}{{9}{12}{Component fitting prediction results showing carbon level vs predicted values}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Singular Value Decomposition (SVD)}{12}{subsection.3.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Convex optimization process showing SVD decomposition of feldspar spectral data}}{13}{figure.10}\protected@file@percent }
+\newlabel{fig:svd_decomposition}{{10}{13}{Convex optimization process showing SVD decomposition of feldspar spectral data}{figure.10}{}}
+\citation{kim_deep_2025}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Convex optimization predictions showing carbon level vs predicted values using SVD}}{14}{figure.11}\protected@file@percent }
+\newlabel{fig:svd_predictions}{{11}{14}{Convex optimization predictions showing carbon level vs predicted values using SVD}{figure.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Deep Learning}{14}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{14}{section.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Results summary for best performing methods}}{15}{table.8}\protected@file@percent }
-\newlabel{tab:results_summary}{{8}{15}{Results summary for best performing methods}{table.8}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Peak Fitting results by method, carbon level, and dataset}}{15}{table.9}\protected@file@percent }
-\newlabel{tab:peak_fitting_results}{{9}{15}{Peak Fitting results by method, carbon level, and dataset}{table.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Component Fitting results by method, carbon level, and dataset}}{16}{table.10}\protected@file@percent }
-\newlabel{tab:component_fitting_results}{{10}{16}{Component Fitting results by method, carbon level, and dataset}{table.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces SVD results by carbon level and dataset}}{16}{table.11}\protected@file@percent }
-\newlabel{tab:svd_results}{{11}{16}{SVD results by carbon level and dataset}{table.11}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Deep Learning results by carbon level and dataset}}{17}{table.12}\protected@file@percent }
-\newlabel{tab:deep_learning_results}{{12}{17}{Deep Learning results by carbon level and dataset}{table.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Comparing Analysis Methods}{17}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Effects of Carbon Levels on Results}{17}{subsection.4.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces MSE values by carbon level and analysis method}}{17}{table.13}\protected@file@percent }
-\newlabel{tab:carbon_level_results}{{13}{17}{MSE values by carbon level and analysis method}{table.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Deep learning prediction results showing carbon level vs predicted values using machine learning optimization}}{15}{figure.12}\protected@file@percent }
+\newlabel{fig:ml_predictions}{{12}{15}{Deep learning prediction results showing carbon level vs predicted values using machine learning optimization}{figure.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{15}{section.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Performance comparison of spectral analysis methods}}{16}{table.5}\protected@file@percent }
+\newlabel{tab:results}{{5}{16}{Performance comparison of spectral analysis methods}{table.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Comparing Analysis Methods}{16}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Effects of Carbon Levels on Results}{16}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Method performance by carbon level}}{16}{table.6}\protected@file@percent }
+\newlabel{tab:carbon_level_effects}{{6}{16}{Method performance by carbon level}{table.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Effects of Convolution on Results}{17}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Method performance by training dataset type}}{17}{table.7}\protected@file@percent }
+\newlabel{tab:convolution_effects}{{7}{17}{Method performance by training dataset type}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{17}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Conclusions}{17}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Future Work}{17}{subsection.5.2}\protected@file@percent }
+\bibstyle{elsarticle-num}
 \bibdata{references}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Effects of Convolution on Results}{18}{subsection.4.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces MSE values by dataset type}}{18}{table.14}\protected@file@percent }
-\newlabel{tab:convolution_results}{{14}{18}{MSE values by dataset type}{table.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{18}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Conclusions}{18}{subsection.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Future Work}{18}{subsection.5.2}\protected@file@percent }
+\bibcite{lal_soil_2018}{{1}{}{{}}{{}}}
+\bibcite{de_ros_advancing_2025}{{2}{}{{}}{{}}}
+\bibcite{yakubova_tagged_2019}{{3}{}{{}}{{}}}
+\bibcite{werner_mcnp_2017}{{4}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}Acknowledgments}{18}{section.6}\protected@file@percent }
-\bibcite{kavetskiy2018}{{1}{}{{}}{{}}}
-\bibcite{yakubova2025}{{2}{}{{}}{{}}}
+\bibcite{kavetskiy_neutron-stimulated_2017}{{5}{}{{}}{{}}}
+\bibcite{kavetskiy_energy_2018}{{6}{}{{}}{{}}}
+\bibcite{yakubova_measuring_2025}{{7}{}{{}}{{}}}
+\bibcite{gardner_use_2011}{{8}{}{{}}{{}}}
+\bibcite{virtanen_scipy_2020}{{9}{}{{}}{{}}}
+\bibcite{kavetskiy_neutron_2023}{{10}{}{{}}{{}}}
+\bibcite{liu_deconvolution_2020}{{11}{}{{}}{{}}}
+\bibcite{kim_deep_2025}{{12}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{19}
+\gdef \@abspage@last{20}

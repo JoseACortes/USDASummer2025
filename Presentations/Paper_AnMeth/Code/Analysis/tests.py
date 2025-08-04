@@ -607,6 +607,10 @@ def ML(training_df, test_df, training_exp_df, test_exp_df):
 
     result, analyze = activation_layer(training_x, training_y)
 
+    predicted_carbon = carbon_predictions_df['Carbon Portion'].apply(analyze).values
+    predicted_training_carbon = carbon_predictions_df['Carbon Portion'].loc[training_exp_df.index].apply(analyze).values
+    predicted_test_carbon = carbon_predictions_df['Carbon Portion'].loc[test_exp_df.index].apply(analyze).values
+
     x = carbon_predictions_df['Carbon Portion'].values
     x_hat = carbon_predictions_df['Carbon Portion'].apply(analyze)
     x_hat = np.array(x_hat)
@@ -624,6 +628,11 @@ def ML(training_df, test_df, training_exp_df, test_exp_df):
         'test_x': test_x,
         'test_y': test_y,
         'x_hat': x_hat,
+        'method group': 'Machine Learning',
+        'true_carbon': true_carbon,
+        'predicted_carbon': predicted_carbon,
+        'predicted_training_carbon': predicted_training_carbon,
+        'predicted_test_carbon': predicted_test_carbon
     }
 
     # training_predicted_df = carbon_predictions_df.loc[training_cols]
@@ -759,13 +768,13 @@ def Filtered_ML(training_df, test_df, training_exp_df, test_exp_df):
 
 # %%
 functions = {
-    "Peak Fitting - linear Baseline": PF_Linear,
-    # "Peak Fitting - Exponential Falloff Baseline": PF_Exp_Falloff,
-    # "Component Analysis - Average Training": CAavg,
-    # "Component Analysis - Elemental Maps": CAelem,
-    # "SVD": SVD,
-    # "Machine Learning": ML,
-    # "Filtered Machine Learning": Filtered_ML,
+    "Baseline and Peak Fitting - linear Baseline": PF_Linear,
+    "Baseline and Peak Fitting - Exponential Falloff Baseline": PF_Exp_Falloff,
+    "Component Analysis - Average Training": CAavg,
+    "Component Analysis - Elemental Maps": CAelem,
+    "Convex Optimization": SVD,
+    "Machine Learning": ML,
+    "Filtered Machine Learning": Filtered_ML,
 }
 
 # %%

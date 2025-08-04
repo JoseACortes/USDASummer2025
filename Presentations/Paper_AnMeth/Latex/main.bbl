@@ -1,21 +1,108 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{kavetskiy2018}
-A.~Kavetskiy, G.~Yakubova, S.~B. Sarker, K.~Truong, W.~Ezekoye, D.~Prior,
-  G.~Lin, A.~Torbert, Energy correlated timing method for neutron induced
-  prompt gamma ray spectroscopy, Applied Radiation and Isotopes 132 (2018)
-  177--183.
-\newblock \href {https://doi.org/10.1016/j.apradiso.2017.11.022}
-  {\path{doi:10.1016/j.apradiso.2017.11.022}}.
+\bibitem{lal_soil_2018}
+R.~Lal, J.~M. Kimble, R.~F. Follett, B.~A. Stewart (Eds.), Soil {Processes} and
+  the {Carbon} {Cycle}, CRC Press, Boca Raton, 2018.
+\newblock \href {https://doi.org/10.1201/9780203739273}
+  {\path{doi:10.1201/9780203739273}}.
 
-\bibitem{yakubova2025}
-G.~Yakubova, A.~Kavetskiy, S.~B. Sarker, D.~Prior, A.~Torbert, Measuring and
-  mapping moisture content in agricultural soils by neutron-gamma method,
-  Radiation Physics and Chemistry 187 (2025) 110349, forthcoming.
+\bibitem{de_ros_advancing_2025}
+A.~De~Ros, I.~Piccoli, L.~Sartori, B.~Portelli, G.~Serra, N.~Dal~Ferro,
+  F.~Morari,
+  \href{https://www.sciencedirect.com/science/article/pii/S0341816225002826}{Advancing
+  soil texture and organic carbon spatial variability assessment: {Integrating}
+  proximal gamma-ray spectroscopy and electromagnetic induction via data fusion
+  for site-independent analysis}, CATENA 254 (2025) 108980.
+\newblock \href {https://doi.org/10.1016/j.catena.2025.108980}
+  {\path{doi:10.1016/j.catena.2025.108980}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0341816225002826}
+
+\bibitem{yakubova_tagged_2019}
+G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
+  \href{https://www.sciencedirect.com/science/article/pii/S0969804319301381}{Tagged
+  neutron method for carbon analysis of large soil samples}, Applied Radiation
+  and Isotopes 150 (2019) 127--134.
+\newblock \href {https://doi.org/10.1016/j.apradiso.2019.05.028}
+  {\path{doi:10.1016/j.apradiso.2019.05.028}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0969804319301381}
+
+\bibitem{werner_mcnp_2017}
+C.~J. Werner, J.~C. Armstrong, F.~B. Brown, J.~S. Bull, L.~Casswell, L.~J. Cox,
+  D.~A. Dixon, R.~A. Forster, J.~T. {III}, Goorley, H.~G. Hughes, J.~A. {III},
+  Favorite, R.~L. Martz, S.~G. Mashnik, M.~E. Rising, C.~J. Solomon, A.~{Jr.},
+  Sood, J.~E. Sweezy, A.~J. Zukaitis, {MCNP} {User}'s {Manual} {Code} {Version}
+  6.2, Tech. Rep. LA-UR-17-29981, Los Alamos National Laboratory, Los Alamos,
+  NM, USA (Dec. 2017).
+
+\bibitem{kavetskiy_neutron-stimulated_2017}
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Neutron-{Stimulated}
+  {Gamma} {Ray} {Analysis} of {Soil}, in: New {Insights} on {Gamma} {Rays},
+  IntechOpen, 2017.
+\newblock \href {https://doi.org/10.5772/68014} {\path{doi:10.5772/68014}}.
+
+\bibitem{kavetskiy_energy_2018}
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Energy correlated timing
+  spectra in target neutron techniques, Nuclear Instruments and Methods in
+  Physics Research Section B: Beam Interactions with Materials and Atoms 433
+  (2018) 80--86.
+\newblock \href {https://doi.org/10.1016/j.nimb.2018.07.028}
+  {\path{doi:10.1016/j.nimb.2018.07.028}}.
+
+\bibitem{yakubova_measuring_2025}
+G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
+  \href{https://www.sciencedirect.com/science/article/pii/S0167198724004458}{Measuring
+  and mapping moisture content in agricultural fields by neutron-gamma
+  analysis}, Soil and Tillage Research 248 (2025) 106444.
+\newblock \href {https://doi.org/10.1016/j.still.2024.106444}
+  {\path{doi:10.1016/j.still.2024.106444}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0167198724004458}
+
+\bibitem{gardner_use_2011}
+R.~P. Gardner, X.~Ai, C.~R. Peeples, J.~Wang, K.~Lee, J.~L. Peeples,
+  A.~Calderon, Use of an iterative convolution approach for qualitative and
+  quantitative peak analysis in low resolution gamma-ray spectra, Nuclear
+  Instruments and Methods in Physics Research Section A: Accelerators,
+  Spectrometers, Detectors and Associated Equipment 652 (2011) 544--549.
+\newblock \href {https://doi.org/10.1016/j.nima.2010.12.224}
+  {\path{doi:10.1016/j.nima.2010.12.224}}.
+
+\bibitem{virtanen_scipy_2020}
+P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
+  E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, S.~J. van~der Walt,
+  M.~Brett, J.~Wilson, K.~J. Millman, N.~Mayorov, A.~R.~J. Nelson, E.~Jones,
+  R.~Kern, E.~Larson, C.~J. Carey, I.~Polat, Y.~Feng, E.~W. Moore,
+  J.~VanderPlas, D.~Laxalde, J.~Perktold, R.~Cimrman, I.~Henriksen, E.~A.
+  Quintero, C.~R. Harris, A.~M. Archibald, A.~H. Ribeiro, F.~Pedregosa, P.~van
+  Mulbregt, {SciPy} 1.0: fundamental algorithms for scientific computing in
+  {Python}, Nature Methods 17 (2020) 261--272.
+\newblock \href {https://doi.org/10.1038/s41592-019-0686-2}
+  {\path{doi:10.1038/s41592-019-0686-2}}.
+
+\bibitem{kavetskiy_neutron_2023}
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Neutron gamma analysis
+  of soil carbon: {Post}-irradiation physicochemical effects, Environmental
+  Technology \& Innovation 31 (2023) 103219.
+\newblock \href {https://doi.org/10.1016/j.eti.2023.103219}
+  {\path{doi:10.1016/j.eti.2023.103219}}.
+
+\bibitem{liu_deconvolution_2020}
+B.~Liu, H.~Yang, H.~Lv, F.~Jing, X.~Gao, M.~Yan, A deconvolution method for
+  scintillator gamma-ray spectrum analysis based on convex optimization,
+  Nuclear Instruments and Methods in Physics Research Section A: Accelerators,
+  Spectrometers, Detectors and Associated Equipment 957 (2020) 163399.
+\newblock \href {https://doi.org/10.1016/j.nima.2020.163399}
+  {\path{doi:10.1016/j.nima.2020.163399}}.
+
+\bibitem{kim_deep_2025}
+W.~Kim, K.~Ko, J.~Park, S.~Lee, H.~Yun, G.~Cho, Deep learning-based gamma
+  spectroscopic analysis considering multiple variables for in situ
+  applications, Radiation Physics and Chemistry 226 (2025) 112261.
+\newblock \href {https://doi.org/10.1016/j.radphyschem.2024.112261}
+  {\path{doi:10.1016/j.radphyschem.2024.112261}}.
 
 \end{thebibliography}

@@ -183,3 +183,4 @@ output/
 testMovie/
 *.mp4
 latbin/
+analysis_results.pkl
