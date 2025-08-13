@@ -341,6 +341,7 @@ def make_mcnp(
         - mats (str): The MCNP material definitions.
     """
 
+
     if mw == 'w':
         mw = -1
     elif mw == 'm':
@@ -355,6 +356,7 @@ def make_mcnp(
     x_ids = []
     y_ids = []
     z_ids = []
+    
     for i, x in enumerate(xs):
         surface_id = f'{surface_header}1{force_n_digits(i, n)}{surface_footer}'
         x_ids.append(surface_id)
@@ -387,7 +389,8 @@ def make_mcnp(
     z_pad = (z1-z0)/res[2]
     pad = (x_pad, y_pad, z_pad)
     elems = sample_section(f, midpoints, pad, subsection_n)
-    
+
+
     avg_sample = np.mean(elems, axis=0)
     mats = ''
     nn = int(np.ceil(np.log10(len(elems))))
@@ -411,13 +414,12 @@ def make_mcnp(
                 else:
                     # print('b1', mat)
                     mat += f'{id} {e*mw} '
-                    # print('b2', mat)
+                # print('b3', mat)
         # mat = fold128(mat)
         # if a:
         #     print(f'Warning: Material {elem_id} is too long, folding it to 128 characters.', mat)
         #     b
         mats += mat+'\n'
-        
     cells = ''
     cell_ids = []
 
@@ -445,14 +447,15 @@ def make_mcnp(
     if isinstance(density, (int, float, np.floating, np.integer)):
         densities = [density] * len(midpoints)
     elif callable(density):
-        print(midpoints.shape)
+        # print(midpoints.shape)
         densities = list(density(midpoints))
-        print('densities', densities)
+        # print('densities', densities)
     elif isinstance(density, (np.ndarray, list)):
         for i, e in enumerate(elem_ids):
             d = np.multiply(density, elems[i])
             d = np.sum(d, axis=-1)
             densities.append(d) 
+        densities = np.array(densities)
 
     # for i, e in enumerate(elem_ids):
 

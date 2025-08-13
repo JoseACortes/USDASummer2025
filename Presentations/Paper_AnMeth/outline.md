@@ -9,6 +9,14 @@ journal: Radiation Physics and Chemistry
 
 date: August 30, 2025
 
+## Abstract
+
+Abstract
+
+Soil carbon is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of carbon is essential for measuring soil quality and its impact on the environment. Traditional methods for measuring carbon are often time-consuming, expensive, and require laboratory analysis. In situ Neutron-Gamma spectral analysis (NGSA) offers an alternative for rapid and non-destructive measurement of soil carbon. This paper explores the use of NGSA techniques to measure carbon levels in various soil types. We simulate in MCNP6.2 common soil types and apply different NGSA methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring of soil carbon. The results demonstrate that peak fitting with exponential falloff baseline achieves the lowest mean squared error (7.66 × 10−5), followed by component analysis methods. The study shows that NGSA methods can provide accurate soil carbon measurements, with convolution techniques improving overall accuracy across all methods.
+
+Keywords: soil carbon, spectral analysis, gamma-ray spectroscopy, MCNP simulation, peak fitting, component analysis, deep learning
+
 contents:
 
 1. Background
@@ -20,52 +28,27 @@ contents:
 
 ## 1. Background
 
-Soil carbon is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of carbon is essential for measuring soil quality, and its impact on the environment [Lal et al., 2018]. Traditional methods for measuring carbon are often time-consuming, expensive, and require laboratory analysis [Smith et al., 2020]. In situ spectral analysis offers an alternative for rapid and non-destructive measurement of soil carbon [Yakubova et al., 2019]. This paper explores the use of spectral analysis techniques to measure carbon levels in various soil types. We simulate common soil types and apply different spectral analysis methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring soil carbon.
+Soil carbon is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of carbon is essential for measuring soil quality, and its impact on the environment [Lal et al., 2018]. Traditional methods for measuring carbon are often time-consuming, expensive, and require laboratory analysis [Smith et al., 2020]. In situ Neutron Gamma Spectral Analysis, NGSA offers an alternative for rapid and non-destructive measurement of soil carbon [Yakubova et al., 2019]. This paper explores the use of NGSA techniques to measure carbon levels in various soil types. We simulate in MCNP6.2 common soil types and apply different NGSA methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring soil carbon.
 
 ## 2. Data Generation
 
 ### 2.1. Common Soil Types
 
-To investigate the effectiveness of spectral analysis methods for soil carbon measurement, we simulate a range of common soil types. The simulated data includes spectral readings across different wavelengths, capturing the unique spectral signatures of each soil type. This data serves as a foundation for applying various spectral analysis techniques.
+To investigate the effectiveness of NGSA methods for soil carbon measurement, we simulate a range of common soil types. The simulated data includes spectral readings across different wavelengths, capturing the unique spectral signatures of each soil type. This data serves as a foundation for applying various NGSA techniques.
 
-| Element | MCNP Identifier | Density (g/cm^3) |
-|---------|------------------|------------------|
-| Si | 14028 | 2.33 |
-| Al | 13027 | 2.7 |
-| H | 1001 | 0.001 |
-| Na | 11023 | 0.97 |
-| O | 8016 | 0.00143 |
-| Fe | 26000 | 7.87 |
-| Mg | 12024 | 1.74 |
-| C | 6000 | 2.33 |
+| Material   |   C % |   H % |   O % |   Si % |   Na % |   Al % |   K % |
+|:-----------|------:|------:|------:|-------:|-------:|-------:|------:|
+| Carbon     | 100.0 |   0.0 |   0.0 |    0.0 |    0.0 |    0.0 |   0.0 |
+| Water      |   0.0 |  11.2 |  88.8 |    0.0 |    0.0 |    0.0 |   0.0 |
+| Quartz     |   0.0 |   0.0 |  53.3 |   46.7 |    0.0 |    0.0 |   0.0 |
+| Feldspar   |   0.0 |   0.0 |  48.8 |   32.1 |    8.8 |   10.3 |   0.0 |
+| Mica       |   0.0 |   0.5 |  48.2 |   21.2 |    0.0 |   20.3 |   9.8 |
 
-| Compound | Density (g/cm^3) |
-|----------|------------------|
-| SiO2 | 2.65 |
-| Al2O3 | 3.95 |
-| H2O | 1.0 |
-| Na2O | 2.16 |
-| Fe2O3 | 5.24 |
-| MgO | 2.74 |
-| C | 2.33 |
+Table x presents the elemental composition of common soil materials used in the simulations. Mechanical mixing is used to combine materials based on their weight proportions, such that a 50% carbon and 50% water mix would have a composition of 50% carbon, 5.6% hydrogen, and 44.4% oxygen. To measure the effectiveness of NGSA methods for carbon measurement, we simulate combinations of soil materials with varying carbon (C) and moisture (Water) content.
 
-| Material | Compound Makeup (by weight) | Density (g/cm^3) |
-|----------|------------------|------------------|
-| Silica | SiO2 (76.4%), Al2O3 (23.6%) | 2.32 |
-| Kaolinite | SiO2 (46.5%), Al2O3 (39.5%), H2O (14.0%) | 3.95 |
-| Smectite | SiO2 (66.7%), Al2O3 (28.3%), H2O (5.0%) | 2.785 |
-| Montmorillonite | SiO2 (73.7%), Al2O3 (24.6%), H2O (1.7%) | 2.7 |
-| Quartz | SiO2 (100.0%) | 2.62 |
-| Chlorite | SiO2 (30.0%), Al2O3 (24.0%), Fe2O3 (23.3%), H2O (22.7%) | 2.6 |
-| Mica | SiO2 (48.9%), Al2O3 (40.3%), H2O (10.8%) | 2.7 |
-| Feldspar | SiO2 (68.0%), Al2O3 (32.0%) | 2.55 |
-| Coconut | C (100.0%) | 0.53 |
+### 2.2. Simulation in MCNP6.2
 
-To measure the effectiveness of spectral analysis methods for carbon measurement, we simulate combinations of soil materials with varying carbon content (coconut).
-
-### 2.2. Simulation in MCNP
-
-MCNP6 [Werner et al., 2017] was used to simulate gamma-ray spectra resulting from neutron activation of soil samples. Each simulation modeled a soil matrix with varying concentrations of carbon and other common soil constituents. The geometry was set up to mimic in situ measurement conditions, with a neutron source placed above a soil slab and a detector positioned to capture emitted gamma rays [Kavetskiy et al., 2017].
+MCNP6.2 [Werner et al., 2017] was used to simulate gamma-ray spectra resulting from neutron activation of soil samples. Each simulation modeled a soil sample undergoing neutron activation with varying concentrations of carbon and other common soil constituents. The geometry was set up to mimic in situ measurement conditions, with a neutron source placed above a soil slab and a detector positioned to capture emitted gamma rays [Kavetskiy et al., 2017].
 
 ![Geometry of MCNP](Figures/DataGeneration/MCNPGeometry.png)
 
@@ -76,17 +59,21 @@ Key simulation parameters included:
 - **Detector type:** Geiger-Mueller (G-M) detector [Yakubova et al., 2025]
 - **Tally:** F8 (pulse height tally) for gamma spectra
 
-This approach enables the generation of realistic spectral data for a variety of soil compositions, forming the basis for evaluating different spectral analysis techniques.
+| Element         |    C |    H |    O |    Si |    Na |    Al |     K |
+|:----------------|-----:|-----:|-----:|------:|------:|------:|------:|
+| MCNP Identifier | 6000 | 1001 | 8016 | 14028 | 11021 | 13027 | 19000 |
 
-## 2.3. Spectral Readings
+This approach enables the generation of realistic spectral data for a variety of soil compositions, forming the basis for evaluating different NGSA techniques.
 
-The spectral readings obtained from the MCNP simulations provide a detailed representation of the gamma-ray emissions from the soil samples. Mathematically it is a probability density function (PDF) of the energy distribution of the emitted gamma rays.
+### 2.3. Spectral Readings
+
+The spectral readings obtained from the MCNP simulations provide a detailed distribution of the gamma-ray emissions from the soil samples per neutron, similar to what would be measured in a real-world scenario.
 
 ![MCNP Spectral Reading](Figures/DataGeneration/MCNPSpectralReading.png)
 
-## 2.4 Training and Testing Data
+### 2.4 Training and Testing Data
 
-The training data for the spectral analysis methods is picked from the edge cases of the simulated data. This includes the highest and lowest carbon levels both as would be found in simulation as well as natural soils. The testing data is all cases of the simulated data, excluding the training data. 
+The training data for the NGSA methods is picked from the edge cases of the simulated data. This includes the highest and lowest carbon levels both as would be found in simulation as well as natural soils. The testing data is all cases of the simulated data, excluding the training data.
 
 | Carbon Level | Associated Amount |
 |--------------|-------------------|
@@ -95,20 +82,26 @@ The training data for the spectral analysis methods is picked from the edge case
 
 ![Feldspar Spectral Reading By Carbon Level](Figures/DataGeneration/FeldsparSpectralReadingByCarbonLevel.png)
 
-## 2.5. Data Convolution
+### 2.5. Data Convolution
+
+In the context of NGSA, MCNP can be used to simulate the interaction of radiation with soil materials, providing spectrums to analyze. Linear Convolution is used to quickly predict spectral readings for material mixtures by combining the spectral signatures of individual components. This does not account for the complex interactions between materials, but it provides a simplified approach to generate spectral data for analysis. The error metric for this convolution method is based on the difference between the simulated spectral readings and the readings obtained from MCNP simulations. The effects of convolution as training data on the analysis results will be investigated in the results section.
 
 ![Simulated vs Convoluted Data](Figures/DataGeneration/Sim_vs_Convoluted_FeldsparSpectralReadings_Combined.png)
 
-In the context of spectral analysis, MCNP can be used to simulate the interaction of radiation with soil materials, providing spectrums to analyze. Linear Convolution is used to quickly predict spectral readings for material mixtures by combining the spectral signatures of individual components. This does not account for the complex interactions between materials, but it provides a simplified approach to generate spectral data for analysis. The error metric for this convolution method is based on the difference between the simulated spectral readings and the readings obtained from MCNP simulations. The effects of convolution as training data on the analysis results will be investigated in the results section.
-
 ## 3. Analysis Methods of Spectral Readings
 
-This section explores various spectral analysis methods applied to the simulated spectral readings. Each method is evaluated for its effectiveness in measuring Carbon levels.
+This section explores various NGSA methods applied to the simulated spectral readings. Each method is evaluated for its effectiveness in measuring Carbon levels.
 Error is calculated using mean squared error (MSE) between the predicted and actual carbon levels in the test data.
+
+### 3.0 Calibration Layer
+
+All models undergo a calibration process to align their predictions with the carbon measurements. This involves a regression model between a key characteristic and the predicted values. A linear regression model is used for this purpose.
+
+The Scipy python package is used for the fitting process [Virtanen et al., 1977], leveraging its curve fitting capabilities to refine the initial parameter estimates. All fitting problems are taken as fitting a curve f(x, p0) where p0 are the initial parameters. The fitting process iteratively adjusts these parameters to minimize the difference between the predicted and actual values, using a least-squares approach. The Levenberg-Marquardt algorithm is employed to optimize the fitting process [Moré 1978]. When the fitting is bounded, Trust Region Reflective optimization [Branch et al., 1999] is used.
 
 ### 3.1 Peak Fitting
 
-Baseline - Peak fitting involves using the least- squares method in identifying and quantifying the baseline and peaks in the spectral data that correspond to specific soil components [Gardner et al., 2011]. This method is useful for extracting information about the concentration of individual elements or compounds in the soil. For effective peak fitting, the data is filtered to focus on the peak area.
+Baseline - Peak fitting involves using the least-squares method in identifying and quantifying the baseline and peaks in the spectral data that correspond to specific soil components [Gardner et al., 2011]. This method is useful for extracting information about the concentration of individual elements or compounds in the soil. For effective peak fitting, the data is filtered to focus on the peak area.
 
 | Symbol | Description                | Example Function                |
 |--------|----------------------------|---------------------------------|
@@ -136,7 +129,7 @@ This method relies on parameterized functions, which are fitted to the spectral 
 |                  | Width     | 1                                         | -∞                              | ∞                               |
 |                  | Height    | window minimum                           | -∞                              | ∞                               |
 
-The Scipy python package is used for the fitting process [Virtanen et al., 2020], leveraging its curve fitting capabilities to refine the initial parameter estimates. The baseline function is subtracted from the fitted function to isolate the peak, and the area under the peak is calculated to quantify the concentration of the corresponding element or compound in the soil.
+The baseline function is subtracted from the fitted function to isolate the peak, and the area under the peak is calculated to quantify the concentration of the corresponding element or compound in the soil.
 
 ![Fitted Peak](Figures/Analysis/peak_fitting_feldspar.png)
 
@@ -231,17 +224,17 @@ Lower carbon levels tend to result in higher MSE values across all methods, indi
 | Feldspar             |                                                3.43383e-05 |                                   0.00036     |                             7.48497e-07 |                           7.91956e-07 |           0.0021363   |                 0.011007    |        0.000930396 |
 | Material Mixes       |                                                7.65971e-05 |                                   0.000351535 |                             0.000343431 |                           0.000209907 |           0.000427226 |                 0.00369571  |        0.000366705 |
 
-Convolution generally improves the accuracy of spectral analysis methods by smoothing out noise and enhancing the signal-to-noise ratio. The results show that convolution leads to lower MSE values across all methods, indicating that it is beneficial for spectral analysis in soil carbon measurement.
+Convolution generally improves the accuracy of NGSA methods by smoothing out noise and enhancing the signal-to-noise ratio. The results show that convolution leads to lower MSE values across all methods, indicating that it is beneficial for NGSA in soil carbon measurement.
 
 ## 5. Discussion
 
 ### 5.1 Conclusions
 
-The study demonstrates the potential of spectral analysis methods for measuring soil carbon levels. Component fitting and peak fitting methods show the best performance, while deep learning techniques require further refinement. Convolution is beneficial for improving the accuracy of spectral analysis.
+The study demonstrates the potential of NGSA methods for measuring soil carbon levels. Component fitting and peak fitting methods show the best performance, while deep learning techniques require further refinement. Convolution is beneficial for improving the accuracy of NGSA.
 
 ### 5.2 Future Work
 
-Future work will focus on x
+Future work will focus on exploring advanced machine learning techniques and their integration with NGSA methods to enhance soil carbon measurement capabilities.
 
 ## 6. Acknowledgments and References
 

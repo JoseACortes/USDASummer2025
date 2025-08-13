@@ -14,7 +14,6 @@ from CortesAnalysisPackage import svd as svd
 # Import
 import pandas as pd
 import numpy as np
-import INS_Analysis as insd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats.mstats import linregress

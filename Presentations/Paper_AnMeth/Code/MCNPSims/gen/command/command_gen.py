@@ -2,8 +2,13 @@
 import pandas as pd
 import os
 
-filenames = '../../sims.csv'
-filenames = pd.read_csv(filenames)
+# filenames = '../../sims.csv'
+# filenames = pd.read_csv(filenames)
+# filenames = filenames['filename']
+
+filenames = '../../tests.pkl'
+filenames = pd.read_pickle(filenames)
+filenames = filenames['filename'].tolist()
 
 compute_folder = '../../compute/'
 commands_folder = compute_folder+'commands/'
@@ -15,7 +20,7 @@ with open('command_template.sh', 'r') as file:
     template = file.read()
     file.close()
     
-for name in filenames['filename']:
+for name in filenames:
     name = name.split('.')[0]
 
     # replace "@filename@" with the filenames
