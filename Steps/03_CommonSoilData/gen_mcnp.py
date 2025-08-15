@@ -406,6 +406,9 @@ sims_df = {}
 id_header = "003"
 count = 0
 
+avg_samples = []
+labels = []
+
 sim_folder = "compute/input/"
 for res in ress:
     for f in all_fns:
@@ -426,10 +429,11 @@ for res in ress:
             detector_cell='101',
         )
         script = mcnpgen(cells, walls, surfaces, mats, detector_tallies)
-
+        avg_samples.append(avg_sample)
         id = id_header+str(force_n_digits(count, 3))
 
         label = f"{res}_{f}_{id}"
+        labels.append(label)
         filename = f"{label}.txt"
 
         sims_df[label] = {
@@ -464,3 +468,4 @@ for res in ress:
 sims_df = pd.DataFrame.from_dict(sims_df, orient='index')
 sims_df.to_csv("sims_03.csv", index=False)
 
+pd.DataFrame(avg_samples, index=labels, columns=elem_labels).to_csv("avg_samples_03.csv")

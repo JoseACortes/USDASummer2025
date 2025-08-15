@@ -52,11 +52,11 @@ MCNP6.2 [Werner et al., 2017] was used to simulate gamma-ray spectra resulting f
 
 ![Geometry of MCNP](Figures/DataGeneration/MCNPGeometry.png)
 
-Key simulation parameters included:
+Key simulation parameters include:
 
 - **Neutron source energy:** API120 portable neutron (D-T generator) generator [Kavetskiy et al., 2018] 
 - **Soil slab dimensions:**  112 cm x 90 cm x 30 cm
-- **Detector type:** Geiger-Mueller (G-M) detector [Yakubova et al., 2025]
+- **Detector type:** NaI detector [Yakubova et al., 2025]
 - **Tally:** F8 (pulse height tally) for gamma spectra
 
 | Element         |    C |    H |    O |    Si |    Na |    Al |     K |
@@ -115,7 +115,7 @@ Baseline - Peak fitting involves using the least-squares method in identifying a
 | Exp Falloff     | Amplitude, Decay, Offset        | a * exp(-b * x) + c                 |
 | Gaussian        | Amplitude, Center, Width, Height        | a * exp(-((x - b)*-p) ** 2) + c       |
 
-This method relies on parameterized functions, which are fitted to the spectral data to identify the peaks corresponding to specific elements or compounds. The fitting function is a combination of a peak function (e.g., Gaussian) and a baseline function (e.g., linear or exponential falloff). Starting parameters are generated automatically such that the initial fitting function is within the bounds of the spectrum in the strong window. Parameters are also constrained to ensure they remain within reasonable limits based on the expected spectral characteristics of the soil components.
+This method relies on parameterized functions (Table x.), which are fitted to the spectral data to identify the peaks corresponding to specific elements or compounds. The fitting function is a combination of a peak function (e.g., Gaussian) and a baseline function (e.g., linear or exponential falloff). Starting parameters are generated automatically such that the initial fitting function is within the bounds of the spectrum in the strong window. Parameters are also constrained to ensure they remain within reasonable limits based on the expected spectral characteristics of the soil components.
 
 | Function Type    | Parameter | Starting Parameter (p0)                    | Lower Bound                     | Upper Bound                     |
 |------------------|-----------|--------------------------------------------|---------------------------------|---------------------------------|
@@ -131,11 +131,11 @@ This method relies on parameterized functions, which are fitted to the spectral 
 
 The baseline function is subtracted from the fitted function to isolate the peak, and the area under the peak is calculated to quantify the concentration of the corresponding element or compound in the soil.
 
-![Fitted Peak](Figures/Analysis/peak_fitting_feldspar.png)
+![Fitted Peak](Figures/Analysis/peak_fitting_feldspar_subplots.png)
 
-An activation layer of linear regression is used to compare the peak areas to known soil carbon concentrations, allowing for the calibration of the model's predictions.
+The final prediction is calibrated using the peak areas.
 
-![Peak Fitting Prediction Results](Figures/Analysis/carbon_level_vs_predicted.jpg)
+![Peak Fitting Prediction Results](Figures/Analysis/carbon_level_vs_predicted_pf.jpg)
 
 | method                                                   |         mse |
 |----------------------------------------------------------|-------------|
@@ -159,6 +159,7 @@ Where:
 Components can be any known spectral signature, this can be from pure elemental samples [Kavetskiy et al., 2023] or from the average of a set of soil samples. The fitting process involves adjusting the coefficients A_i to minimize the difference between the combined spectral function F_c and the observed spectral data. This method also benefits from filtering of low energy signals which are generally more likely to be caused by noise.
 
 ![Component Fitting Process](Figures/Analysis/linear_combination_feldspar.png)
+![Component Fitting Process](Figures/Analysis/elemental_linear_combination_feldspar.png)
 
 The carbon coefficient A_C is then used to estimate the Carbon level in the soil. This method is particularly useful for analyzing complex soil mixtures where multiple known components contribute to the spectral signature. This method is also generalizable to study other elements or compounds.
 

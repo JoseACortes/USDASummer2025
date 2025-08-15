@@ -2,13 +2,13 @@
 - Cite soil densities and compositions
 - Add more details on the simulation setup
 + Dry to 20% moisture content
-- Explain mechanical mixing equation
++ Explain mechanical mixing equation
 + Elemental component graphs
 + change weights to percentage
 + change probabilities to counts per neutron
-- Change detector type
++ Change detector type
 + mention the regression model
-- make points simulation and lines fitting
++ make points simulation and lines fitting
 - explain each table
 
 Sim GEOM
@@ -25,9 +25,9 @@ Sim Soil
 - now cite them
 
 PF check
-- add true vs peak area graph
-- add soil types to true vs predicted graph
-- send fitting graphs
++ add true vs peak area graph
++ add soil types to true vs predicted graph
++ send fitting graphs
 
 - explain convoluted data
 
