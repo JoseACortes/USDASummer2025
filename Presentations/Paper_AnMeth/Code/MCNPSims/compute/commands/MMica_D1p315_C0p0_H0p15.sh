@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task=48
 
 ##SBATH -p priority --qos=nsdl
-#SBATCH --time=10:00:00
+#SBATCH --time=24:00:00
 
 atlas=true
 line=MMica_D1p315_C0p0_H0p15

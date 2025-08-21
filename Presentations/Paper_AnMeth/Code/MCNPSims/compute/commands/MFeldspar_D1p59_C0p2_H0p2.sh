@@ -12,7 +12,7 @@
 #SBATCH --cpus-per-task=48
 
 ##SBATH -p priority --qos=nsdl
-#SBATCH --time=10:00:00
+#SBATCH --time=24:00:00
 
 atlas=true
 line=MFeldspar_D1p59_C0p2_H0p2

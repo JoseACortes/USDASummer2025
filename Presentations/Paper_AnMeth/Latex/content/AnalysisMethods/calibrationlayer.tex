@@ -1,0 +1,5 @@
+\subsection{Calibration Layer}
+
+All models undergo a calibration process to align their predictions with the carbon measurements. This involves a regression model between a key characteristic and the predicted values. A linear regression model is used for this purpose.
+
+The Scipy python package is used for the fitting process\cite{virtanen_scipy_2020}, leveraging its curve fitting capabilities to refine the initial parameter estimates. All fitting problems are taken as fitting a curve f(x, p0) where p0 are the initial parameters. The fitting process iteratively adjusts these parameters to minimize the difference between the predicted and actual values, using a least-squares approach. The Levenberg-Marquardt algorithm is employed to optimize the fitting process\cite{more_levenberg-marquardt_1978}. When the fitting is bounded, Trust Region Reflective optimization \cite{branch_subspace_1999} is used.

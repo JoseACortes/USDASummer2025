@@ -11,17 +11,6 @@ R.~Lal, J.~M. Kimble, R.~F. Follett, B.~A. Stewart (Eds.), Soil {Processes} and
 \newblock \href {https://doi.org/10.1201/9780203739273}
   {\path{doi:10.1201/9780203739273}}.
 
-\bibitem{de_ros_advancing_2025}
-A.~De~Ros, I.~Piccoli, L.~Sartori, B.~Portelli, G.~Serra, N.~Dal~Ferro,
-  F.~Morari,
-  \href{https://www.sciencedirect.com/science/article/pii/S0341816225002826}{Advancing
-  soil texture and organic carbon spatial variability assessment: {Integrating}
-  proximal gamma-ray spectroscopy and electromagnetic induction via data fusion
-  for site-independent analysis}, CATENA 254 (2025) 108980.
-\newblock \href {https://doi.org/10.1016/j.catena.2025.108980}
-  {\path{doi:10.1016/j.catena.2025.108980}}.
-\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0341816225002826}
-
 \bibitem{yakubova_tagged_2019}
 G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
   \href{https://www.sciencedirect.com/science/article/pii/S0969804319301381}{Tagged
@@ -33,25 +22,35 @@ G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
 
 \bibitem{werner_mcnp_2017}
 C.~J. Werner, J.~C. Armstrong, F.~B. Brown, J.~S. Bull, L.~Casswell, L.~J. Cox,
-  D.~A. Dixon, R.~A. Forster, J.~T. {III}, Goorley, H.~G. Hughes, J.~A. {III},
-  Favorite, R.~L. Martz, S.~G. Mashnik, M.~E. Rising, C.~J. Solomon, A.~{Jr.},
-  Sood, J.~E. Sweezy, A.~J. Zukaitis, {MCNP} {User}'s {Manual} {Code} {Version}
-  6.2, Tech. Rep. LA-UR-17-29981, Los Alamos National Laboratory, Los Alamos,
-  NM, USA (Dec. 2017).
+  D.~A. Dixon, R.~A. Forster, III, J.~T. Goorley, H.~G. Hughes, III, J.~A.
+  Favorite, R.~L. Martz, S.~G. Mashnik, M.~E. Rising, C.~J. Solomon, Jr.,
+  A.~Sood, J.~E. Sweezy, A.~J. Zukaitis, C.~A. Anderson, J.~S. Elson, J.~W.
+  Durkee, Jr., R.~C. Johns, G.~W. McKinney, G.~E. McMath, J.~S. Hendricks,
+  D.~B. Pelowitz, R.~E. Prael, T.~E. Booth, M.~R. James, M.~L. Fensin, T.~A.
+  Wilcox, B.~C. Kiedrowski,
+  \href{http://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-17-29981}{{MCNP}
+  {User}'s {Manual} {Code} {Version} 6.2}, Tech. Rep. LA-UR-17-29981, Los
+  Alamos National Laboratory, Los Alamos, NM, USA (Oct. 2017).
+\newline\urlprefix\url{http://permalink.lanl.gov/object/tr?what=info:lanl-repo/lareport/LA-UR-17-29981}
 
 \bibitem{kavetskiy_neutron-stimulated_2017}
-A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Neutron-{Stimulated}
-  {Gamma} {Ray} {Analysis} of {Soil}, in: New {Insights} on {Gamma} {Rays},
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, A.~Kavetskiy,
+  G.~Yakubova, S.~A. Prior, H.~A. Torbert,
+  \href{https://www.intechopen.com/chapters/54779}{Neutron-{Stimulated} {Gamma}
+  {Ray} {Analysis} of {Soil}}, in: New {Insights} on {Gamma} {Rays},
   IntechOpen, 2017.
 \newblock \href {https://doi.org/10.5772/68014} {\path{doi:10.5772/68014}}.
+\newline\urlprefix\url{https://www.intechopen.com/chapters/54779}
 
 \bibitem{kavetskiy_energy_2018}
-A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Energy correlated timing
-  spectra in target neutron techniques, Nuclear Instruments and Methods in
-  Physics Research Section B: Beam Interactions with Materials and Atoms 433
-  (2018) 80--86.
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert,
+  \href{https://www.sciencedirect.com/science/article/pii/S0168583X18304476}{Energy
+  correlated timing spectra in target neutron techniques}, Nuclear Instruments
+  and Methods in Physics Research Section B: Beam Interactions with Materials
+  and Atoms 433 (2018) 80--86.
 \newblock \href {https://doi.org/10.1016/j.nimb.2018.07.028}
   {\path{doi:10.1016/j.nimb.2018.07.028}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0168583X18304476}
 
 \bibitem{yakubova_measuring_2025}
 G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
@@ -62,15 +61,6 @@ G.~Yakubova, A.~Kavetskiy, S.~A. Prior, H.~A. Torbert,
   {\path{doi:10.1016/j.still.2024.106444}}.
 \newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0167198724004458}
 
-\bibitem{gardner_use_2011}
-R.~P. Gardner, X.~Ai, C.~R. Peeples, J.~Wang, K.~Lee, J.~L. Peeples,
-  A.~Calderon, Use of an iterative convolution approach for qualitative and
-  quantitative peak analysis in low resolution gamma-ray spectra, Nuclear
-  Instruments and Methods in Physics Research Section A: Accelerators,
-  Spectrometers, Detectors and Associated Equipment 652 (2011) 544--549.
-\newblock \href {https://doi.org/10.1016/j.nima.2010.12.224}
-  {\path{doi:10.1016/j.nima.2010.12.224}}.
-
 \bibitem{virtanen_scipy_2020}
 P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
   E.~Burovski, P.~Peterson, W.~Weckesser, J.~Bright, S.~J. van~der Walt,
@@ -78,31 +68,61 @@ P.~Virtanen, R.~Gommers, T.~E. Oliphant, M.~Haberland, T.~Reddy, D.~Cournapeau,
   R.~Kern, E.~Larson, C.~J. Carey, I.~Polat, Y.~Feng, E.~W. Moore,
   J.~VanderPlas, D.~Laxalde, J.~Perktold, R.~Cimrman, I.~Henriksen, E.~A.
   Quintero, C.~R. Harris, A.~M. Archibald, A.~H. Ribeiro, F.~Pedregosa, P.~van
-  Mulbregt, {SciPy} 1.0: fundamental algorithms for scientific computing in
-  {Python}, Nature Methods 17 (2020) 261--272.
+  Mulbregt, \href{https://www.nature.com/articles/s41592-019-0686-2}{{SciPy}
+  1.0: fundamental algorithms for scientific computing in {Python}}, Nature
+  Methods 17~(3) (2020) 261--272, publisher: Nature Publishing Group.
 \newblock \href {https://doi.org/10.1038/s41592-019-0686-2}
   {\path{doi:10.1038/s41592-019-0686-2}}.
+\newline\urlprefix\url{https://www.nature.com/articles/s41592-019-0686-2}
+
+\bibitem{more_levenberg-marquardt_1978}
+J.~J. Moré, \href{https://link.springer.com/chapter/10.1007/BFb0067700}{The
+  {Levenberg}-{Marquardt} algorithm: {Implementation} and theory}, in:
+  Numerical {Analysis}, Springer, Berlin, Heidelberg, 1978, pp. 105--116, iSSN:
+  1617-9692.
+\newblock \href {https://doi.org/10.1007/BFb0067700}
+  {\path{doi:10.1007/BFb0067700}}.
+\newline\urlprefix\url{https://link.springer.com/chapter/10.1007/BFb0067700}
+
+\bibitem{branch_subspace_1999}
+M.~A. Branch, T.~F. Coleman, Y.~Li,
+  \href{https://epubs.siam.org/doi/10.1137/S1064827595289108}{A {Subspace},
+  {Interior}, and {Conjugate} {Gradient} {Method} for {Large}-{Scale}
+  {Bound}-{Constrained} {Minimization} {Problems}}, SIAM Journal on Scientific
+  Computing 21~(1) (1999) 1--23, publisher: Society for Industrial and Applied
+  Mathematics.
+\newblock \href {https://doi.org/10.1137/S1064827595289108}
+  {\path{doi:10.1137/S1064827595289108}}.
+\newline\urlprefix\url{https://epubs.siam.org/doi/10.1137/S1064827595289108}
+
+\bibitem{gardner_use_2011}
+R.~P. Gardner, X.~Ai, C.~R. Peeples, J.~Wang, K.~Lee, J.~L. Peeples,
+  A.~Calderon,
+  \href{https://www.sciencedirect.com/science/article/pii/S0168900210030500}{Use
+  of an iterative convolution approach for qualitative and quantitative peak
+  analysis in low resolution gamma-ray spectra}, Nuclear Instruments and
+  Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors
+  and Associated Equipment 652~(1) (2011) 544--549.
+\newblock \href {https://doi.org/10.1016/j.nima.2010.12.224}
+  {\path{doi:10.1016/j.nima.2010.12.224}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0168900210030500}
 
 \bibitem{kavetskiy_neutron_2023}
-A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert, Neutron gamma analysis
-  of soil carbon: {Post}-irradiation physicochemical effects, Environmental
-  Technology \& Innovation 31 (2023) 103219.
+A.~Kavetskiy, G.~Yakubova, S.~A. Prior, H.~A. Torbert,
+  \href{https://www.sciencedirect.com/science/article/pii/S2352186423002158}{Neutron
+  gamma analysis of soil carbon: {Post}-irradiation physicochemical effects},
+  Environmental Technology \& Innovation 31 (2023) 103219.
 \newblock \href {https://doi.org/10.1016/j.eti.2023.103219}
   {\path{doi:10.1016/j.eti.2023.103219}}.
-
-\bibitem{liu_deconvolution_2020}
-B.~Liu, H.~Yang, H.~Lv, F.~Jing, X.~Gao, M.~Yan, A deconvolution method for
-  scintillator gamma-ray spectrum analysis based on convex optimization,
-  Nuclear Instruments and Methods in Physics Research Section A: Accelerators,
-  Spectrometers, Detectors and Associated Equipment 957 (2020) 163399.
-\newblock \href {https://doi.org/10.1016/j.nima.2020.163399}
-  {\path{doi:10.1016/j.nima.2020.163399}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S2352186423002158}
 
 \bibitem{kim_deep_2025}
-W.~Kim, K.~Ko, J.~Park, S.~Lee, H.~Yun, G.~Cho, Deep learning-based gamma
-  spectroscopic analysis considering multiple variables for in situ
-  applications, Radiation Physics and Chemistry 226 (2025) 112261.
+W.~Kim, K.~Ko, J.~Park, S.~Lee, H.~Yun, G.~Cho,
+  \href{https://www.sciencedirect.com/science/article/pii/S0969806X24007539}{Deep
+  learning-based gamma spectroscopic analysis considering multiple variables
+  for in situ applications}, Radiation Physics and Chemistry 226 (2025) 112261.
 \newblock \href {https://doi.org/10.1016/j.radphyschem.2024.112261}
   {\path{doi:10.1016/j.radphyschem.2024.112261}}.
+\newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0969806X24007539}
 
 \end{thebibliography}

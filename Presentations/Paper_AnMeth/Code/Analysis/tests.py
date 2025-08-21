@@ -198,7 +198,7 @@ Carbon_Levels = {
     },
     'Agricultural': {
         'min': 0.00,
-        'max': 0.06
+        'max': 0.15
     }
 }
 
@@ -526,7 +526,7 @@ def SVD(training_df, test_df, training_exp_df, test_exp_df):
     
     fitting_df, decomposed_df, responses = svd.SVD(
         combined_df, 
-        [4.2, 4.7], 
+        [4.3, 4.7], 
         [2, 10], 
         bins=combined_df.index
         )

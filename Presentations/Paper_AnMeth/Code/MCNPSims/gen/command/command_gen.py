@@ -37,7 +37,7 @@ for name in filenames:
 
 # write the batch file
 
-check_mctal = False
+check_mctal = True
 mctal_folder = compute_folder+'output/mctal/'
 with open(compute_folder+'batch.sh', 'w') as file:
     for line in batch:

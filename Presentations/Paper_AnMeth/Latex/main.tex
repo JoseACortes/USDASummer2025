@@ -19,13 +19,15 @@
 
 \begin{frontmatter}
 
-\title{In Situ Spectral Analysis for Soil Carbon Measurement}
+\title{
+    In Situ Spectral Analysis for Soil Carbon Measurement
+    }
 
 \author[uta]{Jose A. Cortes}
-\ead{jose.cortes@mavs.uta.edu}
+\ead{jose.cortes@uta.edu}
 
 \author[uta]{Andrzej Korzeniowski}
-\ead{akorzeni@uta.edu}
+\ead{korzeniowski@uta.edu}
 
 \author[usda]{Galina Yakubova}
 \ead{galina.yakubova@usda.gov}
@@ -47,340 +49,21 @@
                   state={AL},
                   country={USA}}
 
-\begin{abstract}
-Soil carbon is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of carbon is essential for measuring soil quality and its impact on the environment. Traditional methods for measuring carbon are often time-consuming, expensive, and require laboratory analysis. In situ spectral analysis offers an alternative for rapid and non-destructive measurement of soil carbon. This paper explores the use of spectral analysis techniques to measure carbon levels in various soil types. We simulate common soil types and apply different spectral analysis methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring soil carbon. The results demonstrate that peak fitting with exponential falloff baseline achieves the lowest mean squared error ($7.66\times10^{-5}$), followed by component analysis methods. The study shows that spectral analysis methods can provide accurate soil carbon measurements, with convolution techniques improving overall accuracy across all methods.
-\end{abstract}
-
-\begin{keyword}
-soil carbon \sep spectral analysis \sep neutron activation \sep gamma-ray spectroscopy \sep MCNP simulation \sep peak fitting \sep component analysis \sep deep learning
-\end{keyword}
+\input{content/Abstract/abstract.tex}
 
 \end{frontmatter}
 
-\section{Introduction}
+\input{content/Introduction/introduction.tex}
 
-Soil carbon is a key component of soil health and plays a crucial role in the global carbon cycle. Accurate measurement of carbon is essential for measuring soil quality, and its impact on the environment \cite{lal_soil_2018}. Traditional methods for measuring carbon are often time-consuming, expensive, and require laboratory analysis \cite{de_ros_advancing_2025}. In situ spectral analysis offers an alternative for rapid and non-destructive measurement of soil carbon \cite{yakubova_tagged_2019}.
+\input{content/DataGeneration/datageneration.tex}
 
-This paper explores the use of spectral analysis techniques to measure carbon levels in various soil types. We simulate common soil types and apply different spectral analysis methods, including peak fitting, component fitting, singular value decomposition, and deep learning, to evaluate their effectiveness in measuring soil carbon.
+\input{content/AnalysisMethods/analysismethods.tex}
 
-\section{Data Generation}
+\input{content/Results/results.tex}
 
-\subsection{Common Soil Types}
+\input{content/Discussion/discussion.tex}
 
-To investigate the effectiveness of spectral analysis methods for soil carbon measurement, we simulate a range of common soil types. The simulated data includes spectral readings across different wavelengths, capturing the unique spectral signatures of each soil type. This data serves as a foundation for applying various spectral analysis techniques.
-
-\begin{table}[H]
-\centering
-\caption{Elemental compositions used in MCNP simulations}
-\label{tab:elements}
-\begin{tabular}{lcc}
-\toprule
-Element & MCNP Identifier & Density (g/cm³) \\
-\midrule
-Si & 14028 & 2.33 \\
-Al & 13027 & 2.7 \\
-H & 1001 & 0.001 \\
-Na & 11023 & 0.97 \\
-O & 8016 & 0.00143 \\
-Fe & 26000 & 7.87 \\
-Mg & 12024 & 1.74 \\
-C & 6000 & 2.33 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Material compositions for soil simulation}
-\label{tab:materials}
-\begin{tabular}{lcc}
-\toprule
-Material & Compound Makeup (by weight) & Density (g/cm³) \\
-\midrule
-Silica & SiO$_2$ (76.4\%), Al$_2$O$_3$ (23.6\%) & 2.32 \\
-Kaolinite & SiO$_2$ (46.5\%), Al$_2$O$_3$ (39.5\%), H$_2$O (14.0\%) & 3.95 \\
-Smectite & SiO$_2$ (66.7\%), Al$_2$O$_3$ (28.3\%), H$_2$O (5.0\%) & 2.785 \\
-Montmorillonite & SiO$_2$ (73.7\%), Al$_2$O$_3$ (24.6\%), H$_2$O (1.7\%) & 2.7 \\
-Quartz & SiO$_2$ (100.0\%) & 2.62 \\
-Chlorite & SiO$_2$ (30.0\%), Al$_2$O$_3$ (24.0\%), Fe$_2$O$_3$ (23.3\%), H$_2$O (22.7\%) & 2.6 \\
-Mica & SiO$_2$ (48.9\%), Al$_2$O$_3$ (40.3\%), H$_2$O (10.8\%) & 2.7 \\
-Feldspar & SiO$_2$ (68.0\%), Al$_2$O$_3$ (32.0\%) & 2.55 \\
-Coconut & C (100.0\%) & 0.53 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Simulation in MCNP}
-
-MCNP6 \cite{werner_mcnp_2017} was used to simulate gamma-ray spectra resulting from neutron activation of soil samples. Each simulation modeled a soil matrix with varying concentrations of carbon and other common soil constituents. The geometry was set up to mimic in situ measurement conditions, with a neutron source placed above a soil slab and a detector positioned to capture emitted gamma rays \cite{kavetskiy_neutron-stimulated_2017}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/MCNPGeometry.png}
-\caption{Geometry of MCNP simulation setup showing neutron source, soil slab, and detector configuration}
-\label{fig:mcnp_geometry}
-\end{figure}
-
-Key simulation parameters included:
-\begin{itemize}
-\item \textbf{Neutron source energy:} API120 portable neutron (D-T generator) generator \cite{kavetskiy_energy_2018}
-\item \textbf{Soil slab dimensions:} 112 cm × 90 cm × 30 cm
-\item \textbf{Detector type:} Geiger-Mueller (G-M) detector \cite{yakubova_measuring_2025}
-\item \textbf{Tally:} F8 (pulse height tally) for gamma spectra
-\end{itemize}
-
-This approach enables the generation of realistic spectral data for a variety of soil compositions, forming the basis for evaluating different spectral analysis techniques.
-
-\subsection{Spectral Readings}
-
-The spectral readings obtained from the MCNP simulations provide a detailed representation of the gamma-ray emissions from the soil samples. Mathematically it is a probability density function (PDF) of the energy distribution of the emitted gamma rays.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/MCNPSpectralReading.png}
-\caption{Example MCNP spectral reading showing gamma-ray energy distribution}
-\label{fig:mcnp_spectral}
-\end{figure}
-
-\subsection{Training and Testing Data}
-
-The training data for the spectral analysis methods is picked from the edge cases of the simulated data. This includes the highest and lowest carbon levels both as would be found in simulation as well as natural soils. The testing data is all cases of the simulated data, excluding the training data.
-
-\begin{table}[H]
-\centering
-\caption{Carbon level classifications}
-\label{tab:carbon_levels}
-\begin{tabular}{ll}
-\toprule
-Carbon Level & Associated Amount \\
-\midrule
-Natural & 0\%-6\% Carbon \\
-High & 6\%-100\% Carbon \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/FeldsparSpectralReadingByCarbonLevel.png}
-\caption{Feldspar spectral reading by carbon level showing the variation in spectral signatures with different carbon concentrations}
-\label{fig:feldspar_carbon}
-\end{figure}
-
-\subsection{Data Convolution}
-
-In the context of spectral analysis, MCNP can be used to simulate the interaction of radiation with soil materials, providing spectrums to analyze. Linear Convolution is used to quickly predict spectral readings for material mixtures by combining the spectral signatures of individual components. This does not account for the complex interactions between materials, but it provides a simplified approach to generate spectral data for analysis. The error metric for this convolution method is based on the difference between the simulated spectral readings and the readings obtained from MCNP simulations. The effects of convolution as training data on the analysis results will be investigated in the results section.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/Sim_vs_Convoluted_FeldsparSpectralReadings_Combined.png}
-\caption{Comparison of simulated vs convoluted data for Feldspar spectral readings}
-\label{fig:sim_vs_conv}
-\end{figure}
-
-\section{Analysis Methods of Spectral Readings}
-
-This section explores various spectral analysis methods applied to the simulated spectral readings. Each method is evaluated for its effectiveness in measuring Carbon levels. Error is calculated using mean squared error (MSE) between the predicted and actual carbon levels in the test data.
-
-\subsection{Peak Fitting}
-
-Peak fitting involves using the least-squares method in identifying and quantifying the baseline and peaks in the spectral data that correspond to specific soil components \cite{gardner_use_2011}. This method is useful for extracting information about the concentration of individual elements or compounds in the soil. For effective peak fitting, the data is filtered to focus on the peak area.
-
-The fitting function is defined as:
-\begin{equation}
-F_f = F_p + F_b
-\end{equation}
-
-where $F_p$ is the peak function (e.g., Gaussian) and $F_b$ is the baseline function (e.g., linear or exponential falloff).
-
-\begin{table}[H]
-\centering
-\caption{Function parameterizations for peak fitting}
-\label{tab:functions}
-\begin{tabular}{ll}
-\toprule
-Function Type & Example Expression \\
-\midrule
-Linear & $ax + b$ \\
-Exp Falloff & $a \cdot \exp(-b \cdot x) + c$ \\
-Gaussian & $a \cdot \exp(-((x - b)^2)/c^2) + d$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The SciPy Python package is used for the fitting process \cite{virtanen_scipy_2020}, leveraging its curve fitting capabilities to refine the initial parameter estimates. The baseline function is subtracted from the fitted function to isolate the peak, and the area under the peak is calculated to quantify the concentration of the corresponding element or compound in the soil.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/peak_fitting_feldspar.png}
-\caption{Peak fitting example showing fitted peak and baseline for feldspar spectrum}
-\label{fig:peak_fitting}
-\end{figure}
-
-An activation layer of linear regression is used to compare the peak areas to known soil carbon concentrations, allowing for the calibration of the model's predictions.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/carbon_level_vs_predicted.jpg}
-\caption{Peak fitting prediction results showing carbon level vs predicted values}
-\label{fig:peak_predictions}
-\end{figure}
-
-\subsection{Component Fitting}
-
-Component fitting involves modeling the spectral data as a combination of known spectral signatures of soil components. This method allows for the estimation of the concentration of multiple components in the soil based on their spectral contributions.
-
-The combined spectral function is defined as:
-\begin{equation}
-F_c = \sum_{i} A_i \cdot F_i
-\end{equation}
-
-where $F_c$ is the combined spectral function, $A_i$ are the coefficients representing the concentration of each component, and $F_i$ are the spectral functions of individual components.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/DataGeneration/CommonSoilSpectravsAverageSoilSpectrum.jpg}
-\caption{Common soil spectra vs average soil spectrum showing the spectral signatures of different soil components}
-\label{fig:common_soil_spectra}
-\end{figure}
-
-Components can be any known spectral signature, either from pure elemental samples \cite{kavetskiy_neutron_2023} or from the average of a set of soil samples. The fitting process involves adjusting the coefficients $A_i$ to minimize the difference between the combined spectral function $F_c$ and the observed spectral data. This method also benefits from filtering of low energy signals which are generally more likely to be caused by noise.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/linear_combination_feldspar.png}
-\caption{Component fitting process showing linear combination of spectral components for feldspar analysis}
-\label{fig:component_fitting}
-\end{figure}
-
-The carbon coefficient $A_C$ is then used to estimate the Carbon level in the soil. This method is particularly useful for analyzing complex soil mixtures where multiple known components contribute to the spectral signature. This method is also generalizable to study other elements or compounds.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/carbon_level_vs_predicted_component_analysis.jpg}
-\caption{Component fitting prediction results showing carbon level vs predicted values}
-\label{fig:component_predictions}
-\end{figure}
-
-\subsection{Singular Value Decomposition (SVD)}
-
-Singular Value Decomposition is a mathematical technique used to decompose the spectral data into convex components \cite{liu_deconvolution_2020}. The resulting singular values inside the strong window can be summed to provide a measure of the concentration of carbon in the soil.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/decomposed_feldspar_svd.jpg}
-\caption{Convex optimization process showing SVD decomposition of feldspar spectral data}
-\label{fig:svd_decomposition}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/carbon_level_vs_predicted_convex_optimization.jpg}
-\caption{Convex optimization predictions showing carbon level vs predicted values using SVD}
-\label{fig:svd_predictions}
-\end{figure}
-
-\subsection{Deep Learning}
-
-Deep learning techniques, such as convolutional neural networks (CNNs), can be applied to spectral data for feature extraction and classification. These methods can learn complex relationships in the data and provide robust predictions of carbon levels based on spectral readings. The most important difference between deep learning and the previous methods is that it requires a large amount of training data to be effective. One method by Kim et al. \cite{kim_deep_2025} uses a deep learning model to predict existence, concentration and carbon peak areas.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{../Figures/Analysis/carbon_level_vs_predicted_ml_optimization.jpg}
-\caption{Deep learning prediction results showing carbon level vs predicted values using machine learning optimization}
-\label{fig:ml_predictions}
-\end{figure}
-
-\section{Results}
-
-The effectiveness of each method in measuring carbon levels is evaluated based on accuracy using mean squared error (MSE) as the metric. The results are summarized in Table~\ref{tab:results}.
-
-\begin{table}[H]
-\centering
-\caption{Performance comparison of spectral analysis methods}
-\label{tab:results}
-\begin{tabular}{llc}
-\toprule
-Method Group & Method & MSE \\
-\midrule
-Peak Fitting & Exponential Falloff Baseline & $7.66 \times 10^{-5}$ \\
-Component Analysis & Elemental Maps & $2.10 \times 10^{-4}$ \\
-Component Analysis & Average Training & $3.43 \times 10^{-4}$ \\
-Peak Fitting & Linear Baseline & $3.52 \times 10^{-4}$ \\
-Machine Learning & Deep Learning & $3.67 \times 10^{-4}$ \\
-Convex Optimization & SVD & $4.27 \times 10^{-4}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{Comparing Analysis Methods}
-
-Peak fitting with exponential falloff baseline is the most effective method for measuring carbon levels in soil, achieving the lowest MSE ($7.66 \times 10^{-5}$). Component analysis methods also perform well, with elemental maps achieving the second-best performance. The deep learning method shows promise but requires further optimization to improve its performance.
-
-\subsection{Effects of Carbon Levels on Results}
-
-\begin{table}[H]
-\centering
-\caption{Method performance by carbon level}
-\label{tab:carbon_level_effects}
-\begin{tabular}{lccccccc}
-\toprule
-Carbon Level & \multicolumn{7}{c}{MSE Values} \\
-\cmidrule(lr){2-8}
-& Peak Fitting & Peak Fitting & Component & Component & Convex & Filtered ML & Machine \\
-& (Exp Falloff) & (Linear) & (Average) & (Elemental) & Optimization & & Learning \\
-\midrule
-Agricultural & $7.66 \times 10^{-5}$ & $3.52 \times 10^{-4}$ & $3.43 \times 10^{-4}$ & $2.10 \times 10^{-4}$ & $4.27 \times 10^{-4}$ & $3.70 \times 10^{-3}$ & $3.67 \times 10^{-4}$ \\
-All & $1.42 \times 10^{-2}$ & $3.48 \times 10^{-2}$ & $1.92 \times 10^{-2}$ & $1.92 \times 10^{-2}$ & $2.64 \times 10^{-2}$ & $1.33 \times 10^{-1}$ & $1.01 \times 10^{-1}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Lower carbon levels tend to result in higher MSE values across all methods, indicating that the spectral signatures of low-carbon soils are less distinct and more challenging to analyze accurately. The methods generally perform better with higher carbon concentrations, where the spectral features are more pronounced.
-
-\subsection{Effects of Convolution on Results}
-
-\begin{table}[H]
-\centering
-\caption{Method performance by training dataset type}
-\label{tab:convolution_effects}
-\begin{tabular}{lccccccc}
-\toprule
-Dataset & \multicolumn{7}{c}{MSE Values} \\
-\cmidrule(lr){2-8}
-& Peak Fitting & Peak Fitting & Component & Component & Convex & Filtered ML & Machine \\
-& (Exp Falloff) & (Linear) & (Average) & (Elemental) & Optimization & & Learning \\
-\midrule
-Convolution Training & $7.26 \times 10^{-5}$ & $3.50 \times 10^{-4}$ & $2.95 \times 10^{-4}$ & $1.91 \times 10^{-4}$ & $2.93 \times 10^{-4}$ & $3.65 \times 10^{-4}$ & $3.61 \times 10^{-4}$ \\
-Feldspar & $3.43 \times 10^{-5}$ & $3.60 \times 10^{-4}$ & $7.48 \times 10^{-7}$ & $7.92 \times 10^{-7}$ & $2.14 \times 10^{-3}$ & $1.10 \times 10^{-2}$ & $9.30 \times 10^{-4}$ \\
-Material Mixes & $7.66 \times 10^{-5}$ & $3.52 \times 10^{-4}$ & $3.43 \times 10^{-4}$ & $2.10 \times 10^{-4}$ & $4.27 \times 10^{-4}$ & $3.70 \times 10^{-3}$ & $3.67 \times 10^{-4}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Convolution generally improves the accuracy of spectral analysis methods by smoothing out noise and enhancing the signal-to-noise ratio. The results show that convolution leads to lower MSE values across all methods, indicating that it is beneficial for spectral analysis in soil carbon measurement.
-
-\section{Discussion}
-
-\subsection{Conclusions}
-
-The study demonstrates the potential of spectral analysis methods for measuring soil carbon levels. Peak fitting and component fitting methods show the best performance, while deep learning techniques require further refinement. Convolution is beneficial for improving the accuracy of spectral analysis.
-
-The peak fitting method with exponential falloff baseline achieved the highest accuracy, suggesting that proper baseline correction is crucial for effective spectral analysis. Component analysis methods provide a good balance between accuracy and interpretability, making them suitable for practical applications.
-
-\subsection{Future Work}
-
-Future work will focus on:
-\begin{itemize}
-\item Optimization of deep learning architectures for spectral analysis
-\item Investigation of hybrid methods combining multiple analysis techniques
-\item Field validation of the proposed methods
-\item Extension to other soil properties beyond carbon content
-\end{itemize}
-
-\section{Acknowledgments}
-
-We acknowledge the contributions of the USDA scientists for their guidance and support in this research. The spectral data generated in this study is available for further research and validation.
+\input{content/Acknowledgments/acknowledgments.tex}
 
 \bibliographystyle{elsarticle-num}
 \bibliography{references}
